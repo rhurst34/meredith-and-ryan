@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meredith & Ryan — May 27, 2027</title>
+
+<!-- Open Graph tags for when you share the link on social media / iMessage -->
+<meta property="og:title" content="Meredith & Ryan — May 27, 2027">
+<meta property="og:description" content="We're getting married on the Amalfi Coast!">
+<!-- REPLACE: Uncomment and add your photo URL for the social media preview image -->
+<!-- <meta property="og:image" content="https://yourdomain.com/images/og-preview.jpg"> -->
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+<!-- OPTIONAL: If you buy the real Snell Roundhand font, link it here. Otherwise the site
+     uses Cormorant Garamond (a free elegant serif) as the fallback and it looks great. -->
+
+<style>
+/* =============================================================
+   COLOR PALETTE — Change these 3 values to restyle the whole site
+   ============================================================= */
+:root {
+  --cream: #fcf8f2;
+  --light-blue: #b2c3cb;
+  --blue: #6c848d;
+  --dark: #3a3a3a;
+}
+
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+.script-font {
+  font-family: 'Snell Roundhand', 'Apple Chancery', 'Cormorant Garamond', cursive;
+  font-weight: 300;
+}
+
+body {
+  font-family: 'Avenir', 'Avenir Next', 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: var(--dark);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ===== NAVIGATION ===== */
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 40px;
+  background: rgba(252, 248, 242, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(108, 132, 141, 0.1);
+  transition: transform 0.4s ease;
+}
+.site-nav.hidden-nav { transform: translateY(-100%); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--blue);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover::after { width: 100%; }
+
+.rsvp-btn {
+  margin-left: 20px;
+  padding: 10px 28px;
+  background: var(--blue);
+  color: var(--cream) !important;
+  border-radius: 2px;
+  letter-spacing: 2.5px;
+  font-size: 12px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.rsvp-btn::after { display: none !important; }
+.rsvp-btn:hover { background: #5a727a; transform: translateY(-1px); }
+
+/* ===== PAGES ===== */
+.page { display: none; min-height: 100vh; }
+.page.active { display: block; }
+
+/* ===== HOME PAGE ===== */
+#home {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* This is the full-screen background — see the HTML section below to swap in your video */
+.home-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(160deg, #d4dde1 0%, #a8bcc5 30%, #8aa0a9 60%, #6c848d 100%);
+}
+.home-bg video, .home-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--cream);
+}
+.home-names {
+  font-size: clamp(48px, 8vw, 100px);
+  line-height: 1.15;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 40px rgba(0,0,0,0.15);
+  opacity: 0; animation: fadeUp 1.2s ease forwards 0.2s;
+}
+.home-date {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  opacity: 0; animation: fadeUp 1.2s ease forwards 0.5s;
+}
+
+/* Countdown */
+.countdown {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 48px;
+  justify-content: center;
+  opacity: 0; animation: fadeUp 1.2s ease forwards 0.8s;
+}
+.countdown-unit { text-align: center; }
+.countdown-number {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--cream);
+}
+.countdown-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-top: 6px;
+}
+
+.enter-btn {
+  display: inline-block;
+  padding: 16px 52px;
+  background: var(--blue);
+  color: var(--cream);
+  font-family: 'Avenir', 'Avenir Next', sans-serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1.5px solid rgba(252,248,242,0.3);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  border-radius: 2px;
+  opacity: 0; animation: fadeUp 1.2s ease forwards 1.1s;
+}
+.enter-btn:hover {
+  background: rgba(252,248,242,0.1);
+  border-color: rgba(252,248,242,0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== SECTION HELPERS ===== */
+.section-padding { padding: 100px 40px; }
+.section-padding-lg { padding: 120px 40px; }
+.max-width { max-width: 1100px; margin: 0 auto; }
+.text-center { text-align: center; }
+
+.page-title {
+  font-size: clamp(40px, 5vw, 64px);
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+.divider {
+  width: 60px;
+  height: 1px;
+  background: var(--light-blue);
+  margin: 30px auto;
+}
+
+/* ===== IMAGE PLACEHOLDERS (will be replaced with your real photos) ===== */
+.img-placeholder {
+  background: linear-gradient(135deg, #d4dde1, #b2c3cb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(108, 132, 141, 0.5);
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(252, 248, 242, 0.3);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* Real images — used once you swap in your photos */
+.real-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+/* ===== WEDDING DETAILS ===== */
+.hero-image-placeholder {
+  width: 100%;
+  height: 55vh;
+  min-height: 380px;
+}
+
+.weekend-banner {
+  background: var(--blue);
+  color: var(--cream);
+  padding: 90px 40px;
+}
+.weekend-banner .page-title { color: var(--cream); }
+
+.weekend-columns {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+  max-width: 960px;
+  margin: 60px auto 0;
+}
+.weekend-col {
+  flex: 1;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.weekend-col.visible { opacity: 1; transform: translateY(0); }
+.weekend-col:nth-child(2) { transition-delay: 0.15s; }
+.weekend-col:nth-child(3) { transition-delay: 0.3s; }
+
+.icon-placeholder {
+  width: 56px; height: 56px;
+  margin: 0 auto 28px;
+  border: 1.5px solid rgba(252, 248, 242, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-placeholder svg {
+  width: 24px; height: 24px;
+  stroke: var(--cream);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.weekend-col h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  color: var(--cream);
+}
+.weekend-col p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+/* Our Special Day */
+.special-day {
+  background: var(--cream);
+  padding: 100px 40px;
+}
+.special-day-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.special-day-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 24px;
+  color: var(--blue);
+}
+.special-day-info .detail-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.detail-label {
+  font-weight: 500;
+  min-width: 100px;
+}
+
+/* Wedding Party */
+.wedding-party { padding: 80px 40px 100px; }
+.party-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 800px;
+  margin: 50px auto 0;
+}
+.party-group h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--blue);
+  margin-bottom: 24px;
+  text-align: center;
+}
+.party-member {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(178, 195, 203, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 15px;
+}
+.party-member:last-child { border-bottom: none; }
+.member-name { font-weight: 400; }
+.member-role { font-weight: 300; color: var(--blue); font-size: 13px; font-style: italic; }
+
+.full-image-placeholder {
+  width: 100%;
+  height: 50vh;
+  min-height: 350px;
+}
+
+/* ===== TRAVEL & LODGING ===== */
+.travel-section { background: var(--cream); }
+
+.travel-card {
+  background: white;
+  border-radius: 6px;
+  padding: 40px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 20px rgba(108, 132, 141, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.travel-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(108, 132, 141, 0.12);
+}
+.travel-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--blue);
+  margin-bottom: 14px;
+}
+.travel-card p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #555;
+}
+.travel-card .sub-tip {
+  margin-top: 12px;
+  padding-left: 20px;
+  border-left: 2px solid var(--light-blue);
+  font-size: 14px;
+  font-style: italic;
+  color: #777;
+}
+
+.tip-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+.tip-card {
+  background: white;
+  border-radius: 6px;
+  padding: 32px;
+  box-shadow: 0 2px 20px rgba(108, 132, 141, 0.07);
+}
+.tip-card h4 {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--blue);
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+.tip-card p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #666;
+}
+
+/* ===== ITALY GUIDE ===== */
+.guide-intro {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.experience-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.experience-card.visible { opacity: 1; transform: translateY(0); }
+.experience-card:nth-child(even) { direction: rtl; }
+.experience-card:nth-child(even) > * { direction: ltr; }
+
+.experience-img {
+  width: 100%;
+  height: 320px;
+  border-radius: 6px;
+}
+
+.experience-text h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+.experience-text p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 12px;
+}
+.experience-text .tip {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--blue);
+  padding-left: 16px;
+  border-left: 2px solid var(--light-blue);
+  margin-top: 16px;
+}
+
+.guide-region-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--blue);
+  text-align: center;
+  margin: 40px 0 50px;
+}
+
+/* ===== FAQ ===== */
+.faq-list { max-width: 740px; margin: 50px auto 0; }
+.faq-item {
+  border-bottom: 1px solid rgba(178, 195, 203, 0.3);
+  padding: 28px 0;
+  cursor: pointer;
+}
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--dark);
+  transition: color 0.3s ease;
+}
+.faq-question:hover { color: var(--blue); }
+.faq-toggle {
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--blue);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.faq-item.open .faq-answer { max-height: 400px; padding-top: 16px; }
+.faq-answer p, .faq-answer ul {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #666;
+}
+.faq-answer ul { list-style: none; margin-top: 8px; }
+.faq-answer ul li::before { content: '— '; color: var(--light-blue); }
+
+/* ===== RSVP ===== */
+.rsvp-section {
+  background: var(--blue);
+  color: var(--cream);
+  text-align: center;
+  padding: 100px 40px;
+}
+.rsvp-section .page-title { color: var(--cream); }
+.rsvp-section p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0 auto 36px;
+  opacity: 0.9;
+}
+.rsvp-link-btn {
+  display: inline-block;
+  padding: 16px 52px;
+  background: var(--cream);
+  color: var(--blue);
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.rsvp-link-btn:hover { background: #fff; transform: translateY(-2px); }
+
+/* ===== FOOTER ===== */
+.site-footer {
+  text-align: center;
+  padding: 48px 40px;
+  background: var(--cream);
+  border-top: 1px solid rgba(178, 195, 203, 0.25);
+}
+.footer-names { font-size: 28px; color: var(--blue); margin-bottom: 8px; }
+.footer-date {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--light-blue);
+  text-transform: uppercase;
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== RESPONSIVE (phones & tablets) ===== */
+@media (max-width: 768px) {
+  .site-nav { padding: 14px 20px; }
+  .nav-links { gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .nav-links a { font-size: 11px; letter-spacing: 1.5px; }
+  .rsvp-btn { margin-left: 0; }
+  .section-padding { padding: 70px 24px; }
+  .section-padding-lg { padding: 80px 24px; }
+  .weekend-columns { flex-direction: column; gap: 50px; }
+  .special-day-grid { grid-template-columns: 1fr; }
+  .party-grid { grid-template-columns: 1fr; gap: 50px; }
+  .tip-grid { grid-template-columns: 1fr; }
+  .experience-card { grid-template-columns: 1fr; gap: 24px; }
+  .experience-card:nth-child(even) { direction: ltr; }
+  .countdown { gap: 18px; }
+  .countdown-number { font-size: 36px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     NAVIGATION
+     The nav is hidden on the Home screen and appears after "Enter"
+     ═══════════════════════════════════════════════════════════════ -->
+<nav class="site-nav hidden-nav" id="siteNav">
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home')">Home</a></li>
+    <li><a href="#" onclick="showPage('details')">Wedding Details</a></li>
+    <li><a href="#" onclick="showPage('travel')">Travel & Lodging</a></li>
+    <li><a href="#" onclick="showPage('guide')">Our Italy Guide</a></li>
+    <li><a href="#" onclick="showPage('faq')">FAQs</a></li>
+
+    <!-- ╔═══════════════════════════════════════════════════════╗
+         ║  REPLACE: Update this to link to your Joy RSVP page  ║
+         ║  Change the # below to your Joy URL                  ║
+         ╚═══════════════════════════════════════════════════════╝ -->
+    <li><a href="#" onclick="showPage('faq'); setTimeout(()=>document.getElementById('rsvpSection').scrollIntoView({behavior:'smooth'}),100)" class="rsvp-btn">RSVP</a></li>
+  </ul>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 1: HOME / LANDING
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page active" id="home">
+
+  <!-- ╔═══════════════════════════════════════════════════════════╗
+       ║  REPLACE: HOME BACKGROUND VIDEO OR IMAGE                 ║
+       ║                                                          ║
+       ║  OPTION A — Video background:                            ║
+       ║  Uncomment the <video> tag below and set the src to      ║
+       ║  your video file (put the file in the images/ folder).   ║
+       ║                                                          ║
+       ║  OPTION B — Photo background:                            ║
+       ║  Uncomment the <img> tag below instead.                  ║
+       ║                                                          ║
+       ║  OPTION C — Keep the gradient (current default).         ║
+       ╚═══════════════════════════════════════════════════════════╝ -->
+  <div class="home-bg">
+    <!-- OPTION A: VIDEO — uncomment these 3 lines and add your video file -->
+    <!-- <video autoplay muted loop playsinline>
+      <source src="images/home-video.mp4" type="video/mp4">
+    </video> -->
+
+    <!-- OPTION B: IMAGE — uncomment this line and add your photo -->
+    <!-- <img src="images/home-bg.jpg" alt="Meredith and Ryan"> -->
+  </div>
+
+  <div class="home-content">
+    <h1 class="home-names script-font">Meredith &amp; Ryan</h1>
+    <p class="home-date">Amalfi Coast &middot; Italy</p>
+
+    <div class="countdown" id="countdown">
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-days">---</span>
+        <span class="countdown-label">Days</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-hours">--</span>
+        <span class="countdown-label">Hours</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-mins">--</span>
+        <span class="countdown-label">Minutes</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-secs">--</span>
+        <span class="countdown-label">Seconds</span>
+      </div>
+    </div>
+
+    <button class="enter-btn" onclick="enterSite()">Enter</button>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 2: WEDDING DETAILS
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page" id="details">
+
+  <!-- ╔═══════════════════════════════════════════════════════╗
+       ║  REPLACE: HERO PHOTO                                  ║
+       ║  Swap the placeholder div for an <img> tag:          ║
+       ║  <img src="images/hero.jpg" class="real-img"         ║
+       ║   style="height:55vh;min-height:380px;margin-top:70px"║
+       ║   alt="Meredith and Ryan">                            ║
+       ╚═══════════════════════════════════════════════════════╝ -->
+  <div class="img-placeholder hero-image-placeholder" style="margin-top:70px;">
+    Your Photo Here
+  </div>
+
+  <!-- Our Wedding Weekend — blue banner with 3 events -->
+  <div class="weekend-banner">
+    <div class="text-center">
+      <h2 class="page-title script-font" style="color:var(--cream)">Our Wedding Weekend</h2>
+      <div class="divider" style="background:rgba(252,248,242,0.3)"></div>
+    </div>
+
+    <div class="weekend-columns">
+      <div class="weekend-col">
+        <div class="icon-placeholder">
+          <svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+        </div>
+        <h3>May 26th</h3>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:18px; margin-bottom:14px;">Welcome Party</p>
+        <p><strong>Dress Code:</strong> Italian Chic</p>
+        <p style="opacity:0.7; font-size:13px; margin-top:4px;">(Think linen shirts, sundresses. No ties required)</p>
+      </div>
+
+      <div class="weekend-col">
+        <div class="icon-placeholder">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3>May 27th</h3>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:18px; margin-bottom:14px;">Wedding at 4:30 PM</p>
+        <p><strong>Dress Code:</strong> Formal / Black Tie</p>
+      </div>
+
+      <div class="weekend-col">
+        <div class="icon-placeholder">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </div>
+        <h3>May 28th</h3>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:18px; margin-bottom:14px;">Pool Party at Hotel</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Our Special Day -->
+  <div class="special-day">
+    <div class="max-width">
+      <div class="text-center">
+        <h2 class="page-title script-font">Our Special Day</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="special-day-grid" style="margin-top:50px;">
+        <div class="special-day-info fade-in">
+          <div class="detail-row">
+            <span class="detail-label" style="color:var(--blue);">Where</span>
+            <span>Villa Angelina</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label" style="color:var(--blue);">Time</span>
+            <span>4:00 PM</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label" style="color:var(--blue);">Dress Code</span>
+            <span>Italian Chic</span>
+          </div>
+          <p style="font-size:14px; color:#888; font-style:italic; margin-top:8px; padding-left:110px;">(Think linen shirts, sundresses. No ties required)</p>
+        </div>
+
+        <!-- ╔═══════════════════════════════════════════════════╗
+             ║  REPLACE: SPECIAL DAY PHOTO                       ║
+             ║  <img src="images/special-day.jpg" class="real-img"║
+             ║   style="height:280px" alt="Villa Angelina">      ║
+             ╚═══════════════════════════════════════════════════╝ -->
+        <div class="img-placeholder fade-in" style="height:280px;">Your Photo Here</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wedding Party -->
+  <div class="wedding-party section-padding" style="background:white;">
+    <div class="max-width">
+      <div class="text-center">
+        <h2 class="page-title script-font">The Wedding Party</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="party-grid">
+        <div class="party-group fade-in">
+          <h3>Bridesmaids</h3>
+          <div class="party-member"><span class="member-name">Mallorie Black</span><span class="member-role">Maid of Honor</span></div>
+          <div class="party-member"><span class="member-name">Erica Fried</span><span class="member-role">Maid of Honor</span></div>
+          <div class="party-member"><span class="member-name">Azura Cooke</span><span class="member-role">Matron of Honor</span></div>
+          <div class="party-member"><span class="member-name">Maddy Denton</span><span class="member-role">Bridesmaid</span></div>
+          <div class="party-member"><span class="member-name">Jenny Redmond</span><span class="member-role">Bridesmaid</span></div>
+          <div class="party-member"><span class="member-name">Marlie Tressler</span><span class="member-role">Bridesmaid</span></div>
+          <div class="party-member"><span class="member-name">Maddie Catinella</span><span class="member-role">Bridesmaid</span></div>
+          <div class="party-member"><span class="member-name">Lexi Bump</span><span class="member-role">Bridesmaid</span></div>
+          <div class="party-member"><span class="member-name">Libby Goodman</span><span class="member-role">Bridesmaid</span></div>
+          <div class="party-member"><span class="member-name">Sam Hurst</span><span class="member-role">Bridesmaid</span></div>
+        </div>
+
+        <div class="party-group fade-in">
+          <h3>Groomsmen</h3>
+          <div class="party-member"><span class="member-name">David Hurst</span><span class="member-role">Co-Best Man</span></div>
+          <div class="party-member"><span class="member-name">John Hurst</span><span class="member-role">Co-Best Man</span></div>
+          <div class="party-member"><span class="member-name">Carter Black</span><span class="member-role">Groomsman</span></div>
+          <div class="party-member"><span class="member-name">Chris Dore</span><span class="member-role">Groomsman</span></div>
+          <div class="party-member"><span class="member-name">Daniel Kutka</span><span class="member-role">Groomsman</span></div>
+          <div class="party-member"><span class="member-name">Conner Burks</span><span class="member-role">Groomsman</span></div>
+          <div class="party-member"><span class="member-name">James Holder</span><span class="member-role">Groomsman</span></div>
+          <div class="party-member"><span class="member-name">Will Rowston</span><span class="member-role">Groomsman</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ╔═══════════════════════════════════════════════════════╗
+       ║  REPLACE: BOTTOM FULL-WIDTH PHOTO                     ║
+       ║  <img src="images/bottom-details.jpg" class="real-img"║
+       ║   style="height:50vh;min-height:350px"                ║
+       ║   alt="Wedding photo">                                ║
+       ╚═══════════════════════════════════════════════════════╝ -->
+  <div class="img-placeholder full-image-placeholder">Your Photo Here</div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 3: TRAVEL & LODGING
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page" id="travel">
+  <div class="travel-section section-padding-lg" style="padding-top:140px;">
+    <div class="max-width">
+      <div class="text-center">
+        <h2 class="page-title script-font">Travel &amp; Lodging</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="section-subtitle" style="margin-top:50px;">Flight Tips</div>
+      <p class="fade-in" style="font-size:15px; font-weight:300; line-height:1.75; color:#666; margin-bottom:30px;">Getting to the Amalfi Coast requires a little planning, but the destination is worth the journey. Here are the best strategies we have found for booking flights.</p>
+
+      <div class="travel-card fade-in">
+        <h3>Direct Route into Naples</h3>
+        <p>The closest airport is Naples (NAP). If you can find a good connection here, it is the easiest option because you are only about an hour's drive or ferry ride from Sorrento.</p>
+      </div>
+
+      <div class="travel-card fade-in">
+        <h3>Route into Rome</h3>
+        <p>We also recommend flying into Rome (FCO) as an alternative. It usually offers more direct flights and better prices. From Rome, you simply hop on the high-speed train (Frecciarossa) to Naples, which takes just over an hour.</p>
+      </div>
+
+      <div class="travel-card fade-in">
+        <h3>Be Creative with Routing</h3>
+        <p>Don't be afraid to break up your trip! Sometimes it is significantly cheaper to book a "positioning flight" to a major hub first.</p>
+        <div class="sub-tip"><strong>Via Europe:</strong> Look at flying into major cities such as London, Dublin, or Barcelona, spending a night or simply connecting there, and then grabbing a cheap budget flight to Naples.</div>
+        <div class="sub-tip" style="margin-top:8px;"><strong>Via the US:</strong> Double check the price of booking a separate domestic flight to JFK (New York) first. Often, the round-trip fares from JFK to Italy are unbeatable.</div>
+      </div>
+
+      <div class="travel-card fade-in" style="border-left:3px solid var(--blue);">
+        <h3>Passports</h3>
+        <p>A reminder to check that passports are valid for at least 6 months past the travel date.</p>
+      </div>
+
+      <div class="text-center" style="margin-top:80px;">
+        <div class="section-subtitle">Italy Tips</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:400; color:var(--blue);">Things to Know Before You Go</h3>
+        <div class="divider"></div>
+      </div>
+
+      <div class="tip-grid">
+        <div class="tip-card fade-in">
+          <h4>Download WhatsApp</h4>
+          <p>WhatsApp is the standard way to communicate with everyone in Italy — from your driver to the boat captain. It works over WiFi/Data so you won't get charged for international texts.</p>
+        </div>
+        <div class="tip-card fade-in">
+          <h4>Carry Cash</h4>
+          <p>While most restaurants take credit cards, always carry 50–100 Euros in smaller bills. You will need it for tipping, taxis (whose card machines are often "broken"), and spontaneous lemon gelato.</p>
+        </div>
+        <div class="tip-card fade-in">
+          <h4>Smart Shoes</h4>
+          <p>The Amalfi Coast is beautiful but steep. Between the cobblestones and the stairs, stilettos are a safety hazard. We highly recommend block heels, wedges, or dressy sandals.</p>
+        </div>
+        <div class="tip-card fade-in">
+          <h4>Book Reservations Early</h4>
+          <p>This is a popular region! If you see a restaurant on this list (or Instagram) that you are dying to try, please book it 2–3 months in advance.</p>
+        </div>
+        <div class="tip-card fade-in">
+          <h4>Power Adapters</h4>
+          <p>Italy uses Type L (three pins in a row) or Type C (two pins) plugs. Pick one up before your trip!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 4: OUR ITALY GUIDE
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page" id="guide">
+  <div class="section-padding-lg" style="padding-top:140px;">
+    <div class="max-width">
+      <div class="text-center">
+        <h2 class="page-title script-font">Our Italy Guide</h2>
+        <div class="divider"></div>
+      </div>
+      <p class="guide-intro">We have curated a list of our absolute favorite experiences to help you make the most of your trip. Whether you are here for a few days or a full week, we hope you fall in love with this place just as much as we have.</p>
+
+      <!-- ╔═══════════════════════════════════════════════════════╗
+           ║  REPLACE: Each experience has an image placeholder.   ║
+           ║  Swap the .img-placeholder div for:                   ║
+           ║  <img src="images/capri.jpg" class="real-img          ║
+           ║   experience-img" alt="Capri boat day">               ║
+           ╚═══════════════════════════════════════════════════════╝ -->
+
+      <!-- Capri -->
+      <div class="experience-card fade-in">
+        <div class="experience-text">
+          <h3>A Private Boat Day Around Capri</h3>
+          <p>If you only do one extra excursion, make it this one. There is nothing quite like seeing the coast from the water. We recommend booking a private boat to drive around the island of Capri, swim in the grottos, and see the Faraglioni rocks up close. It is truly magical.</p>
+          <div class="tip">We booked our experiences through Feeling Italy and highly recommend them! They took amazing care of us.</div>
+        </div>
+        <div class="img-placeholder experience-img">Your Photo Here</div>
+      </div>
+
+      <!-- La Conca del Sogno -->
+      <div class="experience-card fade-in">
+        <div class="experience-text">
+          <h3>Beach Club Day at La Conca del Sogno</h3>
+          <p>La Conca del Sogno is a stunning beach club and restaurant tucked away in a secluded cove in Nerano. It feels exclusive, relaxing, and incredibly fun. The food is fresh, the water is clear, and the vibe is unmatched.</p>
+          <div class="tip">Tip: You will need to hire a driver to take you here (it is off the beaten path and tricky to find on your own), but trust us — it is awesome and worth every mile.</div>
+        </div>
+        <div class="img-placeholder experience-img">Your Photo Here</div>
+      </div>
+
+      <!-- Positano -->
+      <div class="experience-card fade-in">
+        <div class="experience-text">
+          <h3>An Afternoon in Positano</h3>
+          <p>Positano is the jewel of the Amalfi Coast. We love spending an afternoon wandering the steep, winding streets, shopping for ceramics, and soaking in the views.</p>
+          <div class="tip">The Perfect Nightcap: After exploring, head to Aldo's Cocktail Bar at the iconic Le Sirenuse hotel. The cocktails are incredible (and strong!), but the view of the village houses lit up at night is the real star.</div>
+        </div>
+        <div class="img-placeholder experience-img">Your Photo Here</div>
+      </div>
+
+      <h3 class="guide-region-heading">Florence &amp; Rome</h3>
+
+      <!-- Cinque Terre -->
+      <div class="experience-card fade-in">
+        <div class="experience-text">
+          <h3>A Day Trip to Cinque Terre</h3>
+          <p>There is nothing quite like seeing these five colorful fishing villages stacked against the rugged cliffs. We recommend taking the train from Florence to the first village, Riomaggiore, and then hopping on the local ferry to hop between Manarola and Vernazza. Seeing the coast from the water is truly magical and one of the most special places in Italy!</p>
+        </div>
+        <div class="img-placeholder experience-img">Your Photo Here</div>
+      </div>
+
+      <!-- Custom Leather -->
+      <div class="experience-card fade-in">
+        <div class="experience-text">
+          <h3>Custom Leather in Florence</h3>
+          <p>Florence is the world's leather capital. Head to Scuola del Cuoio or Benheart. Pick out a high-quality purse or belt and ask them to gold-stamp your initials right in front of you.</p>
+        </div>
+        <div class="img-placeholder experience-img">Your Photo Here</div>
+      </div>
+
+      <!-- Gianicolo Hill -->
+      <div class="experience-card fade-in">
+        <div class="experience-text">
+          <h3>Sunset in Rome on Gianicolo Hill</h3>
+          <p>If you want the absolute best view of Rome, head here. Perched just above Trastevere, this spot offers a sweeping panorama of the entire city. We recommend grabbing a bottle of wine and finding a spot on the wall to watch the sunset — you can even spot the Colosseum in the distance. It is peaceful, romantic, and truly feels like you are floating above the domes.</p>
+        </div>
+        <div class="img-placeholder experience-img">Your Photo Here</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 5: FAQs + RSVP
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page" id="faq">
+  <div class="section-padding-lg" style="padding-top:140px;">
+    <div class="max-width">
+      <div class="text-center">
+        <h2 class="page-title script-font">Frequently Asked Questions</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">Where are you registered?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer"><p>Honestly, your presence in Italy is the greatest gift we could ever ask for! We fully understand the effort and travel required for you to be here with us, so please, do not feel obligated to get us anything. We will add a small registry option closer to the date for anyone who still wishes to send a gift.</p></div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">Do I need to rent a car?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer"><p>We strongly recommend against renting a car. The roads on the Amalfi Coast are extremely narrow, winding, and crowded. Parking is scarce and expensive. We have arranged transportation for the wedding events, and for your free time, we recommend hiring private drivers or using ferries.</p></div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">What is the dress code?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer">
+            <p>We can't wait to see you look your best!</p>
+            <ul>
+              <li>Welcome Party (May 26): Italian Chic</li>
+              <li>The Wedding (May 27): Formal / Black Tie — Suits or tuxedos for men; floor-length or fancy cocktail dresses for women.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">What time should I be ready on the wedding day?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer"><p>The shuttles will depart the hotel promptly at 3:45 PM. Please be in the lobby by 3:30 PM so we can stay on schedule!</p></div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">Are kids invited?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer"><p>Our wedding events will be adults-only (except for Carter Black ;). We hope you view this as a fun getaway to enjoy a few spritzes!</p></div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">Can I bring a date?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer"><p>We will be having a smaller destination wedding and are only able to accommodate the guests named on your invitation.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ╔═══════════════════════════════════════════════════════════╗
+       ║  REPLACE: RSVP LINK                                      ║
+       ║  Change the href="#" below to your Joy RSVP page URL     ║
+       ║  Example: href="https://withjoy.com/meredith-and-ryan"   ║
+       ╚═══════════════════════════════════════════════════════════╝ -->
+  <div class="rsvp-section" id="rsvpSection">
+    <h2 class="page-title script-font">RSVP</h2>
+    <div class="divider" style="background:rgba(252,248,242,0.3)"></div>
+    <p>We would be honored to have you celebrate with us in Italy. Please let us know if you can make it!</p>
+    <a href="#" class="rsvp-link-btn" target="_blank">RSVP on Joy</a>
+  </div>
+
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <p class="footer-names script-font">M &amp; R</p>
+  <p class="footer-date">May 27, 2027 &middot; Amalfi Coast, Italy</p>
+</footer>
+
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+// ---- Countdown Timer (counts down to May 27, 2027 at 4pm EST) ----
+function updateCountdown() {
+  var wedding = new Date('2027-05-27T16:00:00-04:00');
+  var now = new Date();
+  var diff = wedding - now;
+  if (diff <= 0) { diff = 0; }
+  document.getElementById('cd-days').textContent  = Math.floor(diff / (1000*60*60*24));
+  document.getElementById('cd-hours').textContent = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  document.getElementById('cd-mins').textContent  = Math.floor((diff % (1000*60*60)) / (1000*60));
+  document.getElementById('cd-secs').textContent  = Math.floor((diff % (1000*60)) / 1000);
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ---- Page Navigation ----
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+  document.getElementById(pageId).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  var nav = document.getElementById('siteNav');
+  if (pageId === 'home') { nav.classList.add('hidden-nav'); }
+  else { nav.classList.remove('hidden-nav'); }
+  setTimeout(observeAnimations, 100);
+}
+
+function enterSite() { showPage('details'); }
+
+// ---- FAQ Accordion ----
+function toggleFaq(item) {
+  var wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+  if (!wasOpen) item.classList.add('open');
+}
+
+// ---- Scroll Fade-in Animations ----
+function observeAnimations() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-in, .weekend-col, .experience-card').forEach(function(el) {
+    if (!el.classList.contains('visible')) { observer.observe(el); }
+  });
+}
+document.addEventListener('DOMContentLoaded', observeAnimations);
+</script>
+
+</body>
+</html>

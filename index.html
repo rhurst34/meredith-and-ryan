@@ -75,18 +75,19 @@ body {
   font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background 0.3s ease;
   position: relative;
+  padding: 8px 16px;
+  border-radius: 2px;
 }
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px; left: 0;
-  width: 0; height: 1px;
+.nav-links a:hover {
+  background: rgba(108, 132, 141, 0.1);
+}
+/* Active page highlight */
+.nav-links a.nav-active {
   background: var(--blue);
-  transition: width 0.3s ease;
+  color: var(--cream);
 }
-.nav-links a:hover::after { width: 100%; }
 
 .rsvp-btn {
   margin-left: 20px;
@@ -635,7 +636,8 @@ body {
   background: var(--cream);
   border-top: 1px solid rgba(178, 195, 203, 0.25);
 }
-.footer-names { font-size: 28px; color: var(--blue); margin-bottom: 8px; }
+.footer-logo { margin-bottom: 12px; }
+.footer-logo img { height: 50px; width: auto; }
 .footer-date {
   font-size: 13px;
   letter-spacing: 3px;
@@ -678,11 +680,10 @@ body {
      ═══════════════════════════════════════════════════════════════ -->
 <nav class="site-nav hidden-nav" id="siteNav">
   <ul class="nav-links">
-    <li><a href="javascript:void(0)" onclick="showPage('home'); return false;">Home</a></li>
-    <li><a href="javascript:void(0)" onclick="showPage('details'); return false;">Wedding Details</a></li>
-    <li><a href="javascript:void(0)" onclick="showPage('travel'); return false;">Travel &amp; Lodging</a></li>
-    <li><a href="javascript:void(0)" onclick="showPage('guide'); return false;">Our Italy Guide</a></li>
-    <li><a href="javascript:void(0)" onclick="showPage('faq'); return false;">FAQs</a></li>
+    <li><a href="javascript:void(0)" id="nav-details" onclick="showPage('details'); return false;">Wedding Details</a></li>
+    <li><a href="javascript:void(0)" id="nav-travel" onclick="showPage('travel'); return false;">Travel &amp; Lodging</a></li>
+    <li><a href="javascript:void(0)" id="nav-guide" onclick="showPage('guide'); return false;">Our Italy Guide</a></li>
+    <li><a href="javascript:void(0)" id="nav-faq" onclick="showPage('faq'); return false;">FAQs</a></li>
 
     <!-- ╔═══════════════════════════════════════════════════════╗
          ║  REPLACE: Update this to link to your Joy RSVP page  ║
@@ -711,9 +712,9 @@ body {
        ║  OPTION C — Keep the gradient (current default).         ║
        ╚═══════════════════════════════════════════════════════════╝ -->
   <div class="home-bg">
-   <video autoplay muted loop playsinline>
-  <source src="images/home-video.mp4" type="video/mp4">
-</video>
+    <video autoplay muted loop playsinline>
+      <source src="images/home-video.mp4" type="video/mp4">
+    </video>
 
     <!-- OPTION B: IMAGE — uncomment this line and add your photo -->
     <!-- <img src="images/home-bg.jpg" alt="Meredith and Ryan"> -->
@@ -1106,8 +1107,9 @@ body {
 
 <!-- ===== FOOTER ===== -->
 <footer class="site-footer">
-  <p class="footer-names script-font">M &amp; R</p>
-  <p class="footer-date">May 27, 2027 &middot; Amalfi Coast, Italy</p>
+  <!-- REPLACE: Add your logo image to the images folder and update the filename below -->
+  <div class="footer-logo"><img src="images/logo.png" alt="Meredith & Ryan"></div>
+  <p class="footer-date">May 27, 2027 &middot; Sorrento, Italy</p>
 </footer>
 
 
@@ -1147,6 +1149,13 @@ function showPage(pageId) {
   var nav = document.getElementById('siteNav');
   if (pageId === 'home') { nav.classList.add('hidden-nav'); }
   else { nav.classList.remove('hidden-nav'); }
+  // Highlight active nav item
+  var allNavLinks = document.querySelectorAll('.nav-links a:not(.rsvp-btn)');
+  for (var j = 0; j < allNavLinks.length; j++) {
+    allNavLinks[j].classList.remove('nav-active');
+  }
+  var activeLink = document.getElementById('nav-' + pageId);
+  if (activeLink) { activeLink.classList.add('nav-active'); }
   // Trigger animations
   setTimeout(observeAnimations, 150);
 }

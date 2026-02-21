@@ -762,9 +762,7 @@ body {
        ║   style="height:55vh;min-height:380px;margin-top:70px"║
        ║   alt="Meredith and Ryan">                            ║
        ╚═══════════════════════════════════════════════════════╝ -->
-  <div class="img-placeholder hero-image-placeholder" style="margin-top:70px;">
-    Your Photo Here
-  </div>
+<img src="images/hero.jpg" style="width:100%;height:55vh;min-height:380px;object-fit:cover;margin-top:70px;" alt="Meredith and Ryan">
 
   <!-- Our Wedding Weekend — blue banner with 3 events -->
   <div class="weekend-banner">
@@ -1155,22 +1153,34 @@ function showPage(pageId) {
   }
   var activeLink = document.getElementById('nav-' + pageId);
   if (activeLink) { activeLink.classList.add('nav-active'); }
+  // Remember current page so refresh stays here
+  try { window.location.hash = pageId; } catch(e) {}
   // Trigger animations
   setTimeout(observeAnimations, 150);
 }
 
 function enterSite() { showPage('details'); }
 
-// Set initial state on load
+// On load, check if there's a saved page in the URL hash
 (function() {
+  var hash = window.location.hash.replace('#', '');
+  var startPage = (hash && document.getElementById(hash)) ? hash : 'home';
   var allPages = document.querySelectorAll('.page');
   for (var i = 0; i < allPages.length; i++) {
-    if (allPages[i].id === 'home') {
+    if (allPages[i].id === startPage) {
       allPages[i].style.display = 'block';
+      allPages[i].classList.add('active');
     } else {
       allPages[i].style.display = 'none';
+      allPages[i].classList.remove('active');
     }
   }
+  // Show nav and highlight active item if not on home
+  var nav = document.getElementById('siteNav');
+  if (startPage === 'home') { nav.classList.add('hidden-nav'); }
+  else { nav.classList.remove('hidden-nav'); }
+  var activeLink = document.getElementById('nav-' + startPage);
+  if (activeLink) { activeLink.classList.add('nav-active'); }
 })();
 
 // ---- FAQ Accordion ----

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -113,9 +114,10 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: linear-gradient(160deg, #d4dde1 0%, #a8bcc5 30%, #8aa0a9 60%, #6c848d 100%);
 }
 
-/* This is the full-screen background — see the HTML section below to swap in your video */
+/* Background — gradient by default, video/image overlays on top */
 .home-bg {
   position: absolute;
   inset: 0;
@@ -132,70 +134,100 @@ body {
   z-index: 1;
   text-align: center;
   color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.home-names {
-  font-size: clamp(48px, 8vw, 100px);
-  line-height: 1.15;
-  margin-bottom: 12px;
-  text-shadow: 0 2px 40px rgba(0,0,0,0.15);
+
+/* "THE WEDDING OF" — small tracking text above the names */
+.home-preheading {
+  font-family: 'Avenir', 'Avenir Next', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: rgba(252, 248, 242, 0.7);
+  margin-bottom: 20px;
   opacity: 0; animation: fadeUp 1.2s ease forwards 0.2s;
 }
+
+/* "Meredith & Ryan" — large centered script */
+.home-names {
+  font-size: clamp(52px, 9vw, 110px);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  opacity: 0; animation: fadeUp 1.2s ease forwards 0.5s;
+}
+
+/* "MAY 27, 2027 · SORRENTO, ITALY" */
 .home-date {
   font-family: 'Avenir', sans-serif;
   font-weight: 300;
-  font-size: 15px;
+  font-size: 13px;
   letter-spacing: 5px;
   text-transform: uppercase;
-  margin-bottom: 50px;
-  opacity: 0; animation: fadeUp 1.2s ease forwards 0.5s;
+  color: rgba(252, 248, 242, 0.7);
+  margin-bottom: 56px;
+  opacity: 0; animation: fadeUp 1.2s ease forwards 0.8s;
+}
+
+/* Thin decorative line */
+.home-line {
+  width: 50px;
+  height: 1px;
+  background: rgba(252, 248, 242, 0.25);
+  margin-bottom: 56px;
+  opacity: 0; animation: fadeUp 1.2s ease forwards 0.8s;
 }
 
 /* Countdown */
 .countdown {
   display: flex;
-  gap: 32px;
+  gap: 36px;
   margin-bottom: 48px;
   justify-content: center;
-  opacity: 0; animation: fadeUp 1.2s ease forwards 0.8s;
+  opacity: 0; animation: fadeUp 1.2s ease forwards 1.0s;
 }
 .countdown-unit { text-align: center; }
 .countdown-number {
   display: block;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 48px;
+  font-size: 44px;
   font-weight: 300;
   line-height: 1;
   color: var(--cream);
 }
 .countdown-label {
-  font-size: 10px;
+  font-size: 9px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  opacity: 0.75;
-  margin-top: 6px;
+  opacity: 0.55;
+  margin-top: 8px;
+  display: block;
 }
 
 .enter-btn {
   display: inline-block;
-  padding: 16px 52px;
-  background: var(--blue);
+  padding: 14px 48px;
+  background: transparent;
   color: var(--cream);
   font-family: 'Avenir', 'Avenir Next', sans-serif;
-  font-size: 13px;
-  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 4px;
   text-transform: uppercase;
   text-decoration: none;
-  border: 1.5px solid rgba(252,248,242,0.3);
+  border: 1px solid rgba(252,248,242,0.35);
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  border-radius: 2px;
-  opacity: 0; animation: fadeUp 1.2s ease forwards 1.1s;
+  transition: all 0.35s ease;
+  border-radius: 0;
+  opacity: 0; animation: fadeUp 1.2s ease forwards 1.2s;
 }
 .enter-btn:hover {
-  background: rgba(252,248,242,0.1);
-  border-color: rgba(252,248,242,0.6);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  background: rgba(252,248,242,0.08);
+  border-color: rgba(252,248,242,0.7);
+  transform: translateY(-1px);
 }
 
 @keyframes fadeUp {
@@ -641,17 +673,17 @@ body {
      ═══════════════════════════════════════════════════════════════ -->
 <nav class="site-nav hidden-nav" id="siteNav">
   <ul class="nav-links">
-    <li><a href="#" onclick="showPage('home')">Home</a></li>
-    <li><a href="#" onclick="showPage('details')">Wedding Details</a></li>
-    <li><a href="#" onclick="showPage('travel')">Travel & Lodging</a></li>
-    <li><a href="#" onclick="showPage('guide')">Our Italy Guide</a></li>
-    <li><a href="#" onclick="showPage('faq')">FAQs</a></li>
+    <li><a href="javascript:void(0)" onclick="showPage('home'); return false;">Home</a></li>
+    <li><a href="javascript:void(0)" onclick="showPage('details'); return false;">Wedding Details</a></li>
+    <li><a href="javascript:void(0)" onclick="showPage('travel'); return false;">Travel &amp; Lodging</a></li>
+    <li><a href="javascript:void(0)" onclick="showPage('guide'); return false;">Our Italy Guide</a></li>
+    <li><a href="javascript:void(0)" onclick="showPage('faq'); return false;">FAQs</a></li>
 
     <!-- ╔═══════════════════════════════════════════════════════╗
          ║  REPLACE: Update this to link to your Joy RSVP page  ║
          ║  Change the # below to your Joy URL                  ║
          ╚═══════════════════════════════════════════════════════╝ -->
-    <li><a href="#" onclick="showPage('faq'); setTimeout(()=>document.getElementById('rsvpSection').scrollIntoView({behavior:'smooth'}),100)" class="rsvp-btn">RSVP</a></li>
+    <li><a href="javascript:void(0)" onclick="showPage('faq'); setTimeout(function(){document.getElementById('rsvpSection').scrollIntoView({behavior:'smooth'});},200); return false;" class="rsvp-btn">RSVP</a></li>
   </ul>
 </nav>
 
@@ -684,8 +716,11 @@ body {
   </div>
 
   <div class="home-content">
+    <p class="home-preheading">The Wedding Of</p>
     <h1 class="home-names script-font">Meredith &amp; Ryan</h1>
-    <p class="home-date">Amalfi Coast &middot; Italy</p>
+    <p class="home-date">May 27, 2027 &middot; Sorrento, Italy</p>
+
+    <div class="home-line"></div>
 
     <div class="countdown" id="countdown">
       <div class="countdown-unit">
@@ -1090,16 +1125,41 @@ setInterval(updateCountdown, 1000);
 
 // ---- Page Navigation ----
 function showPage(pageId) {
-  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
-  document.getElementById(pageId).classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Hide ALL pages (both via class and inline style for bulletproof hiding)
+  var allPages = document.querySelectorAll('.page');
+  for (var i = 0; i < allPages.length; i++) {
+    allPages[i].classList.remove('active');
+    allPages[i].style.display = 'none';
+  }
+  // Show the requested page
+  var target = document.getElementById(pageId);
+  if (target) {
+    target.classList.add('active');
+    target.style.display = 'block';
+  }
+  // Scroll to top
+  window.scrollTo(0, 0);
+  // Show/hide nav
   var nav = document.getElementById('siteNav');
   if (pageId === 'home') { nav.classList.add('hidden-nav'); }
   else { nav.classList.remove('hidden-nav'); }
-  setTimeout(observeAnimations, 100);
+  // Trigger animations
+  setTimeout(observeAnimations, 150);
 }
 
 function enterSite() { showPage('details'); }
+
+// Set initial state on load
+(function() {
+  var allPages = document.querySelectorAll('.page');
+  for (var i = 0; i < allPages.length; i++) {
+    if (allPages[i].id === 'home') {
+      allPages[i].style.display = 'block';
+    } else {
+      allPages[i].style.display = 'none';
+    }
+  }
+})();
 
 // ---- FAQ Accordion ----
 function toggleFaq(item) {
@@ -1127,3 +1187,4 @@ document.addEventListener('DOMContentLoaded', observeAnimations);
 
 </body>
 </html>
+

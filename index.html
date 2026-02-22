@@ -662,6 +662,60 @@ body {
 .faq-answer ul { list-style: none; margin-top: 8px; }
 .faq-answer ul li::before { content: '— '; color: var(--light-blue); }
 
+/* ===== HOTEL CARDS ===== */
+.hotel-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hotel-card {
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.hotel-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+.hotel-info {
+  padding: 24px;
+  text-align: center;
+}
+.hotel-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+.hotel-info p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 20px;
+}
+.book-now-btn {
+  display: inline-block;
+  padding: 10px 32px;
+  background: var(--blue);
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: opacity 0.3s;
+}
+.book-now-btn:hover { opacity: 0.85; }
+
 /* ===== RSVP ===== */
 .rsvp-section {
   background: linear-gradient(160deg, #d4dde1 0%, #a8bcc5 30%, #8aa0a9 60%, #6c848d 100%);
@@ -735,6 +789,7 @@ body {
   .party-layout { gap: 40px; }
   .party-img { width: 100%; height: auto; aspect-ratio: 1 / 1; min-height: unset; max-width: 350px; margin-left: auto; margin-right: auto; }
   .tip-grid { grid-template-columns: 1fr; }
+  .hotel-cards { grid-template-columns: 1fr; }
   .experience-card { grid-template-columns: 1fr; gap: 24px; }
   .experience-card:nth-child(even) { direction: ltr; }
   .countdown { gap: 18px; }
@@ -998,8 +1053,12 @@ body {
         <div class="divider"></div>
       </div>
 
-      <div class="section-subtitle" style="margin-top:50px;">Flight Tips</div>
-      <p class="fade-in" style="font-size:15px; font-weight:300; line-height:1.75; color:#666; margin-bottom:30px;">Getting to the Amalfi Coast requires a little planning, but the destination is worth the journey. Here are the best strategies we have found for booking flights.</p>
+      <div class="text-center" style="margin-top:50px;">
+        <div class="section-subtitle">Flights</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:400; color:var(--blue);">Best Strategies for Booking Flights</h3>
+        <div class="divider"></div>
+      </div>
+      <p class="fade-in" style="font-weight:300; line-height:1.75; color:#666; margin-bottom:30px;">Getting to the Amalfi Coast requires a little planning, but the destination is worth the journey. Here are the best strategies we have found for booking flights.</p>
 
       <div class="travel-card fade-in">
         <h3>Direct Route into Naples</h3>
@@ -1021,6 +1080,33 @@ body {
       <div class="travel-card fade-in" style="border-left:3px solid var(--blue);">
         <h3>Passports</h3>
         <p>A reminder to check that passports are valid for at least 6 months past the travel date.</p>
+      </div>
+
+      <!-- Lodging Section -->
+      <div class="text-center" style="margin-top:80px;">
+        <div class="section-subtitle">Lodging</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:400; color:var(--blue);">Hotels We Recommend</h3>
+        <div class="divider"></div>
+      </div>
+
+      <div class="hotel-cards">
+        <div class="hotel-card fade-in">
+          <img src="images/hotel-ambasciatori.jpg" class="hotel-img" alt="Grand Hotel Ambasciatori">
+          <div class="hotel-info">
+            <h3>Grand Hotel Ambasciatori</h3>
+            <p>Prestigious five-star hotel facing the stunning Gulf of Naples nestled among the Mediterranean Sea</p>
+            <a href="https://www.ambasciatorisorrento.com/it/" target="_blank" rel="noopener" class="book-now-btn">Book Now</a>
+          </div>
+        </div>
+
+        <div class="hotel-card fade-in">
+          <img src="images/hotel-royal.jpg" class="hotel-img" alt="Grand Hotel Royal">
+          <div class="hotel-info">
+            <h3>Grand Hotel Royal</h3>
+            <p>A classy and stylish five-star estate in the heart of Sorrento, perched over the sea in a privileged location overlooking the Gulf of Naples.</p>
+            <a href="https://www.royalsorrento.com/" target="_blank" rel="noopener" class="book-now-btn">Book Now</a>
+          </div>
+        </div>
       </div>
 
       <div class="text-center" style="margin-top:80px;">

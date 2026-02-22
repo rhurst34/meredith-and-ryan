@@ -396,6 +396,35 @@ body {
   opacity: 0.85;
 }
 
+/* Details Hero */
+.details-hero {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 60px auto 0;
+  overflow: hidden;
+}
+.details-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.details-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+.details-hero-text {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+  width: 100%;
+  padding: 0 20px;
+}
+
 /* Our Special Day */
 .special-day {
   background: var(--cream);
@@ -804,6 +833,8 @@ body {
   .nav-links { gap: 16px; flex-wrap: wrap; justify-content: center; }
   .nav-links a { font-size: 11px; letter-spacing: 1.5px; }
   .rsvp-btn { margin-left: 0; }
+  .details-hero { max-width: 100%; margin-top: 0; padding-top: 60px; }
+  .details-hero-text { bottom: 40px; }
   .section-padding { padding: 50px 24px; }
   .section-padding-lg { padding: 60px 24px; }
   .special-day { padding: 50px 24px; }
@@ -919,11 +950,14 @@ body {
      ═══════════════════════════════════════════════════════════════ -->
 <section class="page" id="details">
 
-  <div class="text-center" style="padding:100px 40px 30px;">
-    <h2 class="page-title script-font" style="color:var(--blue);">Meredith & Ryan</h2>
-    <p style="font-size:14px; letter-spacing:3px; text-transform:uppercase; color:var(--blue); margin-top:8px;">May 27, 2027 &middot; Sorrento, Italy</p>
+  <div class="details-hero">
+    <img src="images/hero.jpg" class="details-hero-img" alt="Meredith and Ryan">
+    <div class="details-hero-overlay"></div>
+    <div class="details-hero-text">
+      <h2 class="page-title script-font" style="color:var(--cream);">Meredith & Ryan</h2>
+      <p style="font-size:14px; letter-spacing:3px; text-transform:uppercase; color:var(--cream); margin-top:8px;">May 27, 2027 &middot; Sorrento, Italy</p>
+    </div>
   </div>
-  <img src="images/hero.jpg" style="width:100%;height:55vh;min-height:380px;object-fit:cover;display:block;" alt="Meredith and Ryan">
 
   <!-- Our Wedding Weekend — blue banner with 3 events -->
   <div class="weekend-banner">

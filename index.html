@@ -186,19 +186,25 @@ body {
   opacity: 0; animation: fadeUp 1.2s ease forwards 0.8s;
 }
 
-/* Countdown */
+/* Countdown — on Wedding Details page */
+.countdown-section {
+  background: var(--blue);
+  color: var(--cream);
+  text-align: center;
+  padding: 80px 40px;
+}
+.countdown-section .page-title { color: var(--cream); }
 .countdown {
   display: flex;
   gap: 36px;
-  margin-bottom: 48px;
   justify-content: center;
-  opacity: 0; animation: fadeUp 1.2s ease forwards 1.0s;
+  margin-top: 40px;
 }
 .countdown-unit { text-align: center; }
 .countdown-number {
   display: block;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 44px;
+  font-size: 48px;
   font-weight: 300;
   line-height: 1;
   color: var(--cream);
@@ -227,7 +233,7 @@ body {
   cursor: pointer;
   transition: all 0.35s ease;
   border-radius: 0;
-  opacity: 0; animation: fadeUp 1.2s ease forwards 1.2s;
+  opacity: 0; animation: fadeUp 1.2s ease forwards 1.0s;
 }
 .enter-btn:hover {
   background: rgba(252,248,242,0.08);
@@ -726,25 +732,6 @@ body {
 
     <div class="home-line"></div>
 
-    <div class="countdown" id="countdown">
-      <div class="countdown-unit">
-        <span class="countdown-number" id="cd-days">---</span>
-        <span class="countdown-label">Days</span>
-      </div>
-      <div class="countdown-unit">
-        <span class="countdown-number" id="cd-hours">--</span>
-        <span class="countdown-label">Hours</span>
-      </div>
-      <div class="countdown-unit">
-        <span class="countdown-number" id="cd-mins">--</span>
-        <span class="countdown-label">Minutes</span>
-      </div>
-      <div class="countdown-unit">
-        <span class="countdown-number" id="cd-secs">--</span>
-        <span class="countdown-label">Seconds</span>
-      </div>
-    </div>
-
     <button class="enter-btn" onclick="enterSite()">Enter</button>
   </div>
 </section>
@@ -755,14 +742,7 @@ body {
      ═══════════════════════════════════════════════════════════════ -->
 <section class="page" id="details">
 
-  <!-- ╔═══════════════════════════════════════════════════════╗
-       ║  REPLACE: HERO PHOTO                                  ║
-       ║  Swap the placeholder div for an <img> tag:          ║
-       ║  <img src="images/hero.jpg" class="real-img"         ║
-       ║   style="height:55vh;min-height:380px;margin-top:70px"║
-       ║   alt="Meredith and Ryan">                            ║
-       ╚═══════════════════════════════════════════════════════╝ -->
-<img src="images/hero.jpg" style="width:100%;height:55vh;min-height:380px;object-fit:cover;margin-top:70px;" alt="Meredith and Ryan">
+  <img src="images/hero.jpg" style="width:100%;height:55vh;min-height:380px;object-fit:cover;margin-top:70px;display:block;" alt="Meredith and Ryan">
 
   <!-- Our Wedding Weekend — blue banner with 3 events -->
   <div class="weekend-banner">
@@ -805,7 +785,7 @@ body {
   <div class="special-day">
     <div class="max-width">
       <div class="text-center">
-        <h2 class="page-title script-font">Our Special Day</h2>
+        <h2 class="page-title script-font">Wedding Day</h2>
         <div class="divider"></div>
       </div>
       <div class="special-day-grid" style="margin-top:50px;">
@@ -825,13 +805,8 @@ body {
           <p style="font-size:14px; color:#888; font-style:italic; margin-top:8px; padding-left:110px;">(Think linen shirts, sundresses. No ties required)</p>
         </div>
 
-        <!-- ╔═══════════════════════════════════════════════════╗
-             ║  REPLACE: SPECIAL DAY PHOTO                       ║
-             ║  <img src="images/special-day.jpg" class="real-img"║
-             ║   style="height:280px" alt="Villa Angelina">      ║
-             ╚═══════════════════════════════════════════════════╝ -->
-        <img src="images/special-day.jpg" class="real-img"║
-             ║   style="height:280px" alt="Villa Angelina"> 
+        <img src="images/special-day.jpg" class="fade-in" style="width:100%;height:280px;object-fit:cover;border-radius:4px;" alt="Villa Angelina">
+      </div>
     </div>
   </div>
 
@@ -873,13 +848,31 @@ body {
     </div>
   </div>
 
-  <!-- ╔═══════════════════════════════════════════════════════╗
-       ║  REPLACE: BOTTOM FULL-WIDTH PHOTO                     ║
-       ║  <img src="images/bottom-details.jpg" class="real-img"║
-       ║   style="height:50vh;min-height:350px"                ║
-       ║   alt="Wedding photo">                                ║
-       ╚═══════════════════════════════════════════════════════╝ -->
-  <div class="img-placeholder full-image-placeholder">Your Photo Here</div>
+  <img src="images/bottom-details.jpg" style="width:100%;height:50vh;min-height:350px;object-fit:cover;display:block;" alt="Wedding photo">
+
+  <!-- Countdown Section -->
+  <div class="countdown-section">
+    <h2 class="page-title script-font" style="color:var(--cream);">Let The Countdown Begin</h2>
+    <div class="divider" style="background:rgba(252,248,242,0.3)"></div>
+    <div class="countdown" id="countdown">
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-days">---</span>
+        <span class="countdown-label">Days</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-hours">--</span>
+        <span class="countdown-label">Hours</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-mins">--</span>
+        <span class="countdown-label">Minutes</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-secs">--</span>
+        <span class="countdown-label">Seconds</span>
+      </div>
+    </div>
+  </div>
 
 </section>
 
@@ -965,13 +958,6 @@ body {
       </div>
       <p class="guide-intro">We have curated a list of our absolute favorite experiences to help you make the most of your trip. Whether you are here for a few days or a full week, we hope you fall in love with this place just as much as we have.</p>
 
-      <!-- ╔═══════════════════════════════════════════════════════╗
-           ║  REPLACE: Each experience has an image placeholder.   ║
-           ║  Swap the .img-placeholder div for:                   ║
-           ║  <img src="images/capri.jpg" class="real-img          ║
-           ║   experience-img" alt="Capri boat day">               ║
-           ╚═══════════════════════════════════════════════════════╝ -->
-
       <!-- Capri -->
       <div class="experience-card fade-in">
         <div class="experience-text">
@@ -979,7 +965,7 @@ body {
           <p>If you only do one extra excursion, make it this one. There is nothing quite like seeing the coast from the water. We recommend booking a private boat to drive around the island of Capri, swim in the grottos, and see the Faraglioni rocks up close. It is truly magical.</p>
           <div class="tip">We booked our experiences through Feeling Italy and highly recommend them! They took amazing care of us.</div>
         </div>
-        <div class="img-placeholder experience-img">Your Photo Here</div>
+        <img src="images/capri.jpg" class="experience-img" style="object-fit:cover;" alt="Capri boat day">
       </div>
 
       <!-- La Conca del Sogno -->
@@ -989,7 +975,7 @@ body {
           <p>La Conca del Sogno is a stunning beach club and restaurant tucked away in a secluded cove in Nerano. It feels exclusive, relaxing, and incredibly fun. The food is fresh, the water is clear, and the vibe is unmatched.</p>
           <div class="tip">Tip: You will need to hire a driver to take you here (it is off the beaten path and tricky to find on your own), but trust us — it is awesome and worth every mile.</div>
         </div>
-        <div class="img-placeholder experience-img">Your Photo Here</div>
+        <img src="images/conca-del-sogno.jpg" class="experience-img" style="object-fit:cover;" alt="La Conca del Sogno">
       </div>
 
       <!-- Positano -->
@@ -999,7 +985,7 @@ body {
           <p>Positano is the jewel of the Amalfi Coast. We love spending an afternoon wandering the steep, winding streets, shopping for ceramics, and soaking in the views.</p>
           <div class="tip">The Perfect Nightcap: After exploring, head to Aldo's Cocktail Bar at the iconic Le Sirenuse hotel. The cocktails are incredible (and strong!), but the view of the village houses lit up at night is the real star.</div>
         </div>
-        <div class="img-placeholder experience-img">Your Photo Here</div>
+        <img src="images/positano.jpg" class="experience-img" style="object-fit:cover;" alt="Positano">
       </div>
 
       <h3 class="guide-region-heading">Florence &amp; Rome</h3>
@@ -1010,7 +996,7 @@ body {
           <h3>A Day Trip to Cinque Terre</h3>
           <p>There is nothing quite like seeing these five colorful fishing villages stacked against the rugged cliffs. We recommend taking the train from Florence to the first village, Riomaggiore, and then hopping on the local ferry to hop between Manarola and Vernazza. Seeing the coast from the water is truly magical and one of the most special places in Italy!</p>
         </div>
-        <div class="img-placeholder experience-img">Your Photo Here</div>
+        <img src="images/cinque-terre.jpg" class="experience-img" style="object-fit:cover;" alt="Cinque Terre">
       </div>
 
       <!-- Custom Leather -->
@@ -1019,7 +1005,7 @@ body {
           <h3>Custom Leather in Florence</h3>
           <p>Florence is the world's leather capital. Head to Scuola del Cuoio or Benheart. Pick out a high-quality purse or belt and ask them to gold-stamp your initials right in front of you.</p>
         </div>
-        <div class="img-placeholder experience-img">Your Photo Here</div>
+        <img src="images/florence-leather.jpg" class="experience-img" style="object-fit:cover;" alt="Custom leather in Florence">
       </div>
 
       <!-- Gianicolo Hill -->
@@ -1028,7 +1014,7 @@ body {
           <h3>Sunset in Rome on Gianicolo Hill</h3>
           <p>If you want the absolute best view of Rome, head here. Perched just above Trastevere, this spot offers a sweeping panorama of the entire city. We recommend grabbing a bottle of wine and finding a spot on the wall to watch the sunset — you can even spot the Colosseum in the distance. It is peaceful, romantic, and truly feels like you are floating above the domes.</p>
         </div>
-        <div class="img-placeholder experience-img">Your Photo Here</div>
+        <img src="images/gianicolo.jpg" class="experience-img" style="object-fit:cover;" alt="Gianicolo Hill sunset">
       </div>
 
     </div>
@@ -1043,7 +1029,7 @@ body {
   <div class="section-padding-lg" style="padding-top:140px;">
     <div class="max-width">
       <div class="text-center">
-        <h2 class="page-title script-font">Frequently Asked Questions</h2>
+        <h2 class="page-title" style="font-family:'Cormorant Garamond',serif;font-weight:400;">Frequently Asked Questions</h2>
         <div class="divider"></div>
       </div>
 
@@ -1093,7 +1079,7 @@ body {
        ║  Example: href="https://withjoy.com/meredith-and-ryan"   ║
        ╚═══════════════════════════════════════════════════════════╝ -->
   <div class="rsvp-section" id="rsvpSection">
-    <h2 class="page-title script-font">RSVP</h2>
+    <h2 class="page-title" style="font-family:'Cormorant Garamond',serif;font-weight:400;">RSVP</h2>
     <div class="divider" style="background:rgba(252,248,242,0.3)"></div>
     <p>We would be honored to have you celebrate with us in Italy. Please let us know if you can make it!</p>
     <a href="#" class="rsvp-link-btn" target="_blank">RSVP on Joy</a>

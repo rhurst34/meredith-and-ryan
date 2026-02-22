@@ -402,6 +402,48 @@ body {
   min-width: 100px;
 }
 
+/* Order of Events */
+.events-timeline {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+.event-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 120px;
+}
+.event-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.event-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.event-time {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+.event-label {
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--dark);
+}
+
 /* Wedding Party */
 .wedding-party { padding: 80px 40px 100px; }
 .party-layout {
@@ -678,6 +720,8 @@ body {
   .section-padding-lg { padding: 80px 24px; }
   .weekend-columns { flex-direction: column; gap: 50px; }
   .special-day-grid { grid-template-columns: 1fr; }
+  .events-timeline { gap: 30px; }
+  .event-icon { width: 60px; height: 60px; }
   .party-layout {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -773,7 +817,7 @@ body {
         <div class="icon-placeholder">
           <svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
         </div>
-        <h3>Wednesday, May 26th</h3>
+        <h3>May 26th</h3>
         <p style="font-family:'Cormorant Garamond',serif; font-size:18px; margin-bottom:14px;">Welcome Party</p>
         <p><strong>Dress Code:</strong> Italian Chic</p>
         <p style="opacity:0.7; font-size:13px; margin-top:4px;">(Think linen shirts, sundresses. No ties required)</p>
@@ -783,7 +827,7 @@ body {
         <div class="icon-placeholder">
           <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
         </div>
-        <h3>Thursday, May 27th</h3>
+        <h3>May 27th</h3>
         <p style="font-family:'Cormorant Garamond',serif; font-size:18px; margin-bottom:14px;">Wedding at 4:30 PM</p>
         <p><strong>Dress Code:</strong> Formal / Black Tie</p>
       </div>
@@ -792,7 +836,7 @@ body {
         <div class="icon-placeholder">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </div>
-        <h3>Friday, May 28th</h3>
+        <h3>May 28th</h3>
         <p style="font-family:'Cormorant Garamond',serif; font-size:18px; margin-bottom:14px;">Pool Party at Hotel</p>
       </div>
     </div>
@@ -823,6 +867,46 @@ body {
         </div>
 
         <img src="images/special-day.jpg" class="fade-in" style="width:100%;height:280px;object-fit:cover;border-radius:4px;" alt="Villa Angelina">
+      </div>
+    </div>
+  </div>
+
+  <!-- Order of Events -->
+  <div class="section-padding" style="background:white;">
+    <div class="max-width">
+      <div class="text-center">
+        <h2 class="page-title script-font">Order of Events</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="events-timeline">
+        <div class="event-item fade-in">
+          <div class="event-icon">
+            <img src="images/icon-ceremony.png" alt="Ceremony icon">
+          </div>
+          <div class="event-time">4:30 PM</div>
+          <div class="event-label">Ceremony</div>
+        </div>
+        <div class="event-item fade-in">
+          <div class="event-icon">
+            <img src="images/icon-cocktails.png" alt="Cocktail Hour icon">
+          </div>
+          <div class="event-time">5:30 PM</div>
+          <div class="event-label">Cocktail Hour</div>
+        </div>
+        <div class="event-item fade-in">
+          <div class="event-icon">
+            <img src="images/icon-dinner.png" alt="Dinner icon">
+          </div>
+          <div class="event-time">6:30 PM</div>
+          <div class="event-label">Dinner</div>
+        </div>
+        <div class="event-item fade-in">
+          <div class="event-icon">
+            <img src="images/icon-party.png" alt="Party icon">
+          </div>
+          <div class="event-time">7:30 PM</div>
+          <div class="event-label">Party</div>
+        </div>
       </div>
     </div>
   </div>

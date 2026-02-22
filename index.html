@@ -128,6 +128,9 @@ body {
   -webkit-appearance: none;
 }
 .home-bg video::-moz-media-controls { display: none !important; }
+.home-bg video::-webkit-media-controls-overlay-play-button { display: none !important; }
+.home-bg video::--webkit-media-controls-play-button { display: none !important; }
+.home-bg video { -webkit-appearance: none; }
 
 .home-content {
   position: absolute;
@@ -1303,6 +1306,19 @@ function observeAnimations() {
   });
 }
 document.addEventListener('DOMContentLoaded', observeAnimations);
+
+// Force video autoplay and hide any lingering play buttons
+var bgVideo = document.querySelector('.home-bg video');
+if (bgVideo) {
+  bgVideo.controls = false;
+  bgVideo.play().catch(function() {
+    // If autoplay blocked, try playing on first user touch
+    document.addEventListener('touchstart', function playOnce() {
+      bgVideo.play();
+      document.removeEventListener('touchstart', playOnce);
+    }, { once: true });
+  });
+}
 </script>
 
 </body>

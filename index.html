@@ -451,15 +451,15 @@ body {
 .wedding-party { padding: 80px 40px 100px; }
 .party-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 300px 1fr 1fr 300px;
   gap: 40px;
   align-items: start;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 50px auto 0;
 }
 .party-img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  width: 300px;
+  height: 400px;
   object-fit: cover;
   border-radius: 4px;
 }
@@ -729,6 +729,7 @@ body {
     grid-template-columns: 1fr;
     gap: 30px;
   }
+  .party-img { width: 100%; height: auto; aspect-ratio: 1 / 1; }
   .party-img-left { order: 2; }
   .party-group-bridesmaids { order: 1; }
   .party-img-right { order: 4; }

@@ -448,12 +448,12 @@ body {
 }
 
 /* Wedding Party */
-.wedding-party { padding: 80px 40px 100px; }
+.wedding-party { padding: 80px 0 100px; }
+.wedding-party .text-center { padding: 0 40px; }
 .party-layout {
   display: flex;
   flex-direction: column;
   gap: 60px;
-  max-width: 700px;
   margin: 50px auto 0;
 }
 .party-column {
@@ -461,13 +461,18 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.party-group {
+  max-width: 700px;
+  width: 100%;
+  padding: 0 40px;
+  margin: 0 auto;
+}
 .party-img {
-  width: 100vw;
+  width: 100%;
   height: 50vh;
   min-height: 350px;
   object-fit: cover;
   margin-top: 30px;
-  margin-left: calc(-50vw + 50%);
   border-radius: 0;
 }
 .party-group h3 {

@@ -814,7 +814,7 @@ body {
          ║  REPLACE: Update this to link to your Joy RSVP page  ║
          ║  Change the # below to your Joy URL                  ║
          ╚═══════════════════════════════════════════════════════╝ -->
-    <li><a href="javascript:void(0)" onclick="showPage('faq'); setTimeout(function(){document.getElementById('rsvpSection').scrollIntoView({behavior:'smooth'});},200); return false;" class="rsvp-btn">RSVP</a></li>
+    <li><a href="javascript:void(0)" id="nav-rsvp" onclick="showPage('faq','rsvp'); setTimeout(function(){document.getElementById('rsvpSection').scrollIntoView({behavior:'smooth'});},200); return false;" class="rsvp-btn">RSVP</a></li>
   </ul>
 </nav>
 
@@ -1103,7 +1103,7 @@ body {
           <img src="images/hotel-royal.jpg" class="hotel-img" alt="Grand Hotel Royal">
           <div class="hotel-info">
             <h3>Grand Hotel Royal</h3>
-            <p>A classy and stylish five-star estate in the heart of Sorrento, perched over the sea in a privileged location overlooking the Gulf of Naples.</p>
+            <p>A classy and stylish five-star estate in the heart of Sorrento, perched over the sea in a privileged location overlooking the Gulf of Naples</p>
             <a href="https://www.royalsorrento.com/" target="_blank" rel="noopener" class="book-now-btn">Book Now</a>
           </div>
         </div>
@@ -1278,7 +1278,7 @@ body {
     <h2 class="page-title" style="font-family:'Cormorant Garamond',serif;font-weight:400;">RSVP</h2>
     <div class="divider" style="background:rgba(252,248,242,0.3)"></div>
     <p>We would be honored to have you celebrate with us in Italy. Please let us know if you can make it!</p>
-    <a href="#" class="rsvp-link-btn" target="_blank">RSVP on Joy</a>
+    <a href="#" class="rsvp-link-btn" target="_blank">RSVP Here</a>
   </div>
 
 </section>
@@ -1329,11 +1329,12 @@ function showPage(pageId) {
   if (pageId === 'home') { nav.classList.add('hidden-nav'); }
   else { nav.classList.remove('hidden-nav'); }
   // Highlight active nav item
-  var allNavLinks = document.querySelectorAll('.nav-links a:not(.rsvp-btn)');
+  var allNavLinks = document.querySelectorAll('.nav-links a');
   for (var j = 0; j < allNavLinks.length; j++) {
     allNavLinks[j].classList.remove('nav-active');
   }
-  var activeLink = document.getElementById('nav-' + pageId);
+  var highlightId = (arguments.length > 1 && arguments[1]) ? arguments[1] : pageId;
+  var activeLink = document.getElementById('nav-' + highlightId);
   if (activeLink) { activeLink.classList.add('nav-active'); }
   // Hide footer on home page
   var footer = document.getElementById('siteFooter');

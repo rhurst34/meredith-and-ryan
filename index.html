@@ -110,6 +110,27 @@ body {
   background: linear-gradient(160deg, #d4dde1 0%, #a8bcc5 30%, #8aa0a9 60%, #6c848d 100%);
 }
 
+/* Hero Carousel */
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 55vh;
+  min-height: 380px;
+  overflow: hidden;
+}
+.carousel-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+.carousel-slide.active {
+  opacity: 1;
+}
+
 /* Background — gradient by default, video/image overlays on top */
 .home-bg {
   position: absolute;
@@ -132,6 +153,13 @@ body {
 .home-bg video::-webkit-media-controls-overlay-play-button { display: none !important; }
 .home-bg video::--webkit-media-controls-play-button { display: none !important; }
 .home-bg video { -webkit-appearance: none; }
+/* Overlay to block iOS play button */
+.video-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+  background: transparent;
+}
 
 .home-content {
   position: absolute;
@@ -864,6 +892,7 @@ body {
     <video autoplay muted loop playsinline disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" style="pointer-events:none;">
       <source src="images/home-video.mp4" type="video/mp4">
     </video>
+    <div class="video-overlay"></div>
 
     <!-- OPTION B: IMAGE — uncomment this line and add your photo -->
     <!-- <img src="images/home-bg.jpg" alt="Meredith and Ryan"> -->
@@ -1187,7 +1216,7 @@ body {
         <div class="experience-text">
           <h3>A Private Boat Day Around Capri</h3>
           <p>If you only do one extra excursion, make it this one. There is nothing quite like seeing the coast from the water. We recommend booking a private boat to drive around the island of Capri, swim in the grottos, and see the Faraglioni rocks up close. It is truly magical.</p>
-          <div class="tip">We booked our experiences through Feeling Italy and highly recommend them! They took amazing care of us.</div>
+          <div class="tip">We booked our experiences through <a href="https://feelingitaly.com/" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline;">Feeling Italy</a> and highly recommend them! They took amazing care of us.</div>
         </div>
         <img src="images/capri.jpg" class="experience-img" style="object-fit:cover;" alt="Capri boat day">
       </div>
@@ -1438,6 +1467,18 @@ if (bgVideo) {
     }, { once: true });
   });
 }
+
+// ---- Hero Carousel ----
+(function() {
+  var slides = document.querySelectorAll('.carousel-slide');
+  if (slides.length < 2) return;
+  var current = 0;
+  setInterval(function() {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 5000);
+})();
 
 // ---- Scroll to Top Button (mobile) ----
 (function() {

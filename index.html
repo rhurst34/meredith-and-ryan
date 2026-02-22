@@ -795,6 +795,30 @@ body {
   .countdown { gap: 18px; }
   .countdown-number { font-size: 36px; }
 }
+
+/* Scroll to top button — mobile only */
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--blue);
+  color: var(--cream);
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+#scrollTopBtn.visible { opacity: 1; }
+@media (min-width: 769px) {
+  #scrollTopBtn { display: none !important; }
+}
 </style>
 </head>
 <body>
@@ -1284,6 +1308,9 @@ body {
 </section>
 
 
+<!-- Scroll to top button (mobile only) -->
+<button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'});" aria-label="Scroll to top">&uarr;</button>
+
 <!-- ===== FOOTER ===== -->
 <footer class="site-footer" id="siteFooter">
   <!-- REPLACE: Add your logo image to the images folder and update the filename below -->
@@ -1407,6 +1434,21 @@ if (bgVideo) {
     }, { once: true });
   });
 }
+
+// ---- Scroll to Top Button (mobile) ----
+(function() {
+  var btn = document.getElementById('scrollTopBtn');
+  if (!btn) return;
+  var mq = window.matchMedia('(max-width: 768px)');
+  function handleScroll() {
+    if (!mq.matches) { btn.style.display = 'none'; return; }
+    btn.style.display = 'block';
+    if (window.scrollY > 300) { btn.classList.add('visible'); }
+    else { btn.classList.remove('visible'); }
+  }
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+})();
 </script>
 
 </body>

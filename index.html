@@ -39,6 +39,7 @@
 body {
   font-family: 'Avenir', 'Avenir Next', 'Segoe UI', Helvetica, Arial, sans-serif;
   font-weight: 300;
+  font-size: 18px;
   color: var(--dark);
   background: var(--cream);
   -webkit-font-smoothing: antialiased;
@@ -343,19 +344,13 @@ body {
 .icon-placeholder {
   width: 56px; height: 56px;
   margin: 0 auto 28px;
-  border: 1.5px solid rgba(252, 248, 242, 0.5);
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.icon-placeholder svg {
-  width: 24px; height: 24px;
-  stroke: var(--cream);
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.icon-placeholder img {
+  width: 100%; height: 100%;
+  object-fit: contain;
 }
 
 .weekend-col h3 {
@@ -397,7 +392,7 @@ body {
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.6;
 }
 .detail-label {
@@ -732,6 +727,7 @@ body {
   .section-padding-lg { padding: 80px 24px; }
   .weekend-columns { flex-direction: column; gap: 50px; }
   .special-day-grid { grid-template-columns: 1fr; }
+  .special-day-img { height: 280px !important; }
   .events-timeline { gap: 30px; }
   .event-icon { width: 60px; height: 60px; }
   .party-layout { gap: 40px; }
@@ -821,9 +817,9 @@ body {
     <div class="weekend-columns">
       <div class="weekend-col">
         <div class="icon-placeholder">
-          <svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+          <img src="images/icon-welcome.png" alt="Welcome Party icon">
         </div>
-        <h3>May 26th</h3>
+        <h3>Wednesday, May 26th</h3>
         <p style="font-family:'Cormorant Garamond',serif; font-size:18px; margin-bottom:14px;">Welcome Party</p>
         <p><strong>Dress Code:</strong> Italian Chic</p>
         <p style="opacity:0.7; font-size:13px; margin-top:4px;">(Think linen shirts, sundresses. No ties required)</p>
@@ -831,18 +827,18 @@ body {
 
       <div class="weekend-col">
         <div class="icon-placeholder">
-          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          <img src="images/icon-wedding.png" alt="Wedding icon">
         </div>
-        <h3>May 27th</h3>
+        <h3>Thursday, May 27th</h3>
         <p style="font-family:'Cormorant Garamond',serif; font-size:18px; margin-bottom:14px;">Wedding at 4:30 PM</p>
         <p><strong>Dress Code:</strong> Formal / Black Tie</p>
       </div>
 
       <div class="weekend-col">
         <div class="icon-placeholder">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <img src="images/icon-pool.png" alt="Pool Party icon">
         </div>
-        <h3>May 28th</h3>
+        <h3>Friday, May 28th</h3>
         <p style="font-family:'Cormorant Garamond',serif; font-size:18px; margin-bottom:14px;">Pool Party at Hotel</p>
       </div>
     </div>
@@ -872,7 +868,7 @@ body {
           <p style="font-size:14px; color:#888; font-style:italic; margin-top:8px; padding-left:110px;">(Think linen shirts, sundresses. No ties required)</p>
         </div>
 
-        <img src="images/special-day.jpg" class="fade-in" style="width:100%;height:280px;object-fit:cover;border-radius:4px;" alt="Villa Angelina">
+        <img src="images/special-day.jpg" class="fade-in special-day-img" style="width:100%;height:450px;object-fit:cover;border-radius:4px;" alt="Villa Angelina">
       </div>
     </div>
 

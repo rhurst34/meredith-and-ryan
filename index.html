@@ -371,8 +371,10 @@ body {
 /* Our Special Day */
 .special-day {
   background: var(--cream);
-  padding: 100px 40px;
+  padding: 100px 0 0;
 }
+.special-day .text-center { padding: 0 40px; }
+.special-day .max-width { max-width: 100%; padding: 0; }
 .special-day-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -870,8 +872,8 @@ body {
           <p style="font-size:14px; color:#888; font-style:italic; margin-top:8px; padding-left:110px;">(Think linen shirts, sundresses. No ties required)</p>
         </div>
 
-        <img src="images/special-day.jpg" class="fade-in special-day-img" style="width:100%;height:350px;object-fit:cover;border-radius:4px;" alt="Villa Angelina">
       </div>
+      <img src="images/special-day.jpg" class="fade-in special-day-img" style="width:100%;height:50vh;min-height:350px;object-fit:cover;display:block;" alt="Villa Angelina">
     </div>
 
       <!-- Order of Events (inside Wedding Day section) -->

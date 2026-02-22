@@ -404,12 +404,22 @@ body {
 
 /* Wedding Party */
 .wedding-party { padding: 80px 40px 100px; }
-.party-grid {
+.party-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  max-width: 800px;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 1100px;
   margin: 50px auto 0;
+}
+.party-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.party-grid {
+  display: contents;
 }
 .party-group h3 {
   font-family: 'Cormorant Garamond', serif;
@@ -668,7 +678,14 @@ body {
   .section-padding-lg { padding: 80px 24px; }
   .weekend-columns { flex-direction: column; gap: 50px; }
   .special-day-grid { grid-template-columns: 1fr; }
-  .party-grid { grid-template-columns: 1fr; gap: 50px; }
+  .party-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .party-img-left { order: 2; }
+  .party-group-bridesmaids { order: 1; }
+  .party-img-right { order: 4; }
+  .party-group-groomsmen { order: 3; }
   .tip-grid { grid-template-columns: 1fr; }
   .experience-card { grid-template-columns: 1fr; gap: 24px; }
   .experience-card:nth-child(even) { direction: ltr; }
@@ -818,8 +835,11 @@ body {
         <div class="divider"></div>
       </div>
 
-      <div class="party-grid">
-        <div class="party-group fade-in">
+      <div class="party-layout">
+        <!-- Left image — upload as bridesmaids-photo.jpg -->
+        <img src="images/bridesmaids-photo.jpg" class="party-img party-img-left fade-in" alt="Bridesmaids">
+
+        <div class="party-group party-group-bridesmaids fade-in">
           <h3>Bridesmaids</h3>
           <div class="party-member"><span class="member-name">Mallorie Black</span><span class="member-role">Maid of Honor</span></div>
           <div class="party-member"><span class="member-name">Erica Fried</span><span class="member-role">Maid of Honor</span></div>
@@ -833,7 +853,7 @@ body {
           <div class="party-member"><span class="member-name">Sam Hurst</span><span class="member-role">Bridesmaid</span></div>
         </div>
 
-        <div class="party-group fade-in">
+        <div class="party-group party-group-groomsmen fade-in">
           <h3>Groomsmen</h3>
           <div class="party-member"><span class="member-name">David Hurst</span><span class="member-role">Co-Best Man</span></div>
           <div class="party-member"><span class="member-name">John Hurst</span><span class="member-role">Co-Best Man</span></div>
@@ -844,6 +864,9 @@ body {
           <div class="party-member"><span class="member-name">James Holder</span><span class="member-role">Groomsman</span></div>
           <div class="party-member"><span class="member-name">Will Rowston</span><span class="member-role">Groomsman</span></div>
         </div>
+
+        <!-- Right image — upload as groomsmen-photo.jpg -->
+        <img src="images/groomsmen-photo.jpg" class="party-img party-img-right fade-in" alt="Groomsmen">
       </div>
     </div>
   </div>
@@ -1089,7 +1112,7 @@ body {
 
 
 <!-- ===== FOOTER ===== -->
-<footer class="site-footer">
+<footer class="site-footer" id="siteFooter">
   <!-- REPLACE: Add your logo image to the images folder and update the filename below -->
   <div class="footer-logo"><img src="images/logo.png" alt="Meredith & Ryan"></div>
   <p class="footer-date">May 27, 2027 &middot; Sorrento, Italy</p>
@@ -1139,6 +1162,9 @@ function showPage(pageId) {
   }
   var activeLink = document.getElementById('nav-' + pageId);
   if (activeLink) { activeLink.classList.add('nav-active'); }
+  // Hide footer on home page
+  var footer = document.getElementById('siteFooter');
+  if (footer) { footer.style.display = (pageId === 'home') ? 'none' : 'block'; }
   // Remember current page so refresh stays here
   try { window.location.hash = pageId; } catch(e) {}
   // Trigger animations
@@ -1167,6 +1193,9 @@ function enterSite() { showPage('details'); }
   else { nav.classList.remove('hidden-nav'); }
   var activeLink = document.getElementById('nav-' + startPage);
   if (activeLink) { activeLink.classList.add('nav-active'); }
+  // Hide footer on home
+  var footer = document.getElementById('siteFooter');
+  if (footer) { footer.style.display = (startPage === 'home') ? 'none' : 'block'; }
 })();
 
 // ---- FAQ Accordion ----

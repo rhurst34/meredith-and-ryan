@@ -1,1575 +1,1546 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HyperFocus — Your On-Demand Creative Team for Content & Branding</title>
-    <meta name="description" content="Full-spectrum creative services for content & branding. Based in Atlanta, GA.">
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.hyperfocus.agency/">
-    <meta property="og:title" content="HyperFocus — Your On-Demand Creative Team">
-    <meta property="og:description" content="Full-spectrum creative services for content & branding. Based in Atlanta, GA.">
-    <meta property="og:image" content="https://www.hyperfocus.agency/assets/images/og-share.jpg">
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="HyperFocus — Your On-Demand Creative Team">
-    <meta name="twitter:description" content="Full-spectrum creative services for content & branding. Based in Atlanta, GA.">
-    <meta name="twitter:image" content="https://www.hyperfocus.agency/assets/images/og-share.jpg">
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-/* ============================================
-   HYPERFOCUS — Complete Stylesheet
-   Black/White/#fecc30 theme
-   ============================================ */
-@font-face {
-    font-family: 'Apple Garamond';
-    src: url('assets/fonts/AppleGaramond-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meredith & Ryan — May 27, 2027</title>
+
+<!-- Open Graph tags for when you share the link on social media / iMessage -->
+<meta property="og:title" content="Meredith & Ryan — May 27, 2027">
+<meta property="og:description" content="We're getting married on the Amalfi Coast!">
+<!-- REPLACE: Uncomment and add your photo URL for the social media preview image -->
+<!-- <meta property="og:image" content="https://yourdomain.com/images/og-preview.jpg"> -->
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+<!-- OPTIONAL: If you buy the real Snell Roundhand font, link it here. Otherwise the site
+     uses Cormorant Garamond (a free elegant serif) as the fallback and it looks great. -->
+
+<style>
+/* =============================================================
+   COLOR PALETTE — Change these 3 values to restyle the whole site
+   ============================================================= */
+:root {
+  --cream: #fcf8f2;
+  --light-blue: #b2c3cb;
+  --blue: #6c848d;
+  --dark: #3a3a3a;
 }
-@font-face {
-    font-family: 'Apple Garamond';
-    src: url('assets/fonts/AppleGaramond-LightItalic.ttf') format('truetype');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-}
+
+/* ===== RESET & BASE ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-:root {
-    --bg: #000000;
-    --bg-card: #111111;
-    --bg-card-hover: #1a1a1a;
-    --text-primary: #ffffff;
-    --text-secondary: #999999;
-    --text-muted: #666666;
-    --accent: #fecc30;
-    --accent-dark: #d4a800;
-    --accent-light: #ffe066;
-    --black: #000000;
-    --white: #ffffff;
-    --border: #222222;
-    --border-light: #333333;
-    --font-serif: 'Playfair Display', Georgia, serif;
-    --font-sans: 'Inter', -apple-system, sans-serif;
-    --font-hero: 'Apple Garamond', Georgia, serif;
-    --max-width: 1200px;
+.script-font {
+  font-family: 'Snell Roundhand', 'Apple Chancery', 'Cormorant Garamond', cursive;
+  font-weight: 300;
 }
-
-html { font-size: 16px; overflow: hidden; height: 100%; }
-#smooth-wrapper { overflow: hidden; position: fixed; inset: 0; height: 100%; width: 100%; }
-#smooth-content { will-change: transform; }
 
 body {
-    font-family: var(--font-sans);
-    background-color: var(--bg);
-    color: var(--text-primary);
-    line-height: 1.6;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    cursor: none;
+  font-family: 'Avenir', 'Avenir Next', 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: var(--dark);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-/* Custom Cursor */
-.cursor-ring {
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    border: 1.5px solid var(--white);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+/* ===== NAVIGATION ===== */
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 40px;
+  background: rgba(252, 248, 242, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(108, 132, 141, 0.1);
+  transition: transform 0.4s ease;
 }
-.cursor-dot {
-    position: fixed;
-    width: 5px;
-    height: 5px;
-    background: var(--white);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 10000;
-    transform: translate(-50%, -50%);
-}
-.cursor-ring.hover {
-    width: 45px;
-    height: 45px;
-    border-color: var(--white);
-}
+.site-nav.hidden-nav { transform: translateY(-100%); }
 
-a { color: inherit; text-decoration: none; cursor: none; }
-button { cursor: none; }
-ul { list-style: none; }
-img { max-width: 100%; display: block; }
-
-.container { max-width: var(--max-width); margin: 0 auto; padding: 0 40px; }
-
-em { font-family: var(--font-hero); font-style: italic; font-weight: 300; }
-
-/* --- Section Headings --- */
-.section-heading {
-    font-family: var(--font-hero);
-    font-size: clamp(3rem, 7vw, 6rem);
-    font-weight: 400;
-    text-align: center;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
 }
-.section-heading em { font-style: italic; font-weight: 300; color: var(--accent); }
-
-.section-heading-large {
-    font-family: var(--font-hero);
-    font-size: clamp(3rem, 7vw, 6rem);
-    font-weight: 400;
-    text-align: center;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
-.section-heading-large em { font-style: italic; font-weight: 300; color: var(--accent); }
-
-.section-subheading {
-    font-family: var(--font-sans);
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    text-align: center;
-    font-weight: 300;
-    margin-bottom: 3rem;
-}
-
-/* ============================================
-   NAVIGATION
-   ============================================ */
-.navbar {
-    position: fixed;
-    top: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    width: 90%;
-    max-width: 1050px;
-    transition: all 0.3s ease;
-}
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: linear-gradient(180deg, rgba(50, 50, 50, 0.7) 0%, rgba(15, 15, 15, 0.85) 100%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 50px;
-    padding: 12px 28px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
-}
-.logo {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-}
-.logo-icon {
-    height: 28px;
-    width: auto;
-}
-.nav-links { display: flex; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%); }
 .nav-links a {
-    font-size: 0.85rem;
-    font-weight: 400;
-    color: var(--text-secondary);
-    transition: color 0.3s;
-    white-space: nowrap;
+  text-decoration: none;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.3s ease, background 0.3s ease;
+  position: relative;
+  padding: 8px 16px;
+  border-radius: 2px;
 }
-.nav-links a:hover { color: var(--accent); }
-.btn-nav {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--black);
-    background: var(--accent);
-    border: none;
-    border-radius: 50px;
-    padding: 8px 20px;
-    transition: all 0.3s;
-    white-space: nowrap;
+.nav-links a:hover {
+  background: rgba(108, 132, 141, 0.1);
 }
-.btn-nav:hover { background: var(--accent-light); transform: translateY(-1px); }
-.btn-nav-mobile { display: none; }
-.mobile-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-.mobile-toggle span { display: block; width: 20px; height: 2px; background: var(--text-primary); transition: 0.3s; }
-
-/* ============================================
-   HERO SECTION
-   ============================================ */
-.hero {
-    position: relative;
-    height: 100vh;
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 13vh;
-    overflow: hidden;
-    margin: 20px;
-}
-.hero-bg {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    border-radius: 20px;
-}
-.hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1);
-    transition: transform 0.1s linear;
-    will-change: transform;
-}
-.hero-overlay { position: absolute; inset: 0; }
-.hero-noise {
-    display: none;
-}
-.hero-noise canvas {
-    width: 100%;
-    height: 100%;
-}
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-}
-.hero-tagline {
-    font-family: var(--font-hero);
-    font-size: 2rem;
-    font-weight: 300;
-    color: var(--black);
-    margin-bottom: 1rem;
-    letter-spacing: 0.5px;
-}
-.hero-title {
-    font-family: var(--font-hero);
-    font-size: clamp(4rem, 16vw, 15rem);
-    font-weight: 400;
-    color: var(--black);
-    line-height: 1;
-    letter-spacing: -3px;
-}
-.hero-italic {
-    color: var(--black);
-}
-.hero-location {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    font-family: var(--font-hero);
-    font-size: 1.9rem;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: 1px;
+/* Active page highlight */
+.nav-links a.nav-active {
+  background: var(--blue);
+  color: var(--cream);
 }
 
-/* ============================================
-   ABOUT SECTION
-   ============================================ */
-.about { padding: 120px 0; }
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-    margin: 3rem auto 0;
-    max-width: var(--max-width);
-}
-.about-text { text-align: left; }
-.about-text p {
-    font-size: 1.15rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    font-weight: 300;
-}
-.about-highlight {
-    color: var(--white) !important;
-    font-weight: 500 !important;
-    font-size: 1.1rem !important;
-}
-.about-founder { display: flex; flex-direction: column; }
-.about-photo {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 12px;
-    overflow: hidden;
-    background: linear-gradient(135deg, #1a1a1a, #333);
-    border: 1px solid var(--border-light);
-}
-.founder-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.founder-info { margin-top: 1.25rem; }
-.founder-name {
-    font-family: var(--font-hero);
-    font-size: 2rem;
-    font-weight: 300;
-    color: var(--white);
-    margin-bottom: 0.5rem;
-}
-.founder-title {
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
-    font-weight: 400;
-    color: var(--text-secondary);
-}
-.founder-bio {
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
-    font-weight: 300;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-top: 0.75rem;
-}
-.btn-work-with-us {
-    display: inline-block;
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--black);
-    background: var(--accent);
-    border-radius: 50px;
-    padding: 12px 32px;
-    margin-top: 0.5rem;
-    transition: all 0.3s;
-}
-.btn-work-with-us:hover {
-    background: var(--accent-light);
-    transform: translateY(-2px);
+.rsvp-btn {
+  margin-left: 0;
 }
 
-/* ============================================
-   WE MEET YOU
-   ============================================ */
-.meet-you { padding: 100px 0; }
-.meet-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-.meet-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 2.5rem 2rem;
-    transition: border-color 0.3s, transform 0.3s;
-}
-.meet-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-4px);
-}
-.meet-number {
-    font-family: var(--font-sans);
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--accent);
-    letter-spacing: 1px;
-    display: block;
-    margin-bottom: 1rem;
-}
-.meet-card h3 {
-    font-family: var(--font-hero);
-    font-size: 2.2rem;
-    font-weight: 500;
-    color: var(--white);
-    margin-bottom: 1rem;
-}
-.meet-card p {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    font-weight: 300;
+/* ===== PAGES ===== */
+.page { display: none; min-height: 100vh; }
+.page.active { display: block; }
+
+/* ===== HOME PAGE ===== */
+#home {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(160deg, #d4dde1 0%, #a8bcc5 30%, #8aa0a9 60%, #6c848d 100%);
 }
 
-/* ============================================
-   LOGO TICKER
-   ============================================ */
-.logo-ticker {
-    padding: 40px 0;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    position: relative;
-    max-width: var(--max-width);
-    margin: 0 auto;
+/* Hero Carousel */
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 55vh;
+  min-height: 380px;
+  overflow: hidden;
 }
-.logo-ticker::before,
-.logo-ticker::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 120px;
-    z-index: 2;
-    pointer-events: none;
+.carousel-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
 }
-.logo-ticker::before {
-    left: 0;
-    background: linear-gradient(to right, var(--bg) 0%, transparent 100%);
-}
-.logo-ticker::after {
-    right: 0;
-    background: linear-gradient(to left, var(--bg) 0%, transparent 100%);
-}
-.ticker-track { overflow: hidden; flex: 1; }
-.ticker-slide {
-    display: flex;
-    gap: 8rem;
-    animation: tickerScroll 30s linear infinite;
-    width: max-content;
-    align-items: center;
-}
-.ticker-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 120px;
-    opacity: 0.3;
-}
-.ticker-logo img {
-    max-height: 45px;
-    max-width: 120px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-    pointer-events: none;
-    -webkit-user-drag: none;
-    user-select: none;
-}
-@keyframes tickerScroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+.carousel-slide.active {
+  opacity: 1;
 }
 
-/* ============================================
-   SERVICES SECTION
-   ============================================ */
-.services { padding: 100px 0; }
-.service-row {
-    display: grid;
-    grid-template-columns: 300px 1fr 1fr;
-    gap: 2rem;
-    align-items: start;
-    padding: 2.5rem 0;
-    border-top: 1px solid var(--border);
+/* Background — gradient by default, video/image overlays on top */
+.home-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(160deg, #d4dde1 0%, #a8bcc5 30%, #8aa0a9 60%, #6c848d 100%);
 }
-.service-info { display: flex; gap: 1.2rem; align-items: flex-start; }
-.service-number { font-size: 0.8rem; color: var(--accent); font-weight: 500; flex-shrink: 0; padding-top: 0.6rem; }
-.service-info-content { flex: 1; }
-.service-title { font-family: var(--font-hero); font-size: 2.4rem; font-weight: 500; color: var(--white); line-height: 1.1; }
-.service-list { display: flex; align-items: flex-start; justify-content: flex-start; padding-top: 0.6rem; padding-left: 2rem; }
-.service-list ul { list-style: none; }
-.service-list ul li { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.4rem; font-weight: 300; }
-.service-image { display: flex; justify-content: flex-end; }
-.service-image-wrap {
-    width: 280px;
-    height: 180px;
-    border-radius: 12px;
-    overflow: hidden;
-    background: var(--bg-card);
+.home-bg video, .home-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover;
 }
-.service-image-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
+/* Hide default play button on mobile browsers */
+.home-bg video::-webkit-media-controls-start-playback-button,
+.home-bg video::-webkit-media-controls-panel,
+.home-bg video::-webkit-media-controls {
+  display: none !important;
+  -webkit-appearance: none;
 }
-/* Service accordion toggle (mobile/tablet only) */
-.service-toggle {
-    display: none;
-    width: 32px;
-    height: 32px;
-    border: 1px solid var(--border-light);
-    border-radius: 50%;
-    background: transparent;
-    color: var(--white);
-    font-size: 1.2rem;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    margin-left: auto;
+.home-bg video::-moz-media-controls { display: none !important; }
+.home-bg video::-webkit-media-controls-overlay-play-button { display: none !important; }
+.home-bg video::--webkit-media-controls-play-button { display: none !important; }
+.home-bg video { -webkit-appearance: none; }
+/* Overlay to block iOS play button */
+.video-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+  background: transparent;
 }
-.service-row.service-open .service-toggle {
-    transform: rotate(45deg);
-    border-color: var(--accent);
-    color: var(--accent);
-}
-.service-image-wrap:hover img {
-    transform: scale(1.05);
-}
-.services-cta { text-align: center; padding-top: 3rem; }
-.btn-outline {
-    display: inline-block;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--accent);
-    border: 1px solid var(--accent);
-    border-radius: 50px;
-    padding: 12px 28px;
-    transition: all 0.3s;
-}
-.btn-outline:hover { background: var(--accent); color: var(--black); }
 
-/* ============================================
-   FEATURED WORK CAROUSEL
-   ============================================ */
-.featured-work { padding: 100px 0; }
-.work-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+.home-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 20px;
 }
-.project-card {
-    text-align: left;
-    display: block;
-    text-decoration: none;
-    color: inherit;
-}
-.project-image {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    border-radius: 12px;
-    margin-bottom: 1rem;
-    overflow: hidden;
-    background: linear-gradient(135deg, #1a1a1a, #333);
-    border: 1px solid var(--border-light);
-}
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1);
-    transition: transform 0.6s ease;
-}
-.project-card:hover .project-image img {
-    transform: scale(1.05);
-}
-.placeholder-project-1 { background: linear-gradient(135deg, #1a1a1a, #333); border: 1px solid var(--border-light); }
-.placeholder-project-2 { background: linear-gradient(135deg, #111, #222); border: 1px solid var(--border-light); }
-.placeholder-project-3 { background: linear-gradient(135deg, #1a1a1a, #2a2a2a); border: 1px solid var(--border-light); }
-.placeholder-project-4 { background: linear-gradient(135deg, #0a0a0a, #1a1a1a); border: 1px solid var(--border-light); }
-.project-card h4 { font-family: var(--font-sans); font-size: 1.1rem; font-weight: 500; color: var(--white); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
-.project-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-.project-tags span { font-size: 0.7rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 50px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; }
-.carousel-btn {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid var(--border-light);
-    background: var(--bg-card);
-    color: var(--text-primary);
-    font-size: 1.1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-    z-index: 5;
-}
-.carousel-btn:hover { background: var(--accent); color: var(--black); border-color: var(--accent); }
-.carousel-btn.prev { left: 10px; }
-.carousel-btn.next { right: 10px; }
 
-/* ============================================
-   TESTIMONIALS
-   ============================================ */
-.testimonials { padding: 100px 0; }
-.testimonial-carousel-wrapper {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 60px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
+/* "THE WEDDING OF" — small tracking text above the names */
+.home-preheading {
+  font-family: 'Avenir', 'Avenir Next', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: rgba(252, 248, 242, 0.7);
+  margin-bottom: 20px;
+  opacity: 0; animation: fadeUp 1.2s ease forwards 0.2s;
 }
-.testimonial-carousel { overflow: hidden; width: 100%; max-width: 700px; position: relative; }
-.testimonial-slide { display: none; opacity: 0; transition: opacity 0.6s ease; }
-.testimonial-slide.active { display: block; opacity: 1; }
-.testimonial-slide.fade-out { opacity: 0; }
-.testimonial-slide.fade-in { display: block; opacity: 0; }
-.testimonial-slide.fade-in.active { opacity: 1; }
-.testimonial-card {
-    display: flex;
-    gap: 2rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 2rem;
-    align-items: flex-start;
-}
-.testimonial-photo {
-    width: 180px;
-    height: 220px;
-    border-radius: 12px;
-    flex-shrink: 0;
-    background-size: cover;
-    background-position: center;
-}
-.placeholder-person-1 { background: linear-gradient(180deg, #222, #111); border: 1px solid var(--border-light); }
-.placeholder-person-2 { background: linear-gradient(180deg, #1a1a1a, #0a0a0a); border: 1px solid var(--border-light); }
-.placeholder-person-3 { background: linear-gradient(180deg, #222, #111); border: 1px solid var(--border-light); }
-.testimonial-content { flex: 1; }
-.testimonial-quote { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; font-weight: 300; margin-bottom: 1.5rem; }
-.testimonial-author h4 { font-size: 0.95rem; font-weight: 500; color: var(--white); }
-.testimonial-author p { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem; }
-.carousel-dots { width: 100%; display: flex; justify-content: center; gap: 8px; margin-top: 2rem; }
-.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text-muted); opacity: 0.4; cursor: pointer; transition: all 0.3s; }
-.dot.active { opacity: 1; background: var(--accent); }
 
-/* ============================================
-   FAQ SECTION
-   ============================================ */
-.faq { padding: 100px 0; }
-.faq-list { max-width: 700px; margin: 0 auto; }
-.faq-item { border-top: 1px solid var(--border); }
-.faq-item:last-child { border-bottom: 1px solid var(--border); }
+/* "Meredith & Ryan" — large centered script */
+.home-names {
+  font-size: clamp(52px, 9vw, 110px);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  opacity: 0; animation: fadeUp 1.2s ease forwards 0.5s;
+}
+
+/* "MAY 27, 2027 · SORRENTO, ITALY" */
+.home-date {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(252, 248, 242, 0.7);
+  margin-bottom: 56px;
+  opacity: 0; animation: fadeUp 1.2s ease forwards 0.8s;
+}
+
+/* Thin decorative line */
+.home-line {
+  width: 50px;
+  height: 1px;
+  background: rgba(252, 248, 242, 0.25);
+  margin-bottom: 56px;
+  opacity: 0; animation: fadeUp 1.2s ease forwards 0.8s;
+}
+
+/* Countdown — on Wedding Details page */
+.countdown-section {
+  background: linear-gradient(160deg, #d4dde1 0%, #a8bcc5 30%, #8aa0a9 60%, #6c848d 100%);
+  color: var(--cream);
+  text-align: center;
+  padding: 80px 40px;
+}
+.countdown-section .page-title { color: var(--cream); }
+.countdown {
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  margin-top: 40px;
+}
+.countdown-unit { text-align: center; }
+.countdown-number {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--cream);
+}
+.countdown-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-top: 8px;
+  display: block;
+}
+
+.enter-btn {
+  display: inline-block;
+  padding: 14px 48px;
+  background: transparent;
+  color: var(--cream);
+  font-family: 'Avenir', 'Avenir Next', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(252,248,242,0.35);
+  cursor: pointer;
+  transition: all 0.35s ease;
+  border-radius: 0;
+  opacity: 0; animation: fadeUp 1.2s ease forwards 1.0s;
+}
+.enter-btn:hover {
+  background: rgba(252,248,242,0.08);
+  border-color: rgba(252,248,242,0.7);
+  transform: translateY(-1px);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== SECTION HELPERS ===== */
+.section-padding { padding: 100px 40px; }
+.section-padding-lg { padding: 120px 40px; }
+.max-width { max-width: 1100px; margin: 0 auto; }
+.text-center { text-align: center; }
+
+.page-title {
+  font-size: clamp(40px, 5vw, 64px);
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+.divider {
+  width: 60px;
+  height: 1px;
+  background: var(--light-blue);
+  margin: 30px auto;
+}
+
+/* ===== IMAGE PLACEHOLDERS (will be replaced with your real photos) ===== */
+.img-placeholder {
+  background: linear-gradient(135deg, #d4dde1, #b2c3cb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(108, 132, 141, 0.5);
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(252, 248, 242, 0.3);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* Real images — used once you swap in your photos */
+.real-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+/* ===== WEDDING DETAILS ===== */
+.hero-image-placeholder {
+  width: 100%;
+  height: 55vh;
+  min-height: 380px;
+}
+
+.weekend-banner {
+  background: linear-gradient(160deg, #d4dde1 0%, #a8bcc5 30%, #8aa0a9 60%, #6c848d 100%);
+  color: var(--cream);
+  padding: 90px 40px;
+}
+.weekend-banner .page-title { color: var(--cream); }
+
+.weekend-columns {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+  max-width: 960px;
+  margin: 60px auto 0;
+}
+.weekend-col {
+  flex: 1;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.weekend-col.visible { opacity: 1; transform: translateY(0); }
+.weekend-col:nth-child(2) { transition-delay: 0.15s; }
+.weekend-col:nth-child(3) { transition-delay: 0.3s; }
+
+.icon-placeholder {
+  width: 70px; height: 70px;
+  margin: 0 auto 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-placeholder img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+}
+
+.weekend-col h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  color: var(--cream);
+}
+.weekend-col p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+/* Details Hero */
+.details-hero {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 60px auto 60px;
+  overflow: hidden;
+}
+.details-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.details-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+.details-hero-text {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+  width: 100%;
+  padding: 0 20px;
+}
+.details-hero-text .page-title {
+  font-size: clamp(54px, 7vw, 86px);
+}
+.details-hero-text p {
+  font-size: 19px !important;
+  letter-spacing: 4px !important;
+}
+
+/* Our Special Day */
+.special-day {
+  background: var(--cream);
+  padding: 100px 40px;
+}
+.special-day-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.special-day-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 24px;
+  color: var(--blue);
+}
+.special-day-info .detail-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.detail-label {
+  font-weight: 500;
+  min-width: 100px;
+}
+
+/* Order of Events */
+.events-timeline {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+.event-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 150px;
+}
+.event-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.event-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.event-time {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 6px;
+}
+.event-label {
+  font-size: 19px;
+  letter-spacing: 1.5px;
+  color: var(--dark);
+}
+
+/* Wedding Party */
+.wedding-party { padding: 80px 0 100px; }
+.wedding-party .text-center { padding: 0 40px; }
+.party-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin: 50px auto 0;
+}
+.party-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.party-group {
+  max-width: 700px;
+  width: 100%;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+.party-img {
+  max-width: 620px;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  margin-top: 30px;
+  border-radius: 4px;
+}
+.party-group h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--blue);
+  margin-bottom: 24px;
+  text-align: center;
+}
+.party-member {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(178, 195, 203, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 15px;
+}
+.party-member:last-child { border-bottom: none; }
+.member-name { font-weight: 400; }
+.member-role { font-weight: 300; color: var(--blue); font-size: 13px; font-style: italic; }
+
+.full-image-placeholder {
+  width: 100%;
+  height: 50vh;
+  min-height: 350px;
+}
+
+/* ===== TRAVEL & LODGING ===== */
+.travel-section { background: var(--cream); }
+
+.travel-card {
+  background: white;
+  border-radius: 6px;
+  padding: 40px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 20px rgba(108, 132, 141, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.travel-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(108, 132, 141, 0.12);
+}
+.travel-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--blue);
+  margin-bottom: 14px;
+}
+.travel-card p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #555;
+}
+.travel-card .sub-tip {
+  margin-top: 12px;
+  padding-left: 20px;
+  border-left: 2px solid var(--light-blue);
+  font-size: 14px;
+  font-style: italic;
+  color: #777;
+}
+
+.tip-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+.tip-card {
+  background: white;
+  border-radius: 6px;
+  padding: 32px;
+  box-shadow: 0 2px 20px rgba(108, 132, 141, 0.07);
+}
+.tip-card h4 {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--blue);
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+.tip-card p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #666;
+}
+
+/* ===== ITALY GUIDE ===== */
+.guide-intro {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.experience-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.experience-card.visible { opacity: 1; transform: translateY(0); }
+.experience-card:nth-child(even) { direction: rtl; }
+.experience-card:nth-child(even) > * { direction: ltr; }
+
+.experience-img {
+  width: 100%;
+  height: 320px;
+  border-radius: 6px;
+}
+
+.experience-text h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+.experience-text p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 12px;
+}
+.experience-text .tip {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--blue);
+  padding-left: 16px;
+  border-left: 2px solid var(--light-blue);
+  margin-top: 16px;
+}
+
+.guide-region-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--blue);
+  text-align: center;
+  margin: 40px 0 50px;
+}
+
+/* ===== FAQ ===== */
+.faq-list { max-width: 740px; margin: 50px auto 0; }
+.faq-item {
+  border-bottom: 1px solid rgba(178, 195, 203, 0.3);
+  padding: 28px 0;
+  cursor: pointer;
+}
 .faq-question {
-    width: 100%;
-    background: none;
-    border: none;
-    color: var(--white);
-    font-family: var(--font-sans);
-    font-size: 1.05rem;
-    font-weight: 500;
-    text-align: left;
-    padding: 1.5rem 0;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: color 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--dark);
+  transition: color 0.3s ease;
 }
-.faq-question:hover { color: var(--accent); }
-.faq-icon { font-size: 1.5rem; font-weight: 300; color: var(--accent); transition: transform 0.3s; flex-shrink: 0; margin-left: 1rem; }
-.faq-item.open .faq-icon { transform: rotate(45deg); }
-.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
-.faq-item.open .faq-answer { max-height: 200px; padding-bottom: 1.5rem; }
-.faq-answer p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
+.faq-question:hover { color: var(--blue); }
+.faq-toggle {
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--blue);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.faq-item.open .faq-answer { max-height: 400px; padding-top: 16px; }
+.faq-answer p, .faq-answer ul {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #666;
+}
+.faq-answer ul { list-style: none; margin-top: 8px; }
+.faq-answer ul li::before { content: '— '; color: var(--light-blue); }
 
-/* ============================================
-   CTA FINAL SECTION
-   ============================================ */
-.cta-final {
-    position: relative;
-    height: 60vh;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 40px;
-    border-radius: 16px;
-    overflow: hidden;
+/* ===== HOTEL CARDS ===== */
+.hotel-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.cta-bg { position: absolute; inset: 0; }
-.cta-overlay { position: absolute; inset: 0; background: none; }
-.cta-content { position: relative; z-index: 2; text-align: center; }
-.cta-content h2 {
-    font-family: var(--font-hero);
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 400;
-    color: var(--black);
-    margin-bottom: 2rem;
-    line-height: 1.3;
-    white-space: nowrap;
+.hotel-card {
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
-.cta-content h2 em { color: var(--black); font-style: italic; }
-.btn-accent {
-    display: inline-block;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--accent);
-    background: var(--black);
-    border-radius: 50px;
-    padding: 14px 32px;
-    transition: all 0.3s;
+.hotel-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
 }
-.btn-accent:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); }
+.hotel-info {
+  padding: 24px;
+  text-align: center;
+}
+.hotel-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+.hotel-info p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 20px;
+}
+.book-now-btn {
+  display: inline-block;
+  padding: 10px 32px;
+  background: var(--blue);
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: opacity 0.3s;
+}
+.book-now-btn:hover { opacity: 0.85; }
 
-/* ============================================
-   FOOTER
-   ============================================ */
-.footer { padding: 40px; border-top: 1px solid var(--border); }
-.footer-container { display: flex; justify-content: space-between; align-items: center; max-width: var(--max-width); margin: 0 auto; }
-.footer-brand { display: flex; flex-direction: column; gap: 0.3rem; }
-.footer-logo { font-family: var(--font-hero); font-size: 1.2rem; font-weight: 600; color: var(--white); }
-.footer-location { font-size: 0.75rem; color: var(--text-muted); }
-.footer-links { display: flex; gap: 1.5rem; }
-.footer-links a { font-size: 0.8rem; color: var(--text-secondary); transition: color 0.3s; }
-.footer-links a:hover { color: var(--accent); }
-.footer-socials { display: flex; gap: 1.5rem; }
-.footer-socials a { font-size: 0.8rem; color: var(--text-secondary); transition: color 0.3s; }
-.footer-socials a:hover { color: var(--accent); }
+/* ===== RSVP ===== */
+.rsvp-section {
+  background: linear-gradient(160deg, #d4dde1 0%, #a8bcc5 30%, #8aa0a9 60%, #6c848d 100%);
+  color: var(--cream);
+  text-align: center;
+  padding: 100px 40px;
+}
+.rsvp-section .page-title { color: var(--cream); }
+.rsvp-section p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0 auto 36px;
+  opacity: 0.9;
+}
+.rsvp-link-btn {
+  display: inline-block;
+  padding: 16px 52px;
+  background: var(--cream);
+  color: var(--blue);
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.rsvp-link-btn:hover { background: #fff; transform: translateY(-2px); }
 
-/* ============================================
-   ANIMATIONS
-   ============================================ */
-.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+/* ===== FOOTER ===== */
+.site-footer {
+  text-align: center;
+  padding: 48px 40px;
+  background: var(--cream);
+  border-top: 1px solid rgba(178, 195, 203, 0.25);
+}
+.footer-logo { margin-bottom: 12px; }
+.footer-logo img { height: 50px; width: auto; }
+.footer-date {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--light-blue);
+  text-transform: uppercase;
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-@media (max-width: 1024px) {
-    .service-row {
-        grid-template-columns: 1fr;
-        cursor: pointer;
-        gap: 0;
-    }
-    .service-info {
-        align-items: center;
-    }
-    .service-toggle { display: flex; }
-    .service-list {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease, padding 0.4s ease;
-        padding: 0;
-        justify-content: flex-start;
-    }
-    .service-list ul { text-align: left; }
-    .service-image {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease, padding 0.4s ease;
-        justify-content: flex-start;
-        padding: 0;
-    }
-    .service-image-wrap {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-    }
-    .service-row.service-open .service-list {
-        max-height: 300px;
-        padding-top: 1.5rem;
-    }
-    .service-row.service-open .service-image {
-        max-height: 500px;
-        padding-top: 1.5rem;
-    }
-}
+/* ===== RESPONSIVE (phones & tablets) ===== */
 @media (max-width: 768px) {
-    .nav-container {
-        position: relative;
-        flex-wrap: wrap;
-        border-radius: 50px;
-        transition: border-radius 0.35s ease;
-    }
-    .nav-container.menu-open {
-        border-radius: 20px;
-    }
-    .nav-links {
-        display: flex;
-        position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-        width: 100%;
-        flex-basis: 100%;
-        order: 4;
-        background: none;
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-        border-left: none;
-        border-right: none;
-        border-bottom: none;
-        border-top: 1px solid transparent;
-        border-radius: 0;
-        padding: 0;
-        box-shadow: none;
-        transform: none;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
-    }
-    .nav-links.mobile-open {
-        max-height: 300px;
-        padding: 0.25rem 0 0.5rem;
-        border-top-color: rgba(255,255,255,0.1);
-    }
-    .nav-links a {
-        padding: 0.75rem 1.5rem;
-        width: 100%;
-        text-align: center;
-        font-size: 1rem;
-        opacity: 0;
-        transform: translateY(-8px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    .nav-links.mobile-open a {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    .nav-links.mobile-open a:nth-child(1) { transition-delay: 0.05s; }
-    .nav-links.mobile-open a:nth-child(2) { transition-delay: 0.1s; }
-    .nav-links.mobile-open a:nth-child(3) { transition-delay: 0.15s; }
-    .nav-links.mobile-open a:nth-child(4) { transition-delay: 0.2s; }
-    .btn-nav-desktop { display: none; }
-    .btn-nav-mobile {
-        display: block;
-        width: auto;
-        margin-top: 0.5rem;
-        background: transparent;
-        color: var(--text-secondary);
-        border: none;
-        font-weight: 400;
-        padding: 0.75rem 1.5rem;
-        opacity: 0;
-        transform: translateY(-8px);
-    }
-    .btn-nav-mobile:hover { background: transparent; color: var(--accent); transform: none; }
-    .nav-links.mobile-open .btn-nav-mobile { opacity: 1; transform: translateY(0); }
-    .mobile-toggle { display: flex; }
-    .navbar { max-width: calc(100% - 40px); }
-    .hero { justify-content: flex-start; padding-top: 28vh; }
-    .hero-title { font-size: clamp(4.5rem, 22vw, 10rem); text-align: center; letter-spacing: -3px; }
-    .hero-tagline { font-size: 1.1rem; margin-bottom: 1.5rem; text-align: center; letter-spacing: 1px; max-width: 90vw; margin-top: 5vh; }
-    .hero-location { font-size: 0.9rem; bottom: 30px; }
-    .about-text p { font-size: 0.95rem; }
-    .service-row { grid-template-columns: 1fr; }
-    .work-grid { grid-template-columns: 1fr; }
-    .meet-grid { grid-template-columns: 1fr; }
-    .about-content { grid-template-columns: 1fr; text-align: center; }
-    .about-founder { max-width: 350px; margin: 0 auto; }
-    .about-text { text-align: center; }
-    .founder-info { text-align: center; }
-    .testimonial-card { flex-direction: column; align-items: center; text-align: center; }
-    .testimonial-photo { width: 120px; height: 150px; }
-    .footer-container { flex-direction: column; gap: 1.5rem; text-align: center; }
-    .cta-final { margin: 20px; height: 50vh; }
-    .cta-content { transform: translateY(15%); }
-}
-@media (max-width: 1024px) {
-    html { overflow: auto; height: auto; }
-    #smooth-wrapper { position: static; overflow: visible; height: auto; }
-    #smooth-content { will-change: auto; transform: none !important; }
-    body { cursor: auto; }
-    a { cursor: pointer; }
-    button { cursor: pointer; }
-    .cursor-ring, .cursor-dot { display: none !important; }
-}
-@media (max-width: 480px) {
-    .container { padding: 0 20px; }
-    .section-heading-large { font-size: 2.5rem; }
-    .faq-question { font-size: 0.95rem; }
+  .site-nav { padding: 14px 20px; }
+  .nav-links { gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .nav-links a { font-size: 11px; letter-spacing: 1.5px; }
+  .rsvp-btn { margin-left: 0; }
+  .details-hero { max-width: 100%; margin: 0 auto 40px; padding-top: 60px; }
+  .details-hero-text { top: 120px; }
+  .details-hero-text .page-title { font-size: clamp(40px, 5vw, 64px); }
+  .details-hero-text p { font-size: 11px !important; letter-spacing: 2px !important; }
+  .section-padding { padding: 50px 24px; }
+  .section-padding-lg { padding: 60px 24px; }
+  .special-day { padding: 50px 24px; }
+  .weekend-banner { padding: 50px 24px; }
+  .wedding-party { padding: 50px 0 60px; }
+  .countdown-section { padding: 50px 24px; }
+  #details .text-center[style*="padding:100px"] { padding: 70px 24px 20px !important; }
+  .weekend-columns { flex-direction: column; gap: 30px; }
+  .special-day-grid { grid-template-columns: 1fr; gap: 30px; }
+  .special-day-img { height: 250px !important; margin-top: 0 !important; }
+  .special-day .divider { margin-bottom: 20px; }
+  .events-timeline { gap: 20px; margin-top: 30px !important; }
+  .event-icon { width: 60px; height: 60px; }
+  .event-time { font-size: 20px; }
+  .event-label { font-size: 15px; }
+  .event-item { min-width: 120px; }
+  .party-layout { gap: 40px; }
+  .party-img { width: 100%; height: auto; aspect-ratio: 1 / 1; min-height: unset; max-width: 350px; margin-left: auto; margin-right: auto; }
+  .tip-grid { grid-template-columns: 1fr; }
+  .hotel-cards { grid-template-columns: 1fr; }
+  .experience-card { grid-template-columns: 1fr; gap: 24px; }
+  .experience-card:nth-child(even) { direction: ltr; }
+  .countdown { gap: 18px; }
+  .countdown-number { font-size: 36px; }
 }
 
-/* Scroll to Top Button (mobile/tablet only) */
-.scroll-top-btn {
-    display: none;
-    position: fixed;
-    bottom: 30px;
-    right: 20px;
-    width: 44px;
-    height: 44px;
-    background: var(--accent);
-    color: var(--black);
-    border: none;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    z-index: 999;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
-    cursor: pointer;
+/* Scroll to top button — mobile only */
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--blue);
+  color: var(--cream);
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-.scroll-top-btn.visible {
-    opacity: 1;
-    transform: translateY(0);
+#scrollTopBtn.visible { opacity: 1; }
+@media (min-width: 769px) {
+  #scrollTopBtn { display: none !important; }
 }
-@media (max-width: 1024px) {
-    .scroll-top-btn { display: block; }
-}
-    </style>
+</style>
 </head>
 <body>
 
-    <!-- Scroll to Top Button (mobile/tablet) -->
-    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">&uarr;</button>
+<!-- ═══════════════════════════════════════════════════════════════
+     NAVIGATION
+     The nav is hidden on the Home screen and appears after "Enter"
+     ═══════════════════════════════════════════════════════════════ -->
+<nav class="site-nav hidden-nav" id="siteNav">
+  <ul class="nav-links">
+    <li><a href="javascript:void(0)" id="nav-details" onclick="showPage('details'); return false;">Wedding Details</a></li>
+    <li><a href="javascript:void(0)" id="nav-travel" onclick="showPage('travel'); return false;">Travel &amp; Lodging</a></li>
+    <li><a href="javascript:void(0)" id="nav-guide" onclick="showPage('guide'); return false;">Our Italy Guide</a></li>
+    <li><a href="javascript:void(0)" id="nav-faq" onclick="showPage('faq'); return false;">FAQs</a></li>
 
-    <!-- Custom Cursor (outside wrapper so it stays fixed) -->
-    <div class="cursor-ring"></div>
-    <div class="cursor-dot"></div>
+    <!-- ╔═══════════════════════════════════════════════════════╗
+         ║  REPLACE: Update this to link to your Joy RSVP page  ║
+         ║  Change the # below to your Joy URL                  ║
+         ╚═══════════════════════════════════════════════════════╝ -->
+    <li><a href="javascript:void(0)" id="nav-rsvp" onclick="showPage('faq','rsvp'); setTimeout(function(){document.getElementById('rsvpSection').scrollIntoView({behavior:'smooth'});},200); return false;" class="rsvp-btn">RSVP</a></li>
+  </ul>
+</nav>
 
-    <!-- Navigation (outside smooth scroll so it stays fixed) -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo"><img src="assets/logos/logo-icon.svg" alt="HyperFocus" class="logo-icon"></a>
-            <div class="nav-links">
-                <a href="#work">Work</a>
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="contact.html" class="btn-nav btn-nav-mobile">Start Your Project</a>
-            </div>
-            <a href="contact.html" class="btn-nav btn-nav-desktop">Start Your Project</a>
-            <button class="mobile-toggle" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 1: HOME / LANDING
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page active" id="home">
+
+  <!-- ╔═══════════════════════════════════════════════════════════╗
+       ║  REPLACE: HOME BACKGROUND VIDEO OR IMAGE                 ║
+       ║                                                          ║
+       ║  OPTION A — Video background:                            ║
+       ║  Uncomment the <video> tag below and set the src to      ║
+       ║  your video file (put the file in the images/ folder).   ║
+       ║                                                          ║
+       ║  OPTION B — Photo background:                            ║
+       ║  Uncomment the <img> tag below instead.                  ║
+       ║                                                          ║
+       ║  OPTION C — Keep the gradient (current default).         ║
+       ╚═══════════════════════════════════════════════════════════╝ -->
+  <div class="home-bg">
+    <video autoplay muted loop playsinline disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" style="pointer-events:none;">
+      <source src="images/home-video.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+
+    <!-- OPTION B: IMAGE — uncomment this line and add your photo -->
+    <!-- <img src="images/home-bg.jpg" alt="Meredith and Ryan"> -->
+  </div>
+
+  <div class="home-content">
+    <p class="home-preheading">The Wedding Of</p>
+    <h1 class="home-names script-font">Meredith &amp; Ryan</h1>
+    <p class="home-date">May 27, 2027 &middot; Sorrento, Italy</p>
+
+    <button class="enter-btn" onclick="enterSite()">Enter</button>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 2: WEDDING DETAILS
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page" id="details">
+
+  <div class="details-hero">
+    <img src="images/hero.jpg" class="details-hero-img" alt="Meredith and Ryan">
+    <div class="details-hero-overlay"></div>
+    <div class="details-hero-text">
+      <h2 class="page-title script-font" style="color:var(--cream);">Meredith & Ryan</h2>
+      <p style="font-size:14px; letter-spacing:3px; text-transform:uppercase; color:var(--cream); margin-top:8px;">May 27, 2027 &middot; Sorrento, Italy</p>
+    </div>
+  </div>
+
+  <!-- Our Wedding Weekend — blue banner with 3 events -->
+  <div class="weekend-banner">
+    <div class="text-center">
+      <h2 class="page-title script-font" style="color:var(--cream)">Our Wedding Weekend</h2>
+      <div class="divider" style="background:rgba(252,248,242,0.3)"></div>
+    </div>
+
+    <div class="weekend-columns">
+      <div class="weekend-col">
+        <div class="icon-placeholder">
+          <img src="images/icon-welcome.png" alt="Welcome Party icon">
         </div>
-    </nav>
+        <h3>Wednesday, May 26th</h3>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:18px; margin-bottom:14px; font-weight:600;">Welcome Party</p>
+        <p><strong>Dress Code:</strong> Italian Chic</p>
+        <p style="opacity:0.7; font-size:13px; margin-top:4px;">(Think linen shirts, sundresses. No ties required)</p>
+      </div>
 
-    <div id="smooth-wrapper">
-    <div id="smooth-content">
-
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-bg">
-            <img src="assets/images/hero.jpg" alt="HyperFocus Hero" class="hero-img">
-            <div class="hero-overlay"></div>
-            <div class="hero-noise"><canvas id="noiseCanvas"></canvas></div>
+      <div class="weekend-col">
+        <div class="icon-placeholder">
+          <img src="images/icon-wedding.png" alt="Wedding icon">
         </div>
-        <div class="hero-content">
-            <p class="hero-tagline">Your on-demand creative team<br>for content &amp; branding</p>
-            <h1 class="hero-title"><em class="hero-italic">Hyper</em>Focus</h1>
+        <h3>Thursday, May 27th</h3>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:18px; margin-bottom:14px; font-weight:600;">Wedding Day</p>
+        <p><strong>Dress Code:</strong> Formal / Black Tie</p>
+      </div>
+
+      <div class="weekend-col">
+        <div class="icon-placeholder">
+          <img src="images/icon-pool.png" alt="Pool Party icon">
         </div>
-        <div class="hero-location">Atlanta, GA</div>
-    </section>
+        <h3>Friday, May 28th</h3>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:18px; margin-bottom:14px; font-weight:600;">Pool Party at Hotel</p>
+      </div>
+    </div>
+  </div>
 
-    <!-- Client Logo Ticker -->
-    <section class="logo-ticker">
-        <div class="ticker-track">
-            <div class="ticker-slide">
-                <!-- set 1 -->
-                <div class="ticker-logo"><img src="assets/logos/40love.svg" alt="40 Love"></div>
-                <div class="ticker-logo"><img src="assets/logos/braves.svg" alt="Braves"></div>
-                <div class="ticker-logo"><img src="assets/logos/br.svg" alt="BR"></div>
-                <div class="ticker-logo"><img src="assets/logos/bodyarmor.svg" alt="BODYARMOR"></div>
-                <div class="ticker-logo"><img src="assets/logos/flerish.svg" alt="Flerish"></div>
-                <div class="ticker-logo"><img src="assets/logos/nike.svg" alt="Nike"></div>
-                <div class="ticker-logo"><img src="assets/logos/powerade.svg" alt="Powerade"></div>
-                <div class="ticker-logo"><img src="assets/logos/athletic.svg" alt="Athletic"></div>
-                <div class="ticker-logo"><img src="assets/logos/wss.svg" alt="WSS"></div>
-                <!-- set 2 (duplicate for seamless loop) -->
-                <div class="ticker-logo"><img src="assets/logos/40love.svg" alt="40 Love"></div>
-                <div class="ticker-logo"><img src="assets/logos/braves.svg" alt="Braves"></div>
-                <div class="ticker-logo"><img src="assets/logos/br.svg" alt="BR"></div>
-                <div class="ticker-logo"><img src="assets/logos/bodyarmor.svg" alt="BODYARMOR"></div>
-                <div class="ticker-logo"><img src="assets/logos/flerish.svg" alt="Flerish"></div>
-                <div class="ticker-logo"><img src="assets/logos/nike.svg" alt="Nike"></div>
-                <div class="ticker-logo"><img src="assets/logos/powerade.svg" alt="Powerade"></div>
-                <div class="ticker-logo"><img src="assets/logos/athletic.svg" alt="Athletic"></div>
-                <div class="ticker-logo"><img src="assets/logos/wss.svg" alt="WSS"></div>
-            </div>
+  <!-- Our Special Day -->
+  <div class="special-day">
+    <div class="max-width">
+      <div class="text-center">
+        <h2 class="page-title script-font">Wedding Day</h2>
+        <div class="divider"></div>
+      </div>
+      <div style="margin-top:50px;">
+        <div class="special-day-info fade-in" style="max-width:500px;margin:0 auto 40px;">
+          <div class="detail-row">
+            <span class="detail-label" style="color:var(--blue);">Where:</span>
+            <span>Villa Angelina</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label" style="color:var(--blue);">Time:</span>
+            <span>4:00 PM</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label" style="color:var(--blue);">Dress Code:</span>
+            <span>Italian Chic</span>
+          </div>
+          <p style="font-size:14px; color:#888; font-style:italic; margin-top:8px; padding-left:110px;">(Think linen shirts, sundresses. No ties required)</p>
         </div>
-    </section>
 
-    <!-- Selected Work Section -->
-    <section class="featured-work" id="work">
-        <div class="container">
-            <h2 class="section-heading-large"><em>Featured</em> Work</h2>
-            <p class="section-subheading">We are proud to partner with some of the most visionary brands in the world, from start-ups to global icons.</p>
-            <div class="work-grid">
-                <a href="project-bodyarmor.html" class="project-card">
-                    <div class="project-image"><img src="assets/images/bodyarmor.jpg" alt="BODYARMOR Project"></div>
-                    <h4>Bodyarmor</h4>
-                    <div class="project-tags">
-                        <span>3D Animation</span>
-                        <span>Digital Content</span>
-                    </div>
-                </a>
-                <a href="project-nike.html" class="project-card">
-                    <div class="project-image"><img src="assets/images/nike.jpg" alt="Nike Project"></div>
-                    <h4>Nike</h4>
-                    <div class="project-tags">
-                        <span>Branding</span>
-                        <span>Creative Direction</span>
-                    </div>
-                </a>
-                <a href="project-powerade.html" class="project-card">
-                    <div class="project-image"><img src="assets/images/powerade.jpg" alt="Powerade Project"></div>
-                    <h4>Powerade</h4>
-                    <div class="project-tags">
-                        <span>Advertising</span>
-                        <span>Digital Content</span>
-                    </div>
-                </a>
-                <a href="project-flerish.html" class="project-card">
-                    <div class="project-image"><img src="assets/images/flerish.jpg" alt="Flerish Project"></div>
-                    <h4>Flerish</h4>
-                    <div class="project-tags">
-                        <span>Branding</span>
-                        <span>Advertising</span>
-                    </div>
-                </a>
-            </div>
+      </div>
+      <img src="images/special-day.jpg" class="fade-in special-day-img" style="max-width:620px;width:100%;height:350px;object-fit:cover;border-radius:4px;display:block;margin:40px auto 0;" alt="Villa Angelina">
+    </div>
+
+      <!-- Order of Events (inside Wedding Day section) -->
+      <div style="margin-top:70px;">
+        <div class="text-center">
+          <h2 class="page-title script-font">Order of Events</h2>
+          <div class="divider"></div>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-heading"><em>What</em> We Do</h2>
-            <p class="section-subheading">Creative services for brands that demand more.</p>
-
-            <div class="service-row">
-                <div class="service-info">
-                    <span class="service-number">[ 01 ]</span>
-                    <div class="service-info-content">
-                        <h3 class="service-title">Digital Content</h3>
-                    </div>
-                    <button class="service-toggle" aria-label="Toggle details">+</button>
-                </div>
-                <div class="service-list">
-                    <ul>
-                        <li>Graphic Design</li>
-                        <li>Video Editing</li>
-                        <li>3D Animation</li>
-                        <li>Content Strategy</li>
-                    </ul>
-                </div>
-                <div class="service-image">
-                    <div class="service-image-wrap">
-                        <img src="assets/images/digital-content.jpg" alt="Digital Content">
-                    </div>
-                </div>
+        <div class="events-timeline">
+          <div class="event-item fade-in">
+            <div class="event-icon">
+              <img src="images/icon-ceremony.png" alt="Ceremony icon">
             </div>
-
-            <div class="service-row">
-                <div class="service-info">
-                    <span class="service-number">[ 02 ]</span>
-                    <div class="service-info-content">
-                        <h3 class="service-title">Branding &amp;<br>Advertising</h3>
-                    </div>
-                    <button class="service-toggle" aria-label="Toggle details">+</button>
-                </div>
-                <div class="service-list">
-                    <ul>
-                        <li>Brand Strategy</li>
-                        <li>Logo Design</li>
-                        <li>Marketing/Advertising Creative</li>
-                        <li>Merchandise Design</li>
-                    </ul>
-                </div>
-                <div class="service-image">
-                    <div class="service-image-wrap">
-                        <img src="assets/images/branding.jpg" alt="Branding & Advertising">
-                    </div>
-                </div>
+            <div class="event-time">4:30 PM</div>
+            <div class="event-label">Ceremony</div>
+          </div>
+          <div class="event-item fade-in">
+            <div class="event-icon">
+              <img src="images/icon-cocktails.png" alt="Cocktail Hour icon">
             </div>
-
-            <div class="service-row">
-                <div class="service-info">
-                    <span class="service-number">[ 03 ]</span>
-                    <div class="service-info-content">
-                        <h3 class="service-title">Creative<br>Direction</h3>
-                    </div>
-                    <button class="service-toggle" aria-label="Toggle details">+</button>
-                </div>
-                <div class="service-list">
-                    <ul>
-                        <li>Athlete/Talent Branding</li>
-                        <li>Event Branding</li>
-                        <li>Design Systems</li>
-                        <li>Content Strategy</li>
-                    </ul>
-                </div>
-                <div class="service-image">
-                    <div class="service-image-wrap">
-                        <img src="assets/images/creative-direction.jpg" alt="Creative Direction">
-                    </div>
-                </div>
+            <div class="event-time">5:30 PM</div>
+            <div class="event-label">Cocktail Hour</div>
+          </div>
+          <div class="event-item fade-in">
+            <div class="event-icon">
+              <img src="images/icon-dinner.png" alt="Dinner icon">
             </div>
-
-            <div class="services-cta">
-                <a href="contact.html" class="btn-outline">Start Your Project</a>
+            <div class="event-time">6:30 PM</div>
+            <div class="event-label">Dinner</div>
+          </div>
+          <div class="event-item fade-in">
+            <div class="event-icon">
+              <img src="images/icon-party.png" alt="Party icon">
             </div>
+            <div class="event-time">7:30 PM</div>
+            <div class="event-label">Party</div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- We Meet You Section -->
-    <section class="meet-you">
-        <div class="container">
-            <h2 class="section-heading">We Meet You <em>Where You're At</em></h2>
-            <p class="section-subheading">No matter the stage, we plug in and push forward.</p>
-            <div class="meet-grid">
-                <div class="meet-card">
-                    <span class="meet-number">[ 01 ]</span>
-                    <h3>Building From Zero</h3>
-                    <p>Starting fresh? We help define your brand from the ground up — identity, strategy, and creative systems built to scale.</p>
-                </div>
-                <div class="meet-card">
-                    <span class="meet-number">[ 02 ]</span>
-                    <h3>Scaling What Works</h3>
-                    <p>Already have momentum? We step in to amplify what's working — refining your creative, expanding content, and elevating your presence.</p>
-                </div>
-                <div class="meet-card">
-                    <span class="meet-number">[ 03 ]</span>
-                    <h3>Need It Done Now</h3>
-                    <p>On a deadline? We operate fast and focused. Campaign launches, event content, product drops — we deliver under pressure.</p>
-                </div>
-            </div>
+    </div>
+  </div>
+
+  <!-- Wedding Party -->
+  <div class="wedding-party section-padding" style="background:white;">
+    <div class="max-width">
+      <div class="text-center">
+        <h2 class="page-title script-font">The Wedding Party</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="party-layout">
+        <div class="party-column fade-in">
+          <div class="party-group party-group-bridesmaids">
+            <h3>Bridesmaids</h3>
+            <div class="party-member"><span class="member-name">Mallorie Black</span><span class="member-role">Maid of Honor</span></div>
+            <div class="party-member"><span class="member-name">Erica Fried</span><span class="member-role">Maid of Honor</span></div>
+            <div class="party-member"><span class="member-name">Azura Cooke</span><span class="member-role">Matron of Honor</span></div>
+            <div class="party-member"><span class="member-name">Maddie Catinella</span><span class="member-role">Bridesmaid</span></div>
+            <div class="party-member"><span class="member-name">Maddy Denton</span><span class="member-role">Bridesmaid</span></div>
+            <div class="party-member"><span class="member-name">Sam Hurst</span><span class="member-role">Bridesmaid</span></div>
+            <div class="party-member"><span class="member-name">Libby Kline</span><span class="member-role">Bridesmaid</span></div>
+            <div class="party-member"><span class="member-name">Jenny Redmond</span><span class="member-role">Bridesmaid</span></div>
+            <div class="party-member"><span class="member-name">Marlie Tressler</span><span class="member-role">Bridesmaid</span></div>
+            <div class="party-member"><span class="member-name">Lexi Wood</span><span class="member-role">Bridesmaid</span></div>
+          </div>
+          <img src="images/bridesmaids-photo.jpg" class="party-img party-img-left" alt="Bridesmaids">
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-heading"><em>Who</em> We Are</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>At HyperFocus, we blend brand strategy with high-performing content, staying focused on every detail from concept to final delivery.</p>
-                    <p>We're not just a creative agency — we're your on-demand team. Built for brands that refuse to be average, we operate at the intersection of culture, strategy, and craft.</p>
-                    <p>Whether you're launching something new, scaling what's working, or need elite creative executed fast — we're the team that gets it done.</p>
-                    <a href="contact.html" class="btn-work-with-us">Work With Us</a>
-                </div>
-                <div class="about-founder">
-                    <div class="about-photo">
-                        <img src="assets/images/ryan.jpg" alt="Ryan Hurst — Founder, HyperFocus" class="founder-img">
-                    </div>
-                    <div class="founder-info">
-                        <h4 class="founder-name">Meet The Founder</h4>
-                        <p class="founder-bio">Ryan Hurst, a multidisciplinary creative director and graphic designer from Atlanta, Georgia, founded the agency in 2025, bringing over a decade of experience in the design and digital media industry.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="party-column fade-in">
+          <div class="party-group party-group-groomsmen">
+            <h3>Groomsmen</h3>
+            <div class="party-member"><span class="member-name">David Hurst</span><span class="member-role">Co-Best Man</span></div>
+            <div class="party-member"><span class="member-name">John Hurst</span><span class="member-role">Co-Best Man</span></div>
+            <div class="party-member"><span class="member-name">Carter Black</span><span class="member-role">Groomsman</span></div>
+            <div class="party-member"><span class="member-name">Conner Burks</span><span class="member-role">Groomsman</span></div>
+            <div class="party-member"><span class="member-name">Chris Dore</span><span class="member-role">Groomsman</span></div>
+            <div class="party-member"><span class="member-name">Pi</span><span class="member-role">Groomsman</span></div>
+            <div class="party-member"><span class="member-name">Daniel Kutka</span><span class="member-role">Groomsman</span></div>
+            <div class="party-member"><span class="member-name">Will Rowston</span><span class="member-role">Groomsman</span></div>
+          </div>
+          <img src="images/groomsmen-photo.jpg" class="party-img party-img-right" alt="Groomsmen">
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="reviews">
-        <div class="container">
-            <h2 class="section-heading"><em>Trusted</em> By</h2>
-            <p class="section-subheading">What our partners have to say</p>
+
+  <!-- Countdown Section -->
+  <div class="countdown-section">
+    <h2 class="page-title script-font" style="color:var(--cream);">Let The Countdown Begin</h2>
+    <div class="divider" style="background:rgba(252,248,242,0.3)"></div>
+    <div class="countdown" id="countdown">
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-days">---</span>
+        <span class="countdown-label">Days</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-hours">--</span>
+        <span class="countdown-label">Hours</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-mins">--</span>
+        <span class="countdown-label">Minutes</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-secs">--</span>
+        <span class="countdown-label">Seconds</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 3: TRAVEL & LODGING
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page" id="travel">
+  <div class="travel-section section-padding-lg" style="padding-top:140px;">
+    <div class="max-width">
+      <div class="text-center">
+        <h2 class="page-title script-font">Travel &amp; Lodging</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="text-center" style="margin-top:50px;">
+        <div class="section-subtitle">Travel</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:400; color:var(--blue);">Booking Flights</h3>
+        <div class="divider"></div>
+      </div>
+      <p class="fade-in" style="font-weight:300; line-height:1.75; color:#666; margin-bottom:30px;">Getting to the Amalfi Coast requires a little planning, but the destination is worth the journey. Here are the best strategies we have found for booking flights.</p>
+
+      <div class="travel-card fade-in">
+        <h3>Direct Route into Naples</h3>
+        <p>The closest airport is Naples (NAP). If you can find a good connection here, it is the easiest option because you are only about an hour's drive or ferry ride from Sorrento.</p>
+      </div>
+
+      <div class="travel-card fade-in">
+        <h3>Route into Rome</h3>
+        <p>We also recommend flying into Rome (FCO) as an alternative. It usually offers more direct flights and better prices. From Rome, you simply hop on the high-speed train (Frecciarossa) to Naples, which takes just over an hour.</p>
+      </div>
+
+      <div class="travel-card fade-in">
+        <h3>Be Creative with Routing</h3>
+        <p>Don't be afraid to break up your trip! Sometimes it is significantly cheaper to book a "positioning flight" to a major hub first.</p>
+        <div class="sub-tip"><strong>Via Europe:</strong> Look at flying into major cities such as London, Dublin, or Barcelona, spending a night or simply connecting there, and then grabbing a cheap budget flight to Naples.</div>
+        <div class="sub-tip" style="margin-top:8px;"><strong>Via the US:</strong> Double check the price of booking a separate domestic flight to JFK (New York) first. Often, the round-trip fares from JFK to Italy are unbeatable.</div>
+      </div>
+
+      <div class="travel-card fade-in" style="border-left:3px solid var(--blue);">
+        <h3>Passports</h3>
+        <p>A reminder to check that passports are valid for at least 6 months past the travel date.</p>
+      </div>
+
+      <!-- Lodging Section -->
+      <div class="text-center" style="margin-top:80px;">
+        <div class="section-subtitle">Lodging</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:400; color:var(--blue);">Hotels We Recommend</h3>
+        <div class="divider"></div>
+      </div>
+
+      <div class="hotel-cards">
+        <div class="hotel-card fade-in">
+          <img src="images/hotel-ambasciatori.jpg" class="hotel-img" alt="Grand Hotel Ambasciatori">
+          <div class="hotel-info">
+            <h3>Grand Hotel Ambasciatori</h3>
+            <p>Prestigious five-star hotel facing the stunning Gulf of Naples nestled among the Mediterranean Sea</p>
+            <a href="https://www.ambasciatorisorrento.com/it/" target="_blank" rel="noopener" class="book-now-btn">Book Now</a>
+          </div>
         </div>
-        <div class="testimonial-carousel-wrapper">
-            <button class="carousel-btn prev" id="testPrev" aria-label="Previous">&larr;</button>
-            <div class="testimonial-carousel" id="testimonialCarousel">
-                <div class="testimonial-slide active">
-                    <div class="testimonial-card">
-                        <div class="testimonial-photo"><img src="assets/images/testimonial-1.jpg" alt="Avery Johnson" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
-                        <div class="testimonial-content">
-                            <p class="testimonial-quote">"HyperFocus elevated our brand with creative that truly resonated. Their ability to understand our vision and translate it into high-impact content was exceptional."</p>
-                            <div class="testimonial-author">
-                                <h4>Avery Johnson</h4>
-                                <p>Founder, Flerish &amp; 40 Love Scottsdale</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-slide">
-                    <div class="testimonial-card">
-                        <div class="testimonial-photo"><img src="assets/images/testimonial-2.jpg" alt="Dansby Swanson" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
-                        <div class="testimonial-content">
-                            <p class="testimonial-quote">"Working with HyperFocus was seamless. They brought a level of creativity and professionalism that made the entire process easy and the results speak for themselves."</p>
-                            <div class="testimonial-author">
-                                <h4>Dansby Swanson</h4>
-                                <p>MLB Player</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-slide">
-                    <div class="testimonial-card">
-                        <div class="testimonial-photo"><img src="assets/images/testimonial-3.jpg" alt="Christian Pierre" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
-                        <div class="testimonial-content">
-                            <p class="testimonial-quote">"The team at HyperFocus was instrumental in bringing our creative visions to life. They've been true partners throughout the process. Professional, collaborative, and consistently delivering at a high level. The team moved quickly, elevated the vision, and executed with a level of polish and cultural fluency that made the campaign feel both credible and impactful."</p>
-                            <div class="testimonial-author">
-                                <h4>Christian Pierre</h4>
-                                <p>Social Media Director, BODYARMOR</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-slide">
-                    <div class="testimonial-card">
-                        <div class="testimonial-photo"><img src="assets/images/testimonial-4.jpg" alt="Ishaan Mishra" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
-                        <div class="testimonial-content">
-                            <p class="testimonial-quote">"HyperFocus operates at the intersection of culture and craft. They're always on the pulse of what actually matters to audiences, and the digital content they have created is consistently fire. They know how to make brands feel native to the moment and that's something you can't teach."</p>
-                            <div class="testimonial-author">
-                                <h4>Ishaan Mishra</h4>
-                                <p>Creative Director, Bleacher Report</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-btn next" id="testNext" aria-label="Next">&rarr;</button>
-            <div class="carousel-dots" id="testimonialDots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
+
+        <div class="hotel-card fade-in">
+          <img src="images/hotel-royal.jpg" class="hotel-img" alt="Grand Hotel Royal">
+          <div class="hotel-info">
+            <h3>Grand Hotel Royal</h3>
+            <p>A classy and stylish five-star estate in the heart of Sorrento, perched over the sea in a privileged location overlooking the Gulf of Naples</p>
+            <a href="https://www.royalsorrento.com/" target="_blank" rel="noopener" class="book-now-btn">Book Now</a>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <h2 class="section-heading">Frequently Asked <em>Questions</em></h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>What makes HyperFocus different?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We operate as an extension of your team. We focus on storytelling, systems, and scalable creative — not just one-off designs.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How do we get started?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Book a discovery call. We'll learn about your goals, timelines, and creative needs, then recommend a structure that fits.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Do you offer monthly packages?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes. We offer retainer-based creative partnerships as well as project-based engagements.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How long do projects take?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Timelines vary depending on scope. Most projects begin with strategy, followed by execution phases with clear milestones.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>What does pricing look like?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Pricing is tailored based on scope, complexity, and timeline. After a discovery call, we provide a clear proposal outlining deliverables and investment.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="text-center" style="margin-top:80px;">
+        <div class="section-subtitle">Italy Tips</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:400; color:var(--blue);">Things to Know Before You Go</h3>
+        <div class="divider"></div>
+      </div>
+
+      <div class="tip-grid">
+        <div class="tip-card fade-in">
+          <h4>Download WhatsApp</h4>
+          <p>WhatsApp is the standard way to communicate with everyone in Italy — from your driver to the boat captain. It works over WiFi/Data so you won't get charged for international texts.</p>
         </div>
-    </section>
-
-    <!-- CTA / Final Section -->
-    <section class="cta-final" id="cta">
-        <div class="cta-bg">
-            <img src="assets/images/cta-bg.jpg" alt="" style="width:100%;height:100%;object-fit:cover;">
-            <div class="cta-overlay"></div>
+        <div class="tip-card fade-in">
+          <h4>Carry Cash</h4>
+          <p>While most restaurants take credit cards, always carry 50–100 Euros in smaller bills. You will need it for tipping, taxis (whose card machines are often "broken"), and spontaneous lemon gelato.</p>
         </div>
-        <div class="cta-content">
-            <h2>Let's Build Something Great <em>Together</em></h2>
-            <a href="contact.html" class="btn-accent">Start Your Project</a>
+        <div class="tip-card fade-in">
+          <h4>Smart Shoes</h4>
+          <p>The Amalfi Coast is beautiful but steep. Between the cobblestones and the stairs, stilettos are a safety hazard. We highly recommend block heels, wedges, or dressy sandals.</p>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <span class="footer-logo"><em>HyperFocus</em></span>
-                <span class="footer-location">Atlanta, GA</span>
-            </div>
-            <div class="footer-links">
-                <a href="#work">Work</a>
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-            </div>
-            <div class="footer-socials">
-                <a href="https://www.instagram.com/hyperfocus.pro/" target="_blank">Instagram</a>
-                <a href="https://www.tiktok.com/@hyperfocus.pro" target="_blank">TikTok</a>
-                <a href="https://www.linkedin.com/company/hyperfocuspro/" target="_blank">LinkedIn</a>
-            </div>
+        <div class="tip-card fade-in">
+          <h4>Book Reservations Early</h4>
+          <p>This is a popular region! If you see a restaurant on this list (or Instagram) that you are dying to try, please book it 2–3 months in advance.</p>
         </div>
-    </footer>
+        <div class="tip-card fade-in">
+          <h4>Power Adapters</h4>
+          <p>Italy uses Type L (three pins in a row) or Type C (two pins) plugs. Pick one up before your trip!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    </div><!-- /smooth-content -->
-    </div><!-- /smooth-wrapper -->
 
-    <script>
-/* ============================================
-   HYPERFOCUS — All JavaScript
-   ============================================ */
-document.addEventListener('DOMContentLoaded', () => {
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 4: OUR ITALY GUIDE
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page" id="guide">
+  <div class="section-padding-lg" style="padding-top:140px;">
+    <div class="max-width">
+      <div class="text-center">
+        <h2 class="page-title script-font">Our Italy Guide</h2>
+        <div class="divider"></div>
+      </div>
+      <p class="guide-intro">We have curated a list of our absolute favorite experiences to help you make the most of your trip. Whether you are here for a few days or a full week, we hope you fall in love with this place just as much as we have.</p>
 
-    // DISABLE RIGHT-CLICK ON LOGOS
-    document.querySelectorAll('.ticker-logo').forEach(logo => {
-        logo.addEventListener('contextmenu', (e) => e.preventDefault());
-    });
+      <!-- Capri -->
+      <div class="experience-card fade-in">
+        <div class="experience-text">
+          <h3>A Private Boat Day Around Capri</h3>
+          <p>If you only do one extra excursion, make it this one. There is nothing quite like seeing the coast from the water. We recommend booking a private boat to drive around the island of Capri, swim in the grottos, and see the Faraglioni rocks up close. It is truly magical.</p>
+          <div class="tip">We booked our experiences through <a href="https://feelingitaly.com/" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline;">Feeling Italy</a> and highly recommend them! They took amazing care of us.</div>
+        </div>
+        <img src="images/capri.jpg" class="experience-img" style="object-fit:cover;" alt="Capri boat day">
+      </div>
 
-    // CUSTOM CURSOR (desktop only)
-    const isDesktop = window.innerWidth > 1024;
-    const cursorRing = document.querySelector('.cursor-ring');
-    const cursorDot = document.querySelector('.cursor-dot');
+      <!-- La Conca del Sogno -->
+      <div class="experience-card fade-in">
+        <div class="experience-text">
+          <h3>Beach Club Day at La Conca del Sogno</h3>
+          <p>La Conca del Sogno is a stunning beach club and restaurant tucked away in a secluded cove in Nerano. It feels exclusive, relaxing, and incredibly fun. The food is fresh, the water is clear, and the vibe is unmatched.</p>
+          <div class="tip">Tip: You will need to hire a driver to take you here (it is off the beaten path and tricky to find on your own), but trust us — it is awesome and worth every mile.</div>
+        </div>
+        <img src="images/conca-del-sogno.jpg" class="experience-img" style="object-fit:cover;" alt="La Conca del Sogno">
+      </div>
 
-    if (isDesktop) {
-        let mouseX = 0, mouseY = 0;
-        let ringX = 0, ringY = 0;
+      <!-- Positano -->
+      <div class="experience-card fade-in">
+        <div class="experience-text">
+          <h3>An Afternoon in Positano</h3>
+          <p>Positano is the jewel of the Amalfi Coast. We love spending an afternoon wandering the steep, winding streets, shopping for ceramics, and soaking in the views.</p>
+          <div class="tip">The Perfect Nightcap: After exploring, head to Aldo's Cocktail Bar at the iconic Le Sirenuse hotel. The cocktails are incredible (and strong!), but the view of the village houses lit up at night is the real star.</div>
+        </div>
+        <img src="images/positano.jpg" class="experience-img" style="object-fit:cover;" alt="Positano">
+      </div>
 
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            cursorDot.style.left = mouseX + 'px';
-            cursorDot.style.top = mouseY + 'px';
-        });
+      <h3 class="guide-region-heading">Florence &amp; Rome</h3>
 
-        function animateRing() {
-            ringX += (mouseX - ringX) * 0.15;
-            ringY += (mouseY - ringY) * 0.15;
-            cursorRing.style.left = ringX + 'px';
-            cursorRing.style.top = ringY + 'px';
-            requestAnimationFrame(animateRing);
-        }
-        animateRing();
+      <!-- Cinque Terre -->
+      <div class="experience-card fade-in">
+        <div class="experience-text">
+          <h3>A Day Trip to Cinque Terre</h3>
+          <p>There is nothing quite like seeing these five colorful fishing villages stacked against the rugged cliffs. We recommend taking the train from Florence to the first village, Riomaggiore, and then hopping on the local ferry to hop between Manarola and Vernazza. Seeing the coast from the water is truly magical and one of the most special places in Italy!</p>
+        </div>
+        <img src="images/cinque-terre.jpg" class="experience-img" style="object-fit:cover;" alt="Cinque Terre">
+      </div>
 
-        document.querySelectorAll('a, button, .project-card, .faq-question, .meet-card').forEach(el => {
-            el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
-            el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
-        });
+      <!-- Steak & Red Wine -->
+      <div class="experience-card fade-in">
+        <div class="experience-text">
+          <h3>Steak & Red Wine in Florence</h3>
+          <p>You cannot leave Florence without experiencing a proper Bistecca alla Fiorentina—a massive T-bone steak grilled over wood fire. Here are a few places we recommend: Buca Lapi, Trattoria Sostanza, and Trattoria 13 Gobbi.</p>
+        </div>
+        <img src="images/florence-leather.jpg" class="experience-img" style="object-fit:cover;" alt="Steak and red wine in Florence">
+      </div>
 
-        document.addEventListener('mouseleave', () => {
-            cursorRing.style.opacity = '0';
-            cursorDot.style.opacity = '0';
-        });
-        document.addEventListener('mouseenter', () => {
-            cursorRing.style.opacity = '1';
-            cursorDot.style.opacity = '1';
-        });
-    }
+      <!-- Gianicolo Hill -->
+      <div class="experience-card fade-in">
+        <div class="experience-text">
+          <h3>Sunset in Rome on Gianicolo Hill</h3>
+          <p>If you want the absolute best view of Rome, head here. Perched just above Trastevere, this spot offers a sweeping panorama of the entire city. We recommend grabbing a bottle of wine and finding a spot on the wall to watch the sunset — you can even spot the Colosseum in the distance. It is peaceful, romantic, and truly feels like you are floating above the domes.</p>
+        </div>
+        <img src="images/gianicolo.jpg" class="experience-img" style="object-fit:cover;" alt="Gianicolo Hill sunset">
+      </div>
 
-    // NAVBAR + HERO refs (used in smooth scroll loop)
-    const navbar = document.getElementById('navbar');
-    const heroImg = document.querySelector('.hero-img');
+    </div>
+  </div>
+</section>
 
-    // MOBILE NAV
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const navContainer = document.querySelector('.nav-container');
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('mobile-open');
-            navContainer.classList.toggle('menu-open');
-        });
-    }
 
-    // FADE-IN ON SCROLL
-    const fadeElements = document.querySelectorAll(
-        '.service-row, .about-content, .faq-item, .section-heading, .section-heading-large, .testimonial-carousel-wrapper, .meet-card'
-    );
-    fadeElements.forEach(el => el.classList.add('fade-in'));
-    const observerFade = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) { entry.target.classList.add('visible'); observerFade.unobserve(entry.target); }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    fadeElements.forEach(el => observerFade.observe(el));
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 5: FAQs + RSVP
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page" id="faq">
+  <div class="section-padding-lg" style="padding-top:140px;">
+    <div class="max-width">
+      <div class="text-center">
+        <h2 class="page-title" style="font-family:'Cormorant Garamond',serif;font-weight:400;">Frequently Asked Questions</h2>
+        <div class="divider"></div>
+      </div>
 
-    // TESTIMONIALS CAROUSEL
-    const testCarousel = document.getElementById('testimonialCarousel');
-    if (testCarousel) {
-        const testSlides = testCarousel.querySelectorAll('.testimonial-slide');
-        const testDots = document.querySelectorAll('#testimonialDots .dot');
-        const testPrev = document.getElementById('testPrev');
-        const testNext = document.getElementById('testNext');
-        let currentTest = 0;
-        let autoPlayTimer;
+      <div class="faq-list">
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">Where are you registered?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer"><p>Honestly, your presence in Italy is the greatest gift we could ever ask for! We fully understand the effort and travel required for you to be here with us, so please, do not feel obligated to get us anything. We will add a small registry option closer to the date for anyone who still wishes to send a gift.</p></div>
+        </div>
 
-        function fadeToSlide(nextIndex) {
-            if (nextIndex === currentTest) return;
-            const current = testSlides[currentTest];
-            const next = testSlides[nextIndex];
-            current.style.transition = 'opacity 0.6s ease';
-            current.style.opacity = '0';
-            setTimeout(() => {
-                current.classList.remove('active');
-                current.style.opacity = '';
-                next.classList.add('active');
-                next.style.opacity = '0';
-                requestAnimationFrame(() => {
-                    next.style.transition = 'opacity 0.6s ease';
-                    requestAnimationFrame(() => { next.style.opacity = '1'; });
-                });
-                currentTest = nextIndex;
-                testDots.forEach((d, i) => { d.classList.remove('active'); if (i === currentTest) d.classList.add('active'); });
-            }, 600);
-        }
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">Do I need to rent a car?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer"><p>We strongly recommend against renting a car. The roads on the Amalfi Coast are extremely narrow, winding, and crowded. Parking is scarce and expensive. We have arranged transportation for the wedding events, and for your free time, we recommend hiring private drivers or using ferries.</p></div>
+        </div>
 
-        function resetAutoPlay() {
-            clearInterval(autoPlayTimer);
-            autoPlayTimer = setInterval(() => { fadeToSlide((currentTest + 1) % testSlides.length); }, 5000);
-        }
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">What is the dress code?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer">
+            <p>We can't wait to see you look your best!</p>
+            <ul>
+              <li>Welcome Party (May 26): Italian Chic</li>
+              <li>The Wedding (May 27): Formal / Black Tie — Suits or tuxedos for men; floor-length or fancy cocktail dresses for women.</li>
+            </ul>
+          </div>
+        </div>
 
-        if (testPrev) testPrev.addEventListener('click', () => { fadeToSlide((currentTest - 1 + testSlides.length) % testSlides.length); resetAutoPlay(); });
-        if (testNext) testNext.addEventListener('click', () => { fadeToSlide((currentTest + 1) % testSlides.length); resetAutoPlay(); });
-        testDots.forEach((dot, i) => { dot.addEventListener('click', () => { fadeToSlide(i); resetAutoPlay(); }); });
-        resetAutoPlay();
-    }
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">What time should I be ready on the wedding day?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer"><p>The shuttles will depart the hotel promptly at 3:45 PM. Please be in the lobby by 3:30 PM so we can stay on schedule!</p></div>
+        </div>
 
-    // SCROLL TO TOP BUTTON (mobile/tablet only)
-    if (!isDesktop) {
-        const scrollTopBtn = document.getElementById('scrollTopBtn');
-        window.addEventListener('scroll', () => {
-            scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
-        });
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">Are kids invited?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer"><p>Our wedding events will be adults-only (except for Carter Black ;). We hope you view this as a fun getaway to enjoy a few spritzes!</p></div>
+        </div>
 
-    // SERVICE ACCORDION (mobile/tablet only)
-    if (!isDesktop) {
-        document.querySelectorAll('.service-row').forEach(row => {
-            row.addEventListener('click', () => {
-                const isOpen = row.classList.contains('service-open');
-                document.querySelectorAll('.service-row').forEach(other => {
-                    if (other !== row) other.classList.remove('service-open');
-                });
-                row.classList.toggle('service-open', !isOpen);
-            });
-        });
-    }
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">Can I bring a date?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer"><p>We will be having a smaller destination wedding and are only able to accommodate the guests named on your invitation.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    // FAQ ACCORDION
-    document.querySelectorAll('.faq-item').forEach(item => {
-        item.querySelector('.faq-question').addEventListener('click', () => {
-            const isOpen = item.classList.contains('open');
-            document.querySelectorAll('.faq-item').forEach(other => { if (other !== item) other.classList.remove('open'); });
-            item.classList.toggle('open', !isOpen);
-        });
-    });
+  <!-- ╔═══════════════════════════════════════════════════════════╗
+       ║  REPLACE: RSVP LINK                                      ║
+       ║  Change the href="#" below to your Joy RSVP page URL     ║
+       ║  Example: href="https://withjoy.com/meredith-and-ryan"   ║
+       ╚═══════════════════════════════════════════════════════════╝ -->
+  <div class="rsvp-section" id="rsvpSection">
+    <h2 class="page-title" style="font-family:'Cormorant Garamond',serif;font-weight:400;">RSVP</h2>
+    <div class="divider" style="background:rgba(252,248,242,0.3)"></div>
+    <p>We would be honored to have you celebrate with us in Italy. Please let us know if you can make it!</p>
+    <a href="https://withjoy.com/ryan-and-meredith-may-27/rsvp" class="rsvp-link-btn" target="_blank">RSVP Here</a>
+  </div>
 
-    // SMOOTH LERP SCROLL (desktop only)
-    const smoothWrapper = document.getElementById('smooth-wrapper');
-    const smoothContent = document.getElementById('smooth-content');
+</section>
 
-    if (isDesktop) {
-        let scrollTarget = 0;
-        let scrollCurrent = 0;
-        const ease = 0.075;
 
-        function getMaxScroll() {
-            return smoothContent.scrollHeight - window.innerHeight;
-        }
+<!-- Scroll to top button (mobile only) -->
+<button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'});" aria-label="Scroll to top">&uarr;</button>
 
-        smoothWrapper.addEventListener('wheel', (e) => {
-            e.preventDefault();
-            scrollTarget += e.deltaY;
-            scrollTarget = Math.max(0, Math.min(scrollTarget, getMaxScroll()));
-        }, { passive: false });
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" id="siteFooter">
+  <!-- REPLACE: Add your logo image to the images folder and update the filename below -->
+  <div class="footer-logo"><img src="images/logo.png" alt="Meredith & Ryan"></div>
+  <p class="footer-date">May 27, 2027 &middot; Sorrento, Italy</p>
+</footer>
 
-        function smoothScrollLoop() {
-            scrollCurrent += (scrollTarget - scrollCurrent) * ease;
-            smoothContent.style.transform = 'translateY(' + (-scrollCurrent) + 'px)';
 
-            navbar.classList.toggle('scrolled', scrollCurrent > 100);
-            if (heroImg) {
-                const scale = 1 + (scrollCurrent * 0.0004);
-                heroImg.style.transform = 'scale(' + Math.min(scale, 1.3) + ')';
-            }
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+// ---- Countdown Timer (counts down to May 27, 2027 at 4pm EST) ----
+function updateCountdown() {
+  var wedding = new Date('2027-05-27T16:00:00-04:00');
+  var now = new Date();
+  var diff = wedding - now;
+  if (diff <= 0) { diff = 0; }
+  document.getElementById('cd-days').textContent  = Math.floor(diff / (1000*60*60*24));
+  document.getElementById('cd-hours').textContent = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  document.getElementById('cd-mins').textContent  = Math.floor((diff % (1000*60*60)) / (1000*60));
+  document.getElementById('cd-secs').textContent  = Math.floor((diff % (1000*60)) / 1000);
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
 
-            requestAnimationFrame(smoothScrollLoop);
-        }
-        smoothScrollLoop();
+// ---- Page Navigation ----
+function showPage(pageId) {
+  // Hide ALL pages (both via class and inline style for bulletproof hiding)
+  var allPages = document.querySelectorAll('.page');
+  for (var i = 0; i < allPages.length; i++) {
+    allPages[i].classList.remove('active');
+    allPages[i].style.display = 'none';
+  }
+  // Show the requested page
+  var target = document.getElementById(pageId);
+  if (target) {
+    target.classList.add('active');
+    target.style.display = 'block';
+  }
+  // Scroll to top
+  window.scrollTo(0, 0);
+  // Show/hide nav
+  var nav = document.getElementById('siteNav');
+  if (pageId === 'home') { nav.classList.add('hidden-nav'); }
+  else { nav.classList.remove('hidden-nav'); }
+  // Highlight active nav item
+  var allNavLinks = document.querySelectorAll('.nav-links a');
+  for (var j = 0; j < allNavLinks.length; j++) {
+    allNavLinks[j].classList.remove('nav-active');
+  }
+  var highlightId = (arguments.length > 1 && arguments[1]) ? arguments[1] : pageId;
+  var activeLink = document.getElementById('nav-' + highlightId);
+  if (activeLink) { activeLink.classList.add('nav-active'); }
+  // Hide footer on home page
+  var footer = document.getElementById('siteFooter');
+  if (footer) { footer.style.display = (pageId === 'home') ? 'none' : 'block'; }
+  // Remember current page so refresh stays here
+  try { window.location.hash = pageId; } catch(e) {}
+  // Trigger animations
+  setTimeout(observeAnimations, 150);
+}
 
-        // On page load, check for hash in URL and scroll to it
-        if (window.location.hash) {
-            const hashTarget = document.querySelector(window.location.hash);
-            if (hashTarget) {
-                const pos = Math.max(0, Math.min(hashTarget.offsetTop, getMaxScroll()));
-                scrollTarget = pos;
-                scrollCurrent = pos;
-            }
-        }
+function enterSite() { showPage('details'); }
 
-        // Anchor link smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', (e) => {
-                const target = document.querySelector(anchor.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    scrollTarget = target.offsetTop;
-                    scrollTarget = Math.max(0, Math.min(scrollTarget, getMaxScroll()));
-                }
-            });
-        });
+// On load, check if there's a saved page in the URL hash
+(function() {
+  var hash = window.location.hash.replace('#', '');
+  var startPage = (hash && document.getElementById(hash)) ? hash : 'home';
+  var allPages = document.querySelectorAll('.page');
+  for (var i = 0; i < allPages.length; i++) {
+    if (allPages[i].id === startPage) {
+      allPages[i].style.display = 'block';
+      allPages[i].classList.add('active');
     } else {
-        // Mobile/tablet: native scroll with navbar toggle + parallax
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 100);
-            if (heroImg) {
-                const scale = 1 + (window.scrollY * 0.0004);
-                heroImg.style.transform = 'scale(' + Math.min(scale, 1.3) + ')';
-            }
-        });
+      allPages[i].style.display = 'none';
+      allPages[i].classList.remove('active');
     }
+  }
+  // Show nav and highlight active item if not on home
+  var nav = document.getElementById('siteNav');
+  if (startPage === 'home') { nav.classList.add('hidden-nav'); }
+  else { nav.classList.remove('hidden-nav'); }
+  var activeLink = document.getElementById('nav-' + startPage);
+  if (activeLink) { activeLink.classList.add('nav-active'); }
+  // Hide footer on home
+  var footer = document.getElementById('siteFooter');
+  if (footer) { footer.style.display = (startPage === 'home') ? 'none' : 'block'; }
+})();
 
-    // ANIMATED FILM GRAIN
-    const noiseCanvas = document.getElementById('noiseCanvas');
-    if (noiseCanvas) {
-        const ctx = noiseCanvas.getContext('2d');
-        const heroEl = noiseCanvas.closest('.hero-noise');
-        let grainW = heroEl ? heroEl.offsetWidth : 1920;
-        let grainH = heroEl ? heroEl.offsetHeight : 1080;
-        noiseCanvas.width = grainW;
-        noiseCanvas.height = grainH;
+// ---- FAQ Accordion ----
+function toggleFaq(item) {
+  var wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+  if (!wasOpen) item.classList.add('open');
+}
 
-        function renderGrain() {
-            const imageData = ctx.createImageData(grainW, grainH);
-            const data = imageData.data;
-            for (let i = 0; i < data.length; i += 4) {
-                const v = Math.random() * 255;
-                data[i] = v;
-                data[i + 1] = v;
-                data[i + 2] = v;
-                data[i + 3] = 255;
-            }
-            ctx.putImageData(imageData, 0, 0);
-        }
+// ---- Scroll Fade-in Animations ----
+function observeAnimations() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-in, .weekend-col, .experience-card').forEach(function(el) {
+    if (!el.classList.contains('visible')) { observer.observe(el); }
+  });
+}
+document.addEventListener('DOMContentLoaded', observeAnimations);
 
-        let lastFrame = 0;
-        const fps = 12;
-        const interval = 1000 / fps;
+// Force video autoplay and hide any lingering play buttons
+var bgVideo = document.querySelector('.home-bg video');
+if (bgVideo) {
+  bgVideo.controls = false;
+  bgVideo.play().catch(function() {
+    // If autoplay blocked, try playing on first user touch
+    document.addEventListener('touchstart', function playOnce() {
+      bgVideo.play();
+      document.removeEventListener('touchstart', playOnce);
+    }, { once: true });
+  });
+}
 
-        function animateGrain(timestamp) {
-            if (timestamp - lastFrame >= interval) {
-                renderGrain();
-                lastFrame = timestamp;
-            }
-            requestAnimationFrame(animateGrain);
-        }
-        requestAnimationFrame(animateGrain);
-    }
+// ---- Hero Carousel ----
+(function() {
+  var slides = document.querySelectorAll('.carousel-slide');
+  if (slides.length < 2) return;
+  var current = 0;
+  setInterval(function() {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 5000);
+})();
 
-});
-    </script>
+// ---- Scroll to Top Button (mobile) ----
+(function() {
+  var btn = document.getElementById('scrollTopBtn');
+  if (!btn) return;
+  var mq = window.matchMedia('(max-width: 768px)');
+  function handleScroll() {
+    if (!mq.matches) { btn.style.display = 'none'; return; }
+    btn.style.display = 'block';
+    if (window.scrollY > 300) { btn.classList.add('visible'); }
+    else { btn.classList.remove('visible'); }
+  }
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+})();
+</script>
+
 </body>
 </html>

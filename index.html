@@ -352,20 +352,19 @@ body {
 
 .weekend-columns {
   display: flex;
-  flex-direction: column;
-  gap: 0;
-  max-width: 700px;
+  justify-content: space-around;
+  gap: 40px;
+  max-width: 960px;
   margin: 60px auto 0;
 }
 .weekend-col {
+  flex: 1;
   text-align: center;
-  padding: 40px 20px;
+  padding: 20px 10px;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.7s ease;
-  border-bottom: 1px solid rgba(252, 248, 242, 0.15);
 }
-.weekend-col:last-child { border-bottom: none; }
 .weekend-col.visible { opacity: 1; transform: translateY(0); }
 .weekend-col:nth-child(2) { transition-delay: 0.15s; }
 .weekend-col:nth-child(3) { transition-delay: 0.3s; }
@@ -883,7 +882,7 @@ body {
   .wedding-party { padding: 50px 0 60px; }
   .countdown-section { padding: 50px 24px; }
   #details .text-center[style*="padding:100px"] { padding: 70px 24px 20px !important; }
-  .weekend-columns { flex-direction: column; gap: 0; }
+  .weekend-columns { flex-direction: column; gap: 30px; }
   .weekend-event-title { font-size: 26px; }
   .special-day-grid { grid-template-columns: 1fr; gap: 30px; }
   .special-day-img { height: 250px !important; margin-top: 0 !important; }
@@ -1352,6 +1351,7 @@ body {
       <div class="experience-card fade-in">
         <div class="experience-text">
           <h3><a href="https://www.lagavitella.it/" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline;">Cooking Class at La Gavitella</a></h3>
+          <p>Enjoy a hands-on Italian cooking class at La Gavitella, where you'll learn to make fresh pasta and authentic Neapolitan pizza with expert local chefs. Finish by enjoying your meal on a stunning seaside terrace overlooking the Amalfi Coast.</p>
         </div>
         <img src="images/la-gavitella.jpg" class="experience-img" style="object-fit:cover;" alt="Cooking Class at La Gavitella">
       </div>

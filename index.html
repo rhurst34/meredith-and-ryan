@@ -352,25 +352,61 @@ body {
 
 .weekend-columns {
   display: flex;
-  justify-content: space-around;
-  gap: 40px;
-  max-width: 960px;
+  flex-direction: column;
+  gap: 0;
+  max-width: 700px;
   margin: 60px auto 0;
 }
 .weekend-col {
-  flex: 1;
   text-align: center;
+  padding: 40px 20px;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.7s ease;
+  border-bottom: 1px solid rgba(252, 248, 242, 0.15);
 }
+.weekend-col:last-child { border-bottom: none; }
 .weekend-col.visible { opacity: 1; transform: translateY(0); }
 .weekend-col:nth-child(2) { transition-delay: 0.15s; }
 .weekend-col:nth-child(3) { transition-delay: 0.3s; }
 
+.weekend-date {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+.weekend-event-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 20px;
+}
+.weekend-detail-row {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--cream);
+  opacity: 0.9;
+  margin-bottom: 6px;
+}
+.weekend-detail-row strong {
+  font-weight: 500;
+}
+.weekend-detail-note {
+  font-size: 13px;
+  opacity: 0.6;
+  color: var(--cream);
+  margin-top: 6px;
+  font-style: italic;
+}
+
 .icon-placeholder {
   width: 70px; height: 70px;
-  margin: 0 auto 28px;
+  margin: 0 auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -847,7 +883,8 @@ body {
   .wedding-party { padding: 50px 0 60px; }
   .countdown-section { padding: 50px 24px; }
   #details .text-center[style*="padding:100px"] { padding: 70px 24px 20px !important; }
-  .weekend-columns { flex-direction: column; gap: 30px; }
+  .weekend-columns { flex-direction: column; gap: 0; }
+  .weekend-event-title { font-size: 26px; }
   .special-day-grid { grid-template-columns: 1fr; gap: 30px; }
   .special-day-img { height: 250px !important; margin-top: 0 !important; }
   .special-day .divider { margin-bottom: 20px; }
@@ -976,28 +1013,31 @@ body {
         <div class="icon-placeholder">
           <img src="images/icon-welcome.png" alt="Welcome Party icon">
         </div>
-        <h3>Wednesday, May 26th</h3>
-        <p style="font-family:'Cormorant Garamond',serif; font-size:18px; margin-bottom:14px; font-weight:600;">Welcome Party</p>
-        <p><strong>Dinner:</strong> Terrace at Grand Hotel Europa Palace</p>
-        <p><strong>Dress Code:</strong> Italian Chic</p>
-        <p style="opacity:0.7; font-size:13px; margin-top:4px;">(Think linen shirts, sundresses. No ties required)</p>
+        <div class="weekend-date">Wednesday, May 26th</div>
+        <div class="weekend-event-title">Welcome Party</div>
+        <div class="weekend-detail-row"><strong>Location:</strong> Terrace at Grand Hotel Europa Palace</div>
+        <div class="weekend-detail-row"><strong>Dress Code:</strong> Italian Chic</div>
+        <div class="weekend-detail-note">(Think linen shirts, sundresses. No ties required)</div>
       </div>
 
       <div class="weekend-col">
         <div class="icon-placeholder">
           <img src="images/icon-wedding.png" alt="Wedding icon">
         </div>
-        <h3>Thursday, May 27th</h3>
-        <p style="font-family:'Cormorant Garamond',serif; font-size:18px; margin-bottom:14px; font-weight:600;">Wedding Day</p>
-        <p><strong>Dress Code:</strong> Black Tie</p>
+        <div class="weekend-date">Thursday, May 27th</div>
+        <div class="weekend-event-title">Wedding Day</div>
+        <div class="weekend-detail-row"><strong>Location:</strong> Villa Angelina</div>
+        <div class="weekend-detail-row"><strong>Time:</strong> 4:30 PM</div>
+        <div class="weekend-detail-row"><strong>Dress Code:</strong> Formal / Black Tie</div>
       </div>
 
       <div class="weekend-col">
         <div class="icon-placeholder">
           <img src="images/icon-pool.png" alt="Pool Party icon">
         </div>
-        <h3>Friday, May 28th</h3>
-        <p style="font-family:'Cormorant Garamond',serif; font-size:18px; margin-bottom:14px; font-weight:600;">Pool Party at Hotel</p>
+        <div class="weekend-date">Friday, May 28th</div>
+        <div class="weekend-event-title">Pool Party</div>
+        <div class="weekend-detail-row"><strong>Location:</strong> Hotel</div>
       </div>
     </div>
   </div>
@@ -1017,11 +1057,11 @@ body {
           </div>
           <div class="detail-row">
             <span class="detail-label" style="color:var(--blue);">Time:</span>
-            <span>4:00 PM</span>
+            <span>4:30 PM</span>
           </div>
           <div class="detail-row">
             <span class="detail-label" style="color:var(--blue);">Dress Code:</span>
-            <span>Black Tie</span>
+            <span>Formal / Black Tie</span>
           </div>
         </div>
 
@@ -1193,6 +1233,28 @@ body {
         <p>We recommend our guests stay at the <strong>Grand Hotel Europa Palace</strong> or the <strong>Hotel Plaza</strong>, both located in the heart of Sorrento. We believe booking will open up around September 2026 — we will keep you updated as we learn more!</p>
       </div>
 
+      <div class="hotel-cards">
+        <div class="hotel-card fade-in">
+          <a href="https://www.grandhoteleuropapalace.com/" target="_blank" rel="noopener">
+            <img src="images/hotel-europa-palace.jpg" class="hotel-img" alt="Grand Hotel Europa Palace">
+          </a>
+          <div class="hotel-info">
+            <h3>Grand Hotel Europa Palace</h3>
+            <a href="https://www.grandhoteleuropapalace.com/" target="_blank" rel="noopener" class="book-now-btn">View Hotel</a>
+          </div>
+        </div>
+
+        <div class="hotel-card fade-in">
+          <a href="https://www.plazasorrento.com/" target="_blank" rel="noopener">
+            <img src="images/hotel-plaza.jpg" class="hotel-img" alt="Hotel Plaza">
+          </a>
+          <div class="hotel-info">
+            <h3>Hotel Plaza</h3>
+            <a href="https://www.plazasorrento.com/" target="_blank" rel="noopener" class="book-now-btn">View Hotel</a>
+          </div>
+        </div>
+      </div>
+
       <div class="text-center" style="margin-top:80px;">
         <div class="section-subtitle">Italy Tips</div>
         <h3 style="font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:400; color:var(--blue);">Things to Know Before You Go</h3>
@@ -1286,6 +1348,14 @@ body {
         <img src="images/arienzo-beach.jpg" class="experience-img" style="object-fit:cover;" alt="Arienzo Beach Club in Positano">
       </div>
 
+      <!-- Cooking Class -->
+      <div class="experience-card fade-in">
+        <div class="experience-text">
+          <h3><a href="https://www.lagavitella.it/" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline;">Cooking Class at La Gavitella</a></h3>
+        </div>
+        <img src="images/la-gavitella.jpg" class="experience-img" style="object-fit:cover;" alt="Cooking Class at La Gavitella">
+      </div>
+
       <h3 class="guide-region-heading">Florence &amp; Rome</h3>
 
       <!-- Cinque Terre -->
@@ -1348,7 +1418,7 @@ body {
             <p>We can't wait to see you look your best!</p>
             <ul>
               <li>Welcome Party (May 26): Italian Chic</li>
-              <li>The Wedding (May 27): Black Tie</li>
+              <li>The Wedding (May 27): Formal / Black Tie</li>
             </ul>
           </div>
         </div>

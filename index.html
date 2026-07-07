@@ -156,7 +156,9 @@ body {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 1;
-  background: transparent;
+  background: rgba(0,0,0,0.001);
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: auto;
 }
 
 .home-content {
@@ -1573,13 +1575,26 @@ document.addEventListener('DOMContentLoaded', observeAnimations);
 var bgVideo = document.querySelector('.home-bg video');
 if (bgVideo) {
   bgVideo.controls = false;
+  bgVideo.removeAttribute('controls');
+  bgVideo.setAttribute('playsinline', '');
+  bgVideo.setAttribute('disablePictureInPicture', '');
+  bgVideo.style.pointerEvents = 'none';
+  // Remove any shadow DOM controls iOS injects
+  try {
+    var shadow = bgVideo.shadowRoot;
+    if (shadow) { shadow.innerHTML = ''; }
+  } catch(e) {}
   bgVideo.play().catch(function() {
-    // If autoplay blocked, try playing on first user touch
     document.addEventListener('touchstart', function playOnce() {
       bgVideo.play();
       document.removeEventListener('touchstart', playOnce);
     }, { once: true });
   });
+  // Periodically ensure controls stay off
+  setInterval(function() {
+    bgVideo.controls = false;
+    bgVideo.removeAttribute('controls');
+  }, 1000);
 }
 
 // ---- Hero Carousel ----

@@ -1579,22 +1579,41 @@ if (bgVideo) {
   bgVideo.setAttribute('playsinline', '');
   bgVideo.setAttribute('disablePictureInPicture', '');
   bgVideo.style.pointerEvents = 'none';
-  // Remove any shadow DOM controls iOS injects
-  try {
-    var shadow = bgVideo.shadowRoot;
-    if (shadow) { shadow.innerHTML = ''; }
-  } catch(e) {}
-  bgVideo.play().catch(function() {
-    document.addEventListener('touchstart', function playOnce() {
-      bgVideo.play();
-      document.removeEventListener('touchstart', playOnce);
-    }, { once: true });
+
+  function tryPlayVideo() {
+    var playPromise = bgVideo.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(function() {});
+    }
+  }
+
+  // Try playing immediately
+  tryPlayVideo();
+
+  // Also try on any user interaction (tap, scroll, click) anywhere on the page
+  ['touchstart', 'click', 'scroll'].forEach(function(evt) {
+    document.addEventListener(evt, function playOnce() {
+      tryPlayVideo();
+      document.removeEventListener(evt, playOnce);
+    }, { once: true, passive: true });
   });
+
+  // Also try when the overlay itself is tapped
+  var overlay = document.querySelector('.video-overlay');
+  if (overlay) {
+    overlay.addEventListener('touchstart', function() { tryPlayVideo(); }, { passive: true });
+    overlay.addEventListener('click', function() { tryPlayVideo(); });
+  }
+
   // Periodically ensure controls stay off
   setInterval(function() {
     bgVideo.controls = false;
     bgVideo.removeAttribute('controls');
   }, 1000);
+
+  // Try again after a short delay (some browsers need this)
+  setTimeout(tryPlayVideo, 500);
+  setTimeout(tryPlayVideo, 1500);
 }
 
 // ---- Hero Carousel ----

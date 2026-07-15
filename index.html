@@ -971,6 +971,7 @@ body {
     <video autoplay muted loop playsinline disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" style="pointer-events:none;">
       <source src="images/home-video.mp4" type="video/mp4">
     </video>
+    <img src="images/home-video-fallback.jpg" class="video-fallback" alt="" style="display:none; position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;">
     <div class="video-overlay"></div>
 
     <!-- OPTION B: IMAGE — uncomment this line and add your photo -->
@@ -1571,8 +1572,9 @@ function observeAnimations() {
 }
 document.addEventListener('DOMContentLoaded', observeAnimations);
 
-// Force video autoplay and hide any lingering play buttons
+// Force video autoplay — if blocked (Low Power Mode), hide video and show fallback image
 var bgVideo = document.querySelector('.home-bg video');
+var fallbackImg = document.querySelector('.video-fallback');
 if (bgVideo) {
   bgVideo.controls = false;
   bgVideo.removeAttribute('controls');
@@ -1580,30 +1582,39 @@ if (bgVideo) {
   bgVideo.setAttribute('disablePictureInPicture', '');
   bgVideo.style.pointerEvents = 'none';
 
+  function showFallback() {
+    if (fallbackImg) {
+      bgVideo.style.display = 'none';
+      fallbackImg.style.display = 'block';
+    }
+  }
+
   function tryPlayVideo() {
     var playPromise = bgVideo.play();
     if (playPromise !== undefined) {
-      playPromise.catch(function() {});
+      playPromise.then(function() {
+        // Video is playing — make sure it stays visible
+        bgVideo.style.display = '';
+        if (fallbackImg) fallbackImg.style.display = 'none';
+      }).catch(function() {
+        // Autoplay blocked — swap to still image
+        showFallback();
+      });
     }
   }
 
   // Try playing immediately
   tryPlayVideo();
 
-  // Also try on any user interaction (tap, scroll, click) anywhere on the page
+  // Also try on any user interaction
   ['touchstart', 'click', 'scroll'].forEach(function(evt) {
     document.addEventListener(evt, function playOnce() {
+      // On interaction, try video again
+      bgVideo.style.display = '';
       tryPlayVideo();
       document.removeEventListener(evt, playOnce);
     }, { once: true, passive: true });
   });
-
-  // Also try when the overlay itself is tapped
-  var overlay = document.querySelector('.video-overlay');
-  if (overlay) {
-    overlay.addEventListener('touchstart', function() { tryPlayVideo(); }, { passive: true });
-    overlay.addEventListener('click', function() { tryPlayVideo(); });
-  }
 
   // Periodically ensure controls stay off
   setInterval(function() {
@@ -1611,9 +1622,12 @@ if (bgVideo) {
     bgVideo.removeAttribute('controls');
   }, 1000);
 
-  // Try again after a short delay (some browsers need this)
+  // Check again after short delays
   setTimeout(tryPlayVideo, 500);
-  setTimeout(tryPlayVideo, 1500);
+  setTimeout(function() {
+    // Final check — if video still isn't playing, show fallback
+    if (bgVideo.paused) showFallback();
+  }, 2000);
 }
 
 // ---- Hero Carousel ----

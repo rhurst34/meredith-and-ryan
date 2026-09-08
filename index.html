@@ -1061,7 +1061,6 @@ body {
     <li><a href="javascript:void(0)" id="nav-details" onclick="showPage('details'); return false;">Wedding Details</a></li>
     <li><a href="javascript:void(0)" id="nav-travel" onclick="showPage('travel'); return false;">Travel &amp; Lodging</a></li>
     <li><a href="javascript:void(0)" id="nav-guide" onclick="showPage('guide'); return false;">Our Italy Guide</a></li>
-    <li><a href="javascript:void(0)" id="nav-dresscode" onclick="showPage('dresscode'); return false;">Dress Code</a></li>
     <li><a href="javascript:void(0)" id="nav-faq" onclick="showPage('faq'); return false;">FAQs</a></li>
 
     <!-- ╔═══════════════════════════════════════════════════════╗
@@ -1069,6 +1068,7 @@ body {
          ║  Change the # below to your Joy URL                  ║
          ╚═══════════════════════════════════════════════════════╝ -->
     <li><a href="javascript:void(0)" id="nav-rsvp" onclick="showPage('faq','rsvp'); setTimeout(function(){document.getElementById('rsvpSection').scrollIntoView({behavior:'smooth'});},200); return false;" class="rsvp-btn">RSVP</a></li>
+    <li><a href="javascript:void(0)" id="nav-dresscode" onclick="showPage('dresscode'); return false;">Dress Inspo</a></li>
   </ul>
 </nav>
 
@@ -1140,7 +1140,7 @@ body {
         <div class="weekend-date">Wednesday, May 26th</div>
         <div class="weekend-event-title">Welcome Party</div>
         <div class="weekend-detail-row"><strong>Location:</strong> Terrace at Grand Hotel Europa Palace</div>
-        <div class="weekend-detail-row"><strong>Dress Code:</strong> Italian Chic</div>
+        <div class="weekend-detail-row"><strong>Dress Inspo:</strong> Italian Chic</div>
         <div class="weekend-detail-note">(Think linen shirts, sundresses. No ties required)</div>
       </div>
 
@@ -1152,7 +1152,7 @@ body {
         <div class="weekend-event-title">Wedding Day</div>
         <div class="weekend-detail-row"><strong>Location:</strong> Villa Angelina</div>
         <div class="weekend-detail-row"><strong>Time:</strong> 4:30 PM</div>
-        <div class="weekend-detail-row"><strong>Dress Code:</strong> Formal / Black Tie</div>
+        <div class="weekend-detail-row"><strong>Dress Inspo:</strong> Formal / Black Tie</div>
       </div>
 
       <div class="weekend-col">
@@ -1184,7 +1184,7 @@ body {
             <span>4:30 PM</span>
           </div>
           <div class="detail-row">
-            <span class="detail-label" style="color:var(--blue);">Dress Code:</span>
+            <span class="detail-label" style="color:var(--blue);">Dress Inspo:</span>
             <span>Formal / Black Tie</span>
           </div>
         </div>
@@ -1539,71 +1539,7 @@ body {
 
 
 <!-- ═══════════════════════════════════════════════════════════════
-     PAGE 5: DRESS CODE
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="page" id="dresscode">
-  <div class="section-padding-lg" style="padding-top:140px;">
-    <div class="max-width">
-      <div class="text-center">
-        <h2 class="page-title script-font">Dress Code</h2>
-        <div class="divider"></div>
-      </div>
-
-      <!-- Welcome Party -->
-      <div class="dresscode-event fade-in" style="margin-top:50px;">
-        <h3>Wednesday, May 26th</h3>
-        <div class="dresscode-label">Welcome Party — Italian Chic</div>
-        <p>Think effortless elegance with an Italian flair. For the gentlemen, linen shirts, light trousers, and loafers are perfect — no ties required. Ladies, sundresses, flowy skirts, or a chic jumpsuit are all wonderful options. Light fabrics and neutral or pastel tones fit the Mediterranean vibe beautifully. This is a relaxed evening to kick off the celebration, so dress comfortably and enjoy the Sorrento breeze!</p>
-      </div>
-
-      <!-- Welcome Party Slideshow -->
-      <div class="slideshow-wrapper">
-        <button class="slideshow-arrow left" onclick="scrollSlideshow(this, -1)">&#8249;</button>
-        <div class="dresscode-slideshow">
-          <img src="images/dresscode-italian-1.jpg" alt="Italian Chic example" onclick="openLightbox(this)">
-          <img src="images/dresscode-italian-2.jpg" alt="Italian Chic example" onclick="openLightbox(this)">
-          <img src="images/dresscode-italian-3.jpg" alt="Italian Chic example" onclick="openLightbox(this)">
-          <img src="images/dresscode-italian-4.jpg" alt="Italian Chic example" onclick="openLightbox(this)">
-        </div>
-        <button class="slideshow-arrow right" onclick="scrollSlideshow(this, 1)">&#8250;</button>
-      </div>
-
-      <!-- Wedding Day -->
-      <div class="dresscode-event fade-in" style="margin-top:70px;">
-        <h3>Thursday, May 27th</h3>
-        <div class="dresscode-label">Wedding Day — Formal / Black Tie</div>
-        <p>This is the big day, and we would love for everyone to dress to impress! Gentlemen, think tuxedos, dark suits, or formal evening wear. Ladies, floor-length gowns, elegant cocktail dresses, or a stunning formal look are all perfect. Just a friendly reminder — the Amalfi Coast has cobblestones and stairs, so we recommend wedges, block heels, or dressy flats over stilettos!</p>
-      </div>
-
-      <!-- Wedding Day Slideshow -->
-      <div class="slideshow-wrapper">
-        <button class="slideshow-arrow left" onclick="scrollSlideshow(this, -1)">&#8249;</button>
-        <div class="dresscode-slideshow">
-          <img src="images/dresscode-formal-1.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
-          <img src="images/dresscode-formal-2.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
-          <img src="images/dresscode-formal-3.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
-          <img src="images/dresscode-formal-4.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
-          <img src="images/dresscode-formal-5.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
-          <img src="images/dresscode-formal-6.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
-          <img src="images/dresscode-formal-7.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
-          <img src="images/dresscode-formal-8.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
-          <img src="images/dresscode-formal-9.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
-          <img src="images/dresscode-formal-10.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
-          <img src="images/dresscode-formal-11.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
-          <img src="images/dresscode-formal-12.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
-          <img src="images/dresscode-formal-13.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
-          <img src="images/dresscode-formal-14.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
-        </div>
-        <button class="slideshow-arrow right" onclick="scrollSlideshow(this, 1)">&#8250;</button>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════════
-     PAGE 6: FAQs + RSVP
+     PAGE 5: FAQs + RSVP
      ═══════════════════════════════════════════════════════════════ -->
 <section class="page" id="faq">
   <div class="section-padding-lg" style="padding-top:140px;">
@@ -1665,6 +1601,70 @@ body {
     <a href="https://withjoy.com/ryan-and-meredith-may-27/rsvp" class="rsvp-link-btn" target="_blank">RSVP Here</a>
   </div>
 
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 6: DRESS INSPO
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page" id="dresscode">
+  <div class="section-padding-lg" style="padding-top:140px;">
+    <div class="max-width">
+      <div class="text-center">
+        <h2 class="page-title script-font">Dress Inspo</h2>
+        <div class="divider"></div>
+      </div>
+
+      <!-- Welcome Party -->
+      <div class="dresscode-event fade-in" style="margin-top:50px;">
+        <h3>Wednesday, May 26th</h3>
+        <div class="dresscode-label">Welcome Party — Italian Chic</div>
+        <p>We'd love for guests to dress up a bit while keeping things relaxed and comfortable. Think Italian chic—polished, summery, and effortless, rather than black tie. For gentlemen, linen or button-down shirts with light trousers and loafers are perfect; ties are not required. Ladies can opt for a pretty dress, midi dress, or skirt with a blouse.</p>
+      </div>
+
+      <!-- Welcome Party Slideshow -->
+      <div class="slideshow-wrapper">
+        <button class="slideshow-arrow left" onclick="scrollSlideshow(this, -1)">&#8249;</button>
+        <div class="dresscode-slideshow">
+          <img src="images/dresscode-italian-1.jpg" alt="Italian Chic example" onclick="openLightbox(this)">
+          <img src="images/dresscode-italian-2.jpg" alt="Italian Chic example" onclick="openLightbox(this)">
+          <img src="images/dresscode-italian-3.jpg" alt="Italian Chic example" onclick="openLightbox(this)">
+          <img src="images/dresscode-italian-4.jpg" alt="Italian Chic example" onclick="openLightbox(this)">
+        </div>
+        <button class="slideshow-arrow right" onclick="scrollSlideshow(this, 1)">&#8250;</button>
+      </div>
+
+      <!-- Wedding Day -->
+      <div class="dresscode-event fade-in" style="margin-top:70px;">
+        <h3>Thursday, May 27th</h3>
+        <div class="dresscode-label">Wedding Day — Formal / Black Tie</div>
+        <p>This is the big day, and we would love for everyone to dress to impress! Gentlemen, think tuxedos, dark suits, or formal evening wear. Ladies, floor-length gowns, elegant cocktail dresses, or a stunning formal look are all perfect.</p>
+      </div>
+
+      <!-- Wedding Day Slideshow -->
+      <div class="slideshow-wrapper">
+        <button class="slideshow-arrow left" onclick="scrollSlideshow(this, -1)">&#8249;</button>
+        <div class="dresscode-slideshow">
+          <img src="images/dresscode-formal-1.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-2.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-3.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-4.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-5.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-6.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-7.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-8.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-9.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-10.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-11.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-12.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-13.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-14.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+        </div>
+        <button class="slideshow-arrow right" onclick="scrollSlideshow(this, 1)">&#8250;</button>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 

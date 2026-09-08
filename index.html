@@ -839,15 +839,20 @@ body {
   color: #555;
   text-align: center;
 }
+.slideshow-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 0 10px;
+}
 .dresscode-slideshow {
   display: flex;
   gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  padding: 30px 0 10px;
-  margin: 0 auto;
-  max-width: 900px;
+  padding: 0 40px;
 }
 .dresscode-slideshow::-webkit-scrollbar { display: none; }
 .dresscode-slideshow img {
@@ -857,7 +862,72 @@ body {
   border-radius: 6px;
   flex-shrink: 0;
   scroll-snap-align: start;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
+.dresscode-slideshow img:hover { transform: scale(1.03); }
+.slideshow-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(108, 132, 141, 0.7);
+  color: var(--cream);
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+.slideshow-arrow:hover { background: var(--blue); }
+.slideshow-arrow.left { left: 0; }
+.slideshow-arrow.right { right: 0; }
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.lightbox.active { display: flex; }
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 6px;
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 36px;
+  cursor: pointer;
+  font-weight: 300;
+  line-height: 1;
+}
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 20px;
+  user-select: none;
+}
+.lightbox-nav.lb-prev { left: 10px; }
+.lightbox-nav.lb-next { right: 10px; }
 
 /* ===== RSVP ===== */
 .rsvp-section {
@@ -947,6 +1017,8 @@ body {
   .experience-card { grid-template-columns: 1fr; gap: 24px; }
   .experience-card:nth-child(even) { direction: ltr; }
   .dresscode-slideshow img { width: 220px; height: 275px; }
+  .slideshow-arrow { width: 32px; height: 32px; font-size: 14px; }
+  .dresscode-slideshow { padding: 0 36px; }
   .countdown { gap: 18px; }
   .countdown-number { font-size: 36px; }
 }
@@ -1483,11 +1555,15 @@ body {
       </div>
 
       <!-- Welcome Party Slideshow -->
-      <div class="dresscode-slideshow">
-        <img src="images/dresscode-italian-1.jpg" alt="Italian Chic example">
-        <img src="images/dresscode-italian-2.jpg" alt="Italian Chic example">
-        <img src="images/dresscode-italian-3.jpg" alt="Italian Chic example">
-        <img src="images/dresscode-italian-4.jpg" alt="Italian Chic example">
+      <div class="slideshow-wrapper">
+        <button class="slideshow-arrow left" onclick="scrollSlideshow(this, -1)">&#8249;</button>
+        <div class="dresscode-slideshow">
+          <img src="images/dresscode-italian-1.jpg" alt="Italian Chic example" onclick="openLightbox(this)">
+          <img src="images/dresscode-italian-2.jpg" alt="Italian Chic example" onclick="openLightbox(this)">
+          <img src="images/dresscode-italian-3.jpg" alt="Italian Chic example" onclick="openLightbox(this)">
+          <img src="images/dresscode-italian-4.jpg" alt="Italian Chic example" onclick="openLightbox(this)">
+        </div>
+        <button class="slideshow-arrow right" onclick="scrollSlideshow(this, 1)">&#8250;</button>
       </div>
 
       <!-- Wedding Day -->
@@ -1498,21 +1574,25 @@ body {
       </div>
 
       <!-- Wedding Day Slideshow -->
-      <div class="dresscode-slideshow">
-        <img src="images/dresscode-formal-1.JPG" alt="Formal Black Tie example">
-        <img src="images/dresscode-formal-2.JPG" alt="Formal Black Tie example">
-        <img src="images/dresscode-formal-3.JPG" alt="Formal Black Tie example">
-        <img src="images/dresscode-formal-4.JPG" alt="Formal Black Tie example">
-        <img src="images/dresscode-formal-5.JPG" alt="Formal Black Tie example">
-        <img src="images/dresscode-formal-6.JPG" alt="Formal Black Tie example">
-        <img src="images/dresscode-formal-7.JPG" alt="Formal Black Tie example">
-        <img src="images/dresscode-formal-8.JPG" alt="Formal Black Tie example">
-        <img src="images/dresscode-formal-9.JPG" alt="Formal Black Tie example">
-        <img src="images/dresscode-formal-10.JPG" alt="Formal Black Tie example">
-        <img src="images/dresscode-formal-11.JPG" alt="Formal Black Tie example">
-        <img src="images/dresscode-formal-12.JPG" alt="Formal Black Tie example">
-        <img src="images/dresscode-formal-13.JPG" alt="Formal Black Tie example">
-        <img src="images/dresscode-formal-14.JPG" alt="Formal Black Tie example">
+      <div class="slideshow-wrapper">
+        <button class="slideshow-arrow left" onclick="scrollSlideshow(this, -1)">&#8249;</button>
+        <div class="dresscode-slideshow">
+          <img src="images/dresscode-formal-1.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-2.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-3.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-4.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-5.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-6.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-7.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-8.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-9.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-10.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-11.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-12.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-13.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+          <img src="images/dresscode-formal-14.JPG" alt="Formal Black Tie example" onclick="openLightbox(this)">
+        </div>
+        <button class="slideshow-arrow right" onclick="scrollSlideshow(this, 1)">&#8250;</button>
       </div>
 
     </div>
@@ -1587,6 +1667,14 @@ body {
 
 
 <!-- Scroll to top button (mobile only) -->
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+  <span class="lightbox-nav lb-prev" onclick="navLightbox(event, -1)">&#8249;</span>
+  <img id="lightboxImg" src="" alt="Dress code example">
+  <span class="lightbox-nav lb-next" onclick="navLightbox(event, 1)">&#8250;</span>
+</div>
+
 <button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'});" aria-label="Scroll to top">&uarr;</button>
 
 <!-- ===== FOOTER ===== -->
@@ -1784,6 +1872,52 @@ if (bgVideo) {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
 })();
+
+// ---- Slideshow Arrows ----
+function scrollSlideshow(btn, direction) {
+  var wrapper = btn.parentElement;
+  var slideshow = wrapper.querySelector('.dresscode-slideshow');
+  var scrollAmount = 300;
+  slideshow.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+}
+
+// ---- Lightbox ----
+var lightboxImages = [];
+var lightboxIndex = 0;
+
+function openLightbox(img) {
+  var slideshow = img.parentElement;
+  lightboxImages = Array.from(slideshow.querySelectorAll('img'));
+  lightboxIndex = lightboxImages.indexOf(img);
+  document.getElementById('lightboxImg').src = img.src;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(e) {
+  if (e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function navLightbox(e, direction) {
+  e.stopPropagation();
+  lightboxIndex += direction;
+  if (lightboxIndex < 0) lightboxIndex = lightboxImages.length - 1;
+  if (lightboxIndex >= lightboxImages.length) lightboxIndex = 0;
+  document.getElementById('lightboxImg').src = lightboxImages[lightboxIndex].src;
+}
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  if (e.key === 'ArrowLeft') navLightbox(e, -1);
+  if (e.key === 'ArrowRight') navLightbox(e, 1);
+});
 </script>
 
 </body>

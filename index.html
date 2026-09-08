@@ -885,8 +885,8 @@ body {
   transition: background 0.3s;
 }
 .slideshow-arrow:hover { background: var(--blue); }
-.slideshow-arrow.left { left: 0; }
-.slideshow-arrow.right { right: 0; }
+.slideshow-arrow.left { left: -50px; }
+.slideshow-arrow.right { right: -50px; }
 
 /* Lightbox */
 .lightbox {
@@ -1018,6 +1018,8 @@ body {
   .experience-card:nth-child(even) { direction: ltr; }
   .dresscode-slideshow img { width: 220px; height: 275px; }
   .slideshow-arrow { width: 32px; height: 32px; font-size: 14px; }
+  .slideshow-arrow.left { left: -5px; }
+  .slideshow-arrow.right { right: -5px; }
   .dresscode-slideshow { padding: 0 36px; }
   .countdown { gap: 18px; }
   .countdown-number { font-size: 36px; }

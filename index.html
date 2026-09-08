@@ -812,6 +812,53 @@ body {
 }
 .book-now-btn:hover { opacity: 0.85; }
 
+/* ===== DRESS CODE ===== */
+.dresscode-event {
+  max-width: 740px;
+  margin: 0 auto 60px;
+}
+.dresscode-event h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--blue);
+  margin-bottom: 8px;
+  text-align: center;
+}
+.dresscode-event .dresscode-label {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 12px;
+  color: var(--dark);
+}
+.dresscode-event p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #555;
+  text-align: center;
+}
+.dresscode-slideshow {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 30px 0 10px;
+  margin: 0 auto;
+  max-width: 900px;
+}
+.dresscode-slideshow::-webkit-scrollbar { display: none; }
+.dresscode-slideshow img {
+  width: 270px;
+  height: 337px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
 /* ===== RSVP ===== */
 .rsvp-section {
   background: linear-gradient(160deg, #d4dde1 0%, #a8bcc5 30%, #8aa0a9 60%, #6c848d 100%);
@@ -899,6 +946,7 @@ body {
   .hotel-cards { grid-template-columns: 1fr; }
   .experience-card { grid-template-columns: 1fr; gap: 24px; }
   .experience-card:nth-child(even) { direction: ltr; }
+  .dresscode-slideshow img { width: 220px; height: 275px; }
   .countdown { gap: 18px; }
   .countdown-number { font-size: 36px; }
 }
@@ -939,6 +987,7 @@ body {
     <li><a href="javascript:void(0)" id="nav-details" onclick="showPage('details'); return false;">Wedding Details</a></li>
     <li><a href="javascript:void(0)" id="nav-travel" onclick="showPage('travel'); return false;">Travel &amp; Lodging</a></li>
     <li><a href="javascript:void(0)" id="nav-guide" onclick="showPage('guide'); return false;">Our Italy Guide</a></li>
+    <li><a href="javascript:void(0)" id="nav-dresscode" onclick="showPage('dresscode'); return false;">Dress Code</a></li>
     <li><a href="javascript:void(0)" id="nav-faq" onclick="showPage('faq'); return false;">FAQs</a></li>
 
     <!-- ╔═══════════════════════════════════════════════════════╗
@@ -1416,7 +1465,53 @@ body {
 
 
 <!-- ═══════════════════════════════════════════════════════════════
-     PAGE 5: FAQs + RSVP
+     PAGE 5: DRESS CODE
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page" id="dresscode">
+  <div class="section-padding-lg" style="padding-top:140px;">
+    <div class="max-width">
+      <div class="text-center">
+        <h2 class="page-title script-font">Dress Code</h2>
+        <div class="divider"></div>
+      </div>
+
+      <!-- Welcome Party -->
+      <div class="dresscode-event fade-in" style="margin-top:50px;">
+        <h3>Wednesday, May 26th</h3>
+        <div class="dresscode-label">Welcome Party — Italian Chic</div>
+        <p>Think effortless elegance with an Italian flair. For the gentlemen, linen shirts, light trousers, and loafers are perfect — no ties required. Ladies, sundresses, flowy skirts, or a chic jumpsuit are all wonderful options. Light fabrics and neutral or pastel tones fit the Mediterranean vibe beautifully. This is a relaxed evening to kick off the celebration, so dress comfortably and enjoy the Sorrento breeze!</p>
+      </div>
+
+      <!-- Welcome Party Slideshow -->
+      <div class="dresscode-slideshow">
+        <img src="images/dresscode-italian-1.jpg" alt="Italian Chic example">
+        <img src="images/dresscode-italian-2.jpg" alt="Italian Chic example">
+        <img src="images/dresscode-italian-3.jpg" alt="Italian Chic example">
+        <img src="images/dresscode-italian-4.jpg" alt="Italian Chic example">
+      </div>
+
+      <!-- Wedding Day -->
+      <div class="dresscode-event fade-in" style="margin-top:70px;">
+        <h3>Thursday, May 27th</h3>
+        <div class="dresscode-label">Wedding Day — Formal / Black Tie</div>
+        <p>This is the big day, and we would love for everyone to dress to impress! Gentlemen, think tuxedos, dark suits, or formal evening wear. Ladies, floor-length gowns, elegant cocktail dresses, or a stunning formal look are all perfect. Just a friendly reminder — the Amalfi Coast has cobblestones and stairs, so we recommend wedges, block heels, or dressy flats over stilettos!</p>
+      </div>
+
+      <!-- Wedding Day Slideshow -->
+      <div class="dresscode-slideshow">
+        <img src="images/dresscode-formal-1.jpg" alt="Formal Black Tie example">
+        <img src="images/dresscode-formal-2.jpg" alt="Formal Black Tie example">
+        <img src="images/dresscode-formal-3.jpg" alt="Formal Black Tie example">
+        <img src="images/dresscode-formal-4.jpg" alt="Formal Black Tie example">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 6: FAQs + RSVP
      ═══════════════════════════════════════════════════════════════ -->
 <section class="page" id="faq">
   <div class="section-padding-lg" style="padding-top:140px;">
